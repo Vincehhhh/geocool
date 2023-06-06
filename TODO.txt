@@ -4,7 +4,22 @@ TODO LIST - 060623  16H30
 - MANUFACTURERS
   >> remove admin_name
   >> remove link to user_id
-
+  >> add website
+  >> add contact_email
 
 - PIPES
+  >> ok
+
+
+- USERS
+  >> add First name
+  >> add Last name
+
+- GroundType Model
+  >> slug not necessary to validate
   >>
+
+- BUILDING
+  >> Replace Floor_area by total_area
+  >> validation Flowrate > 0
+  >> validation total_area > 0
