@@ -1,0 +1,2 @@
+class GroundTypesController < ApplicationController
+end

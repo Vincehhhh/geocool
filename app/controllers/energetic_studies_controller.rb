@@ -1,0 +1,2 @@
+class EnergeticStudiesController < ApplicationController
+end

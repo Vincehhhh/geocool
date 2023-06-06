@@ -1,0 +1,2 @@
+class StudiedPipesController < ApplicationController
+end
