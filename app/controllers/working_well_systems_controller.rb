@@ -1,0 +1,2 @@
+class WorkingWellSystemsController < ApplicationController
+end
