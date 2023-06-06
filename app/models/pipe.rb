@@ -3,4 +3,6 @@ class Pipe < ApplicationRecord
 
   has_many :studied_pipes
   has_many :working_pipes
+
+  
 end
