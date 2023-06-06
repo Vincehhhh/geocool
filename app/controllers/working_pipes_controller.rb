@@ -1,2 +1,0 @@
-class WorkingPipesController < ApplicationController
-end

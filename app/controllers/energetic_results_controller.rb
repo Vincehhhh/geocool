@@ -1,2 +1,0 @@
-class EnergeticResultsController < ApplicationController
-end
