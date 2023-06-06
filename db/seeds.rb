@@ -12,8 +12,8 @@ Manufacturer.destroy_all
 
 puts "Creating Manufacturer..."
 elixair = Manufacturer.create!(
-  social_name: "PAM-Elixair"
-  address: ""
+  social_name: "PAM-Building"
+  address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON"
   admin_name: ""
 )
 file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
@@ -33,7 +33,17 @@ vince = User.create!(
   experience: "Intermediate",
   biographie: "Ayant survécu à l'effondrement de la société, j'ai décidé de mettre mes connaissances en armes et en tactiques de survie au service des autres. En tant que survivaliste expérimenté, j'ai construit un marché d'armes florissant dans ce monde chaotique. Ma passion pour l'apprentissage et mon engagement envers la sécurité des survivants m'ont valu le respect et la confiance de nombreux groupes à travers la région."
 )
-file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
-vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
+# file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
+# vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
-puts "Creating weapons..."
+puts "Creating pipes..."
+
+elixair_150 = Pipe.create!(
+  material: "FONTE",
+  nominal_diameter_dn: "DN-150",
+  name: "PAM Elixair 150",
+  manufacturer_id:
+  thermal_conductivity:36,
+  thickness_mm:3.4,
+  diameter_ext_mm:166.4,
+)

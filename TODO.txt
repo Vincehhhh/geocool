@@ -1,0 +1,10 @@
+
+TODO LIST - 060623  16H30
+
+- MANUFACTURERS
+  >> remove admin_name
+  >> remove link to user_id
+
+
+- PIPES
+  >>
