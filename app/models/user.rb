@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :projects
   has_many :manufacturers
 
+  validates :occupation, presence: true, inclusion:  { in: %w(Architecte Ingénieur Etudiant Artisan Particulier Autre),
+    message: "%{value} is not a valid category" }
 end

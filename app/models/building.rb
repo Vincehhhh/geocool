@@ -5,6 +5,16 @@ class Building < ApplicationRecord
   validates :type, presence: true
   validates :postal_code, presence: true
   validates :city_name, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: [
+    "Maison individuelle",
+    "Logement Collectif",
+    "Bureaux",
+    "Chai Viti-Vinicole",
+    "Groupe Scolaire",
+    "Enseignement Secondaire / Université"
+    ]}
+    
   validates :nominal_flow_rate, presence: true
+
+
 end
