@@ -1,57 +1,20 @@
+<div class="container">
 
-    <div class="form-tape-1">
-      <div class="form-tape-1-child"></div>
-      <div class="form-tape-1-item"></div>
-      <div class="btn-suivant" id="bTNSUIVANTContainer">
-        <div class="suivant">Suivant</div>
-        <img
-          class="tablerarrow-up-icon"
-          alt=""
-          src="./public/tablerarrowup.svg"
-        />
-      </div>
-      <div class="component-2">
-        <div class="component-2-child"></div>
-        <div class="bouton-configurateur-parent">
-          <div class="bouton-configurateur">
-            <img
-              class="icbaseline-person-icon"
-              alt=""
-              src="./public/icbaselineperson.svg"
-            />
-          </div>
-
-        </div>
-      </div>
-      <div class="etape-1-form">
-        <div class="etape-1-form-child"></div>
-        <div class="div">1</div>
-        <div class="intro">INTRO</div>
-        <div class="btiment">BÂTIMENT</div>
-        <div class="sol">SOL</div>
-        <div class="collecteur">COLLECTEUR</div>
-        <div class="rsum">RÉSUMÉ</div>
-        <img class="etape-1-form-item" alt="" src="./public/ellipse-17.svg" />
-
-        <div class="etape-1-form-inner"></div>
-        <div class="ellipse-div"></div>
-        <div class="etape-1-form-child1"></div>
-        <div class="etape-1-form-child2"></div>
-      </div>
-      <div class="titre-poppins">
-        <div class="titre-poppins1">Préambule</div>
-      </div>
-      <div class="paragraphe-sf-pro-displayui">
-        <div class="paragraphe-poppins-container">
-          <span>Les puits climatiques sont des </span>
-          <span class="systmes-renouvelables">systèmes renouvelables </span>
-          <span>de ventilation qui captent l'énergie du sol pour vous </span>
-          <span class="systmes-renouvelables">rafraîchir en été </span>
-          <span>et vous </span>
-          <span class="systmes-renouvelables">réchauffer en hiver !</span>
-        </div>
-      </div>
-      <div class="input">
-        <div class="input1">Nom du projet</div>
+  <div class="info-homepage row">
+    <div class="col-5">
+      <h1>Découvrez le puits canadien !</h1>
+      <p>Faire des économies d’énergies tout en restant au frais !</p>
+      <p>Les puits climatiques sont des systèmes renouvelables de ventilation qui captent l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
+      <div class="btn-homepage">
+        <%= link_to 'Démarrez votre étude', root_path %>
+        <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.9165 12H6.99984M23.9165 12L16.6665 19M23.9165 12L16.6665 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
+    <div class="col-4">
+      <%= image_tag "maison.png", alt: "Le Wagon", width: 420 %>
+    </div>
+  </div>
+
+</div>

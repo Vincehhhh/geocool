@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow:  0px 1px 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,20 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.brand {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 25px;
+}
+
+.collapse{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 45px;
 }

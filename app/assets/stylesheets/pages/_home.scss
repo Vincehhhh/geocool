@@ -1,1 +1,27 @@
-// Specific CSS for your home-page
+.info-homepage{
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  padding-top: 175px;
+}
+
+.btn-homepage {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  background-color: #20D3B0;
+  color: white;
+  margin-top: 50px;
+  padding-inline: 15px;
+  padding-block: 10px;
+  border-radius: 15px;
+}
+
+h1{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+}

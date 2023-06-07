@@ -60,8 +60,6 @@ rehau  = Manufacturer.create!(
 # man3.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
 puts "Creating users..."
 #  status: %w(Newbie Intermediate Confirmed Professional).sample,
-
-
 puts "Creating pipes..."
 
 elixair150 = Pipe.create!(
@@ -142,7 +140,7 @@ argile_humide = GroundType.create!(
   heat_capacity: 1340
 )
 
-sable_humide =  GroundType.create!(
+sable_humide = GroundType.create!(
   slug:'sable_humide_rt2012',
   name:'Sable Humide_RT2012',
   thermal_conductivity: 1.88,
@@ -150,7 +148,7 @@ sable_humide =  GroundType.create!(
   heat_capacity: 1200
 )
 
-sable_sec =  GroundType.create!(
+sable_sec = GroundType.create!(
   slug:'sable_sec_rt2012',
   name:'Sable Sec RT2012',
   thermal_conductivity: 0.70,
@@ -158,7 +156,7 @@ sable_sec =  GroundType.create!(
   heat_capacity: 920
 )
 
-sable_sec =  GroundType.create!(
+sable_sec = GroundType.create!(
   slug:'tourbe',
   name:'Tourbe',
   thermal_conductivity: 0.20,
