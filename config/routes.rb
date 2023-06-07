@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :projects, only: %i[index show new create edit update]
   resources :working_well_systems, only: %i[show]
+  resources :buildings, only: %i[new create edit update]
   # resources :manufacturers, only: %i[new create edit update]
-  # resources :buildings, only: %i[new show create edit update]
   # resources :ground_types, only: %i[new show create edit update]
   # resources :pipes, only: %i[new show create edit update]
   # resources :energetic_studies, only: %i[new show create edit update]
