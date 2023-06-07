@@ -11,35 +11,49 @@ User.destroy_all
 Manufacturer.destroy_all
 
 puts "Creating manufacturers"
+vince = User.create!(
+  email: "vhelpin@protonmail.com",
+  password: "123456",
+  occupation: "Ingénieur",
+  premium_status: true,
+  company_name:"Turtwell"
+)
+
+bastien = User.create!(
+  email: "bastien.vhelpin@protonmail.com",
+  password: "123456",
+  occupation: "Ingénieur",
+  premium_status: false,
+  company_name:"Turtwell"
+)
+# file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
+# vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
+
 elixair = Manufacturer.create!(
   social_name: "Saint-Gobain PAM-Building",
-  address:"21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  website:"www.https://www.pambuilding.fr/elixair-fonctionnement",
-  contact_email:
+  address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
+  user_id: 1
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man1.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
 
 helios = Manufacturer.create!(
   social_name: "Helios",
-  address:"21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  website:"Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  contact_email:
+  address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
+  user_id: 2
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man2.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
 le_pc = Manufacturer.create!(
   social_name: "Le Puits Canadien",
-  address:"Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  website:"https://lepuitscanadien.fr/",
-  contact_email: "contact@lepuitscanadien.fr"
+  address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
+  user_id: 2
 )
 
 rehau  = Manufacturer.create!(
   social_name: "REHAU",
-  address:"Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  website:"www.rehau.com",
-  contact_email: "contact@rehau.com"
+  address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
+  user_id: 2
 )
 
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
@@ -47,25 +61,6 @@ rehau  = Manufacturer.create!(
 puts "Creating users..."
 #  status: %w(Newbie Intermediate Confirmed Professional).sample,
 
-vince = User.create!(
-  username: "Vincent",
-  email: "vhelpin@protonmail.com",
-  password: "123456",
-  occupation: "Ingenieur",
-  premium_status: true,
-  company_name:"Turtwell",
-)
-
-bastien = User.create!(
-  username: "Bastien",
-  email: "bastien.vhelpin@protonmail.com",
-  password: "123456",
-  occupation: "Ingenieur",
-  premium_status: false,
-  company_name:"Turtwell",
-)
-# file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
-# vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 puts "Creating pipes..."
 
