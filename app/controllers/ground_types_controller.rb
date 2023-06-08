@@ -2,7 +2,10 @@ class GroundTypesController < ActionController::Base
 
 
   def index
-    @ground_type = GroundType.all
+    @ground_types = GroundType.all
+
+    # @project = current_user.project_ids.last
+    @project = Project.where(id: current_user.project_ids.last )
   end
 
   def edit

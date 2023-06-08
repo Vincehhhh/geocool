@@ -14,6 +14,7 @@ TODO LIST - 060623  16H30
 - USERS
   >> add First name
   >> add Last name
+  >> User ne doit pas pouvoir avoir many manufacturers...
 
 - GroundType Model
   >> slug not necessary to validate
