@@ -1,0 +1,58 @@
+{
+    "building_data": {
+        "area": 550,
+        "category": "Maison individuelle",
+        "department": "44",
+        "nominal_flow_rate": 6000.0,
+        "type": "Neuf"
+    },
+    "ground": {
+        "density": 1800,
+        "heat_capacity": 1340,
+        "lambda_ground": 1.45,
+        "name": "Argile Humide_RT2012",
+        "slug": "argile_humide_rt2012"
+    },
+    "pipes": [
+        {
+            "diameter_ext_mm": 166.4,
+            "diameter_int": 163,
+            "manufacturer": "Saint Gobain",
+            "material": " Fonte",
+            "name": "PAM Elixair 150",
+            "nominal_diameter_dn": "DN 150",
+            "thermal_conductivity": 36,
+            "thickness_mm": 3.4
+        },
+        {
+            "diameter_ext_mm": 326,
+            "diameter_int": 317,
+            "manufacturer": "Saint Gobain",
+            "material": "Fonte",
+            "name": "PAM Elixair 300",
+            "nominal_diameter_dn": "DN 300",
+            "thermal_conductivity": 36,
+            "thickness_mm": 4.8
+        },
+        {
+            "diameter_ext_mm": 103,
+            "diameter_int": 100,
+            "manufacturer": "Saint Gobain",
+            "material": "Fonte",
+            "name": "PAM Elixair 100",
+            "nominal_diameter_dn": "DN 300",
+            "thermal_conductivity": 36,
+            "thickness_mm": 3
+        },
+        {
+            "diameter_ext_mm": 532,
+            "diameter_int": 518,
+            "manufacturer": "Saint Gobain",
+            "material": "Fonte",
+            "name": "PAM Elixair 500",
+            "nominal_diameter_dn": "DN 500",
+            "thermal_conductivity": 36,
+            "thickness_mm": 7
+        }
+    ]
+}

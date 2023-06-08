@@ -1,0 +1,235 @@
+{
+    "selected_wells": [
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 16,
+            "nominal_speed_per_branch": 5.0,
+            "minimal_unit_length_adviced_RAGE": 26.1,
+            "total_length_adviced": 417.8,
+            "needed_area_m2": 283.7
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 17,
+            "nominal_speed_per_branch": 4.7,
+            "minimal_unit_length_adviced_RAGE": 25.2,
+            "total_length_adviced": 427.8,
+            "needed_area_m2": 290.6
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 18,
+            "nominal_speed_per_branch": 4.4,
+            "minimal_unit_length_adviced_RAGE": 24.3,
+            "total_length_adviced": 437.7,
+            "needed_area_m2": 297.3
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 19,
+            "nominal_speed_per_branch": 4.2,
+            "minimal_unit_length_adviced_RAGE": 23.6,
+            "total_length_adviced": 447.5,
+            "needed_area_m2": 304.0
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 20,
+            "nominal_speed_per_branch": 4.0,
+            "minimal_unit_length_adviced_RAGE": 22.9,
+            "total_length_adviced": 457.2,
+            "needed_area_m2": 310.6
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 21,
+            "nominal_speed_per_branch": 3.8,
+            "minimal_unit_length_adviced_RAGE": 22.2,
+            "total_length_adviced": 466.8,
+            "needed_area_m2": 317.1
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 22,
+            "nominal_speed_per_branch": 3.6,
+            "minimal_unit_length_adviced_RAGE": 21.7,
+            "total_length_adviced": 476.4,
+            "needed_area_m2": 323.5
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 150",
+                "diameter_int": 0.163,
+                "diameter_ext": 0.1698,
+                "radius_int": 0.0815,
+                "e_p_m": 0.0034,
+                "section": 0.020867243803306804,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 150",
+            "external_diameter": 0.1698,
+            "number_of_branches": 23,
+            "nominal_speed_per_branch": 3.5,
+            "minimal_unit_length_adviced_RAGE": 21.1,
+            "total_length_adviced": 485.8,
+            "needed_area_m2": 330.0
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 300",
+                "diameter_int": 0.317,
+                "diameter_ext": 0.3266,
+                "radius_int": 0.1585,
+                "e_p_m": 0.0048,
+                "section": 0.07892387604164619,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 300",
+            "external_diameter": 0.3266,
+            "number_of_branches": 5,
+            "nominal_speed_per_branch": 4.2,
+            "minimal_unit_length_adviced_RAGE": 54.2,
+            "total_length_adviced": 271.0,
+            "needed_area_m2": 354.1
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 300",
+                "diameter_int": 0.317,
+                "diameter_ext": 0.3266,
+                "radius_int": 0.1585,
+                "e_p_m": 0.0048,
+                "section": 0.07892387604164619,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 300",
+            "external_diameter": 0.3266,
+            "number_of_branches": 6,
+            "nominal_speed_per_branch": 3.5,
+            "minimal_unit_length_adviced_RAGE": 48.7,
+            "total_length_adviced": 292.3,
+            "needed_area_m2": 381.9
+        },
+        {
+            "pipe_data": {
+                "name": "PAM Elixair 500",
+                "diameter_int": 0.518,
+                "diameter_ext": 0.532,
+                "radius_int": 0.259,
+                "e_p_m": 0.007,
+                "section": 0.21074117679545692,
+                "lambda_tube": 36,
+                "slope": 0.02,
+                "nb_layers": 1
+            },
+            "sizing_flow_rate": 6000.0,
+            "pipe_name": "PAM Elixair 500",
+            "external_diameter": 0.532,
+            "number_of_branches": 2,
+            "nominal_speed_per_branch": 4.0,
+            "minimal_unit_length_adviced_RAGE": 94.2,
+            "total_length_adviced": 188.5,
+            "needed_area_m2": 401.0
+        }
+    ]
+}
