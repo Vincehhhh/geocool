@@ -82,7 +82,44 @@
   line-height: 22px;
 }
 
+.align-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 .link-premium>a {
   font-size: 12px;
   color: #8E8E93;
+}
+
+.label-card {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 15px;
+}
+
+.response-card {
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  line-height: 15px;
+}
+
+.links-premium {
+  padding-bottom: 33px;
+}
+
+#first-link-premium {
+  padding-bottom: 15px;
+}
+
+.h2-card-result {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.pipe-type {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
 }

@@ -23,3 +23,5 @@ TODO LIST - 060623  16H30
   >> Replace Floor_area by total_area
   >> validation Flowrate > 0
   >> validation total_area > 0
+  >> Add maximal available ground area
+  >> Add maximal available unit length
