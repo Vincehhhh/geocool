@@ -5,14 +5,18 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    raise
-    @building = Building.create!(floor_area: 0,type: "maison", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 0)
-    @ground_type = GroundType.create!(name: "0", slug: "0", thermal_conductivity: 0, density: 0, heat_capacity: 0)
+    @building = Building.create!(area: 0, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 0)
+    @ground_type = GroundType.create!(name: "0", lambda_ground: 0, density: 0, heat_capacity: 0)
     @project = Project.new(set_params)
+    @project.building = @building
+    @project.ground_type = @ground_type
+    @project.user = current_user
+
     if @project.save
-      redirect_to root_path(@project)
+      redirect_to edit_project_building_path(@project, @building)
     else
-      render :new, status: :unprocessable_entity
+      puts @project.errors.full_messages
+      # render :new, status: :unprocessable_entity
     end
   end
 
