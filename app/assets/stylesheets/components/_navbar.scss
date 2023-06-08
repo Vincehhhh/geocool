@@ -20,10 +20,18 @@
   line-height: 25px;
 }
 
-.collapse{
+.collapse {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 45px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: #20D3B0;
 }
