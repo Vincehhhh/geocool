@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-      redirect_to edit_project_building_path(@project, @building, )
+      redirect_to edit_project_building_path(@project, @building)
     else
       puts @project.errors.full_messages
       # render :new, status: :unprocessable_entity
