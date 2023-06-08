@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_08_101541) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -125,16 +126,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_101541) do
 
   create_table "working_well_systems", force: :cascade do |t|
     t.bigint "project_id", null: false
-    t.bigint "working_pipe_id", null: false
     t.integer "proposed_length_lo"
     t.integer "proposed_number_of_pipes"
     t.integer "occupied_area"
     t.integer "proposed_total_length"
-    t.integer "nominal_speed"
+    t.float "nominal_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pipe_id"
+    t.index ["pipe_id"], name: "index_working_well_systems_on_pipe_id"
     t.index ["project_id"], name: "index_working_well_systems_on_project_id"
-    t.index ["working_pipe_id"], name: "index_working_well_systems_on_working_pipe_id"
   end
 
   add_foreign_key "energetic_results", "energetic_studies"
@@ -148,6 +149,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_101541) do
   add_foreign_key "studied_pipes", "projects"
   add_foreign_key "working_pipes", "pipes"
   add_foreign_key "working_pipes", "projects"
+  add_foreign_key "working_well_systems", "pipes"
   add_foreign_key "working_well_systems", "projects"
-  add_foreign_key "working_well_systems", "working_pipes"
 end
