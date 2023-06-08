@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index show new create edit update] do
     resources :working_well_systems, only: %i[index]
     resources :buildings, only: %i[edit]
-    resources :ground_types, only: %i[edit]
+    resources :ground_types, only: %i[index edit]
   end
   resources :ground_types, only: %i[new show create update]
   resources :working_well_systems, only: %i[show]
