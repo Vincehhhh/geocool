@@ -1,4 +1,4 @@
-.info-homepage{
+.info-homepage {
   display: flex;
   justify-content: center;
 }
@@ -10,33 +10,35 @@
 .btn-homepage {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 305px;
+  height: 50px;
   background-color: #20D3B0;
   color: white;
   margin-top: 50px;
-  padding-inline: 15px;
-  padding-block: 10px;
-  border-radius: 15px;
+  padding-inline: 22px;
+  padding-block: 13px;
+  border-radius: 18px;
 }
 
-h1{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
+.btn-homepage>a {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  padding-block: 1px;
+}
+
+.h1-homepage {
+  font-weight: 600;
   font-size: 48px;
 }
 
-.under-title{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
+.h2-homepage {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
 }
 
-.little-p{
-  font-family: 'Poppins';
-  font-weight: 500;
-  font-size: 15px;
-  font-style: normal;
-  color: #7F7C7C;
+.text-banner {
+  font-weight: 400;
+  font-size: 18px;
 }
