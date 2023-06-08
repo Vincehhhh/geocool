@@ -1,0 +1,88 @@
+.h1-center {
+  display: flex;
+  justify-content: center;
+  padding-top: 42px;
+  padding-bottom: 35px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-cards-results {
+  padding-bottom: 35px;
+}
+
+.first-results-card {
+  background: #FFFFFF;
+  border: 3px solid #20D3B0;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  width: 248px;
+  height: 494px;
+  padding: 25px;
+}
+
+.results-card {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  width: 227px;
+  height: 455px;
+  top: 264px;
+  padding: 27px;
+}
+
+.btn-save {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #000000;
+  border-radius: 18px;
+  align-items: center;
+  padding: 20px 35px 20px 35px;
+  width: 267px;
+  justify-content: space-between;
+}
+
+.btn-save>a {
+  font-size: 15px;
+  color: black;
+  font-weight: 500;
+}
+
+.circle-number {
+  padding-bottom: 12px;
+}
+
+.first-results-container {
+  padding-inline: 23px;
+}
+
+.results-container {
+  padding-top: 15px;
+}
+
+.title-result {
+  padding-left: 25px;
+}
+
+.btn-card-result {
+  display: flex;
+  justify-content: center;
+  background-color: #20D3B0;
+  border-radius: 18px;
+  padding: 15px 35px 15px 35px;
+}
+
+.btn-card-result>a {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 22px;
+}
+
+.link-premium>a {
+  font-size: 12px;
+  color: #8E8E93;
+}
