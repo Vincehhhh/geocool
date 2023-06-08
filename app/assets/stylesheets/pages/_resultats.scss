@@ -1,0 +1,22 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.first-results-container {
+  background: #FFFFFF;
+  border: 3px solid #20D3B0;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  width: 248px;
+  height: 494px;
+}
+
+.results-container {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  width: 227px;
+  height: 455px;
+  top: 264px;
+}
