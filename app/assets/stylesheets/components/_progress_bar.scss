@@ -1,36 +1,33 @@
 .progress_bar {
   padding-top: 55px;
   padding-bottom: 48px;
-  width: 572px;
+  width: 720px;
 }
 
 .progressbar-wrapper {
-  background: #fff;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 5px;
+  width: 119%;
 }
 
 .progressbar li {
   list-style-type: none;
   width: 20%;
   float: left;
-  font-size: 12px;
+  font-size: 17px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  color: #F4F4F4;
+  color: #8E8E93;
 }
 
 .progressbar li:before {
-  width: 60px;
-  height: 60px;
+  width: 31px;
+  height: 31px;
   content: "";
   line-height: 60px;
-  border: 1px solid #F4F4F4;
+  border: 1px solid #20D3B0;
   display: block;
   text-align: center;
-  margin: 0 auto 3px auto;
+  margin: 0px auto 12px auto;
   border-radius: 50%;
   position: relative;
   z-index: 2;
@@ -38,11 +35,11 @@
 }
 .progressbar li:after {
    width: 100%;
-   height: 2px;
+   height: 1.5px;
    content: '';
    position: absolute;
    background-color: #F4F4F4;
-   top: 30px;
+   top: 15px;
    left: -50%;
    z-index: 0;
 }
@@ -51,19 +48,21 @@
 }
 
 .progressbar li.active {
-  color: green;
-  font-weight: bold;
-}
-.progressbar li.active:before {
-  border-color: #55b776;
-  background: green;
-}
-.progressbar li.active + li:after {
-  background-color: #55b776;
+  color: black;
+  font-weight: 400;
+  font-size: 17px;
 }
 
 .progressbar li.active:before {
-  background: #55b776  url(user.svg) no-repeat center center;
+  border-color: #20D3B0;
+}
+
+.progressbar li.active + li:after {
+  background-color: #20D3B0;
+}
+
+.progressbar li.active:before {
+  background: #20D3B0  url(user.svg) no-repeat center center;
   background-size: 60%;
 }
 .progressbar li::before {
@@ -71,13 +70,6 @@
   background-size: 60%;
 }
 
-.progressbar {
-  counter-reset: step;
-}
-.progressbar li:before {
-  content: counter(step);
-  counter-increment: step;
-}
 
 // CODE ALMIS
 
