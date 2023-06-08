@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database..."
 Pipe.destroy_all
-User.destroy_all
 Manufacturer.destroy_all
+User.destroy_all
 
-puts "Creating manufacturers"
+puts "Creating users"
 vince = User.create!(
   email: "vhelpin@protonmail.com",
   password: "123456",
@@ -20,19 +20,28 @@ vince = User.create!(
 )
 
 bastien = User.create!(
-  email: "bastien.vhelpin@protonmail.com",
+  email: "bastien@gmail.com",
   password: "123456",
-  occupation: "Ingénieur",
+  occupation: "Architecte",
   premium_status: false,
-  company_name:"Turtwell"
+  company_name:"my_archi"
 )
+
+clement = User.create!(
+  email: "clement@gmail.com",
+  password: "123456",
+  occupation: "Architecte",
+  premium_status: true,
+  company_name:"my_archi"
+)
+
 # file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
 # vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
-
+puts "Creating manufacturers"
 elixair = Manufacturer.create!(
   social_name: "Saint-Gobain PAM-Building",
   address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  user_id: 1
+  user: vince
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man1.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
@@ -40,20 +49,20 @@ elixair = Manufacturer.create!(
 helios = Manufacturer.create!(
   social_name: "Helios",
   address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  user_id: 2
+  user: bastien
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man2.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
 le_pc = Manufacturer.create!(
   social_name: "Le Puits Canadien",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  user_id: 2
+  user: clement
 )
 
 rehau  = Manufacturer.create!(
   social_name: "REHAU",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  user_id: 2
+  user: clement
 )
 
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
@@ -71,6 +80,8 @@ elixair150 = Pipe.create!(
   diameter_ext_mm: 166.4,
   manufacturer: elixair
 )
+elixair150.diameter_int = elixair150.diameter_ext_mm - ( 2 * elixair150.thickness_mm)
+elixair150.save
 
 elixair300 = Pipe.create!(
   material: "FONTE",
@@ -81,6 +92,8 @@ elixair300 = Pipe.create!(
   diameter_ext_mm: 326,
   manufacturer: elixair
 )
+elixair300.diameter_int = elixair300.diameter_ext_mm - ( 2 * elixair300.thickness_mm)
+elixair300.save
 
 elixair500 = Pipe.create!(
   material: "FONTE",
@@ -91,6 +104,8 @@ elixair500 = Pipe.create!(
   diameter_ext_mm: 532,
   manufacturer: elixair
 )
+elixair500.diameter_int = elixair500.diameter_ext_mm - ( 2 * elixair500.thickness_mm)
+elixair500.save
 
 elixair100 = Pipe.create!(
   material: "FONTE",
@@ -101,6 +116,8 @@ elixair100 = Pipe.create!(
   diameter_ext_mm: 103,
   manufacturer: elixair
 )
+elixair100.diameter_int = elixair100.diameter_ext_mm - ( 2 * elixair100.thickness_mm)
+elixair100.save
 
 helios150 = Pipe.create!(
   material: "PEHD",
@@ -111,6 +128,8 @@ helios150 = Pipe.create!(
   diameter_ext_mm: 196,
   manufacturer: helios
 )
+helios150.diameter_int = helios150.diameter_ext_mm - ( 2 * helios150.thickness_mm)
+helios150.save
 
 helios200 = Pipe.create!(
   material: "PEHD",
@@ -121,6 +140,9 @@ helios200 = Pipe.create!(
   diameter_ext_mm: 214,
   manufacturer: helios
 )
+helios200.diameter_int = helios200.diameter_ext_mm - ( 2 * helios200.thickness_mm)
+helios200.save
+
 helios300 = Pipe.create!(
   material: "PEHD",
   nominal_diameter_dn: "DN-200",
@@ -130,12 +152,15 @@ helios300 = Pipe.create!(
   diameter_ext_mm: 320,
   manufacturer: helios
 )
+helios300.diameter_int = helios300.diameter_ext_mm - ( 2 * helios300.thickness_mm)
+helios300.save
 
 puts "Creating grounds..."
+
 argile_humide = GroundType.create!(
   name:'Argile Humide_RT2012',
   slug:'argile_humide_rt2012',
-  thermal_conductivity: 1.45,
+  lambda_ground: 1.45,
   density:  1800,
   heat_capacity: 1340
 )
@@ -143,7 +168,7 @@ argile_humide = GroundType.create!(
 sable_humide = GroundType.create!(
   slug:'sable_humide_rt2012',
   name:'Sable Humide_RT2012',
-  thermal_conductivity: 1.88,
+  lambda_ground: 1.88,
   density: 1500,
   heat_capacity: 1200
 )
@@ -151,7 +176,7 @@ sable_humide = GroundType.create!(
 sable_sec = GroundType.create!(
   slug:'sable_sec_rt2012',
   name:'Sable Sec RT2012',
-  thermal_conductivity: 0.70,
+  lambda_ground: 0.70,
   density: 1500,
   heat_capacity: 920
 )
@@ -159,7 +184,10 @@ sable_sec = GroundType.create!(
 sable_sec = GroundType.create!(
   slug:'tourbe',
   name:'Tourbe',
-  thermal_conductivity: 0.20,
+  lambda_ground: 0.20,
   density: 500,
   heat_capacity: 3200
 )
+
+
+puts "Seeds Finished!"
