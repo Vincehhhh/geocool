@@ -1,13 +1,12 @@
 class ProjectsController < ApplicationController
 
-
-
   def new
     @project = Project.new
   end
 
   def create
-    @building = Building.create!(area: 0, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 0)
+    # TO DO :
+    @building = Building.create!(area: 0, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 2)
     @ground_type = GroundType.last
     @project = Project.new(set_params)
     @project.building = @building

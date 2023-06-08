@@ -21,7 +21,8 @@ TODO LIST - 060623  16H30
 
 - BUILDING
   >> Replace Floor_area by total_area
-  >> validation Flowrate > 0
-  >> validation total_area > 0
+  >> validation Flowrate > 0 - DONE
+  >> validation total_area > 0 - DONE
+  >> How to display error message if input values are not correct ?
   >> Add maximal available ground area
   >> Add maximal available unit length

@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
-  belongs_to :building
-  belongs_to :ground_type
+  belongs_to :building, optional: true
+  belongs_to :ground_type, optional: true
 
   has_many :working_well_systems
   has_many :energetic_studies

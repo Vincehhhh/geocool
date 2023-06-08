@@ -1,6 +1,12 @@
-<div>
+<div class = container>
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :name, label: "Nouveau Projet", placeholder: "Nommez votre étude" %>
+    <%= f.submit  "Créer mon projet", class:"btn d-flex" %>
+  <% end %>
+
   <% @ground_type.each do |ground| %>
     <%= ground.name %>
+    <%= f.association :movie,:include_blank => false %>
 
   <% end %>
 </div>

@@ -7,11 +7,11 @@
     <div class="main-card-form main-card-form-preambule align-item">
 
       <div class="container-text-preambule">
-        <h1>Préambule</h1>
-        <p>Les puits climatiques sont des systèmes renouvelables de ventilation  qui captent l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
+        <h1>Vous avez dit Puits Climatique ?</h1>
+        <p>Le puits climatique est un système de ventilation renouvelable qui capte gratuitement l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
         <%= simple_form_for(@project) do |f| %>
-          <%= f.input :name %> 
-          <%= f.submit %>
+          <%= f.input :name, label: "Nouveau Projet", placeholder: "Nommez votre étude" %>
+          <%= f.submit  "Créer mon projet", class:"btn d-flex" %>
         <% end %>
       </div>
 
