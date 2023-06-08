@@ -1,0 +1,11 @@
+ <div>
+    <%= simple_form_for(@building) do |f| %>
+      <%= f.input :area %>
+      <%= f.input :building_type %>
+      <%= f.input :postal_code %>
+      <%= f.input :city_name %>
+      <%= f.input :category %>
+      <%= f.input :nominal_flow_rate %>
+      <%= f.submit %>
+    <% end %>
+  </div>
