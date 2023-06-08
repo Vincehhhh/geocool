@@ -35,3 +35,27 @@
 .nav-link:hover {
   color: #20D3B0;
 }
+
+.btn-login {
+  background: #20D3B0;
+  border-radius: 18px;
+  align-items: center;
+  padding: 0px 15px 0px 18px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-login>a {
+  color: white;
+}
+
+.btn-login:hover {
+  color: black;
+  background: #20b799;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-login>a:hover {
+  color: white;
+}
