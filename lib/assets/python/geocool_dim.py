@@ -277,14 +277,14 @@ for i_well in arr_well_system:
     #       "Long Unitaire Conseillée(RAGE):",np.round(i_well.L_0,1),"m  ", "Longueur tot conseillée:",np.round(i_well.L_total,1),'m  ',"surf. terrain",np.round(i_well.occupied_surface,1),'m²')
     i_result = {
         "pipe_data": i_well.pipe,
-        "sizing_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
+        "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
         "pipe_name": i_well.pipe.name,
         "external_diameter": i_well.pipe.diameter_ext,
-        "number_of_branches": i_well.nb_branch,
-        "nominal_speed_per_branch": np.round(i_well.speed_max,1),
-        "minimal_unit_length_adviced_RAGE": np.round(i_well.L_0,1),
-        "total_length_adviced": np.round(i_well.L_total,1),
-        "needed_area_m2": np.round(i_well.occupied_surface,1)
+        "proposed_number_of_pipes": i_well.nb_branch,
+        "nominal_speed": np.round(i_well.speed_max,1),
+        "proposed_length_lo": np.round(i_well.L_0,1),
+        "proposed_total_length": np.round(i_well.L_total,1),
+        "occupied_area": np.round(i_well.occupied_surface,1)
     }
     result_wells.append(i_result)
 

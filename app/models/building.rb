@@ -15,7 +15,7 @@ class Building < ApplicationRecord
     "Maison individuelle",
     "Logement Collectif",
     "Bureaux",
-    "Chai Viti-Vinicole",
+    "Chai Vini-viticole",
     "Groupe Scolaire",
     "Enseignement Secondaire / Université"
     ]}
