@@ -1,4 +1,4 @@
-.info-homepage{
+.info-homepage {
   display: flex;
   justify-content: center;
 }
@@ -15,26 +15,32 @@
   background-color: #20D3B0;
   color: white;
   margin-top: 50px;
-  padding-inline: 15px;
-  padding-block: 10px;
+  padding-inline: 22px;
+  padding-block: 13px;
   border-radius: 18px;
 }
 
-h1{
+.btn-homepage>a {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding-block: 1px;
+}
+
+.h1-homepage {
   font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 48px;
 }
 
-.under-title{
+.h2-homepage {
   font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
 }
 
-.little-p{
+.little-p {
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 15px;
