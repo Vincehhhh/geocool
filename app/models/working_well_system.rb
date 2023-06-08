@@ -1,6 +1,6 @@
 class WorkingWellSystem < ApplicationRecord
-  belongs_to :project
-  belongs_to :working_pipe
+  belongs_to :project, optional: true
+  belongs_to :pipe, optional: true
 
   validates :proposed_length_lo, presence: true
   validates :proposed_number_of_pipes, presence: true

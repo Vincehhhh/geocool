@@ -297,6 +297,5 @@ jsonResult = json.dumps(result,  default=toJson, indent=4, sort_keys=True)
 # print ('------------------------------------------')
 print (jsonResult)
 
-
-with open("result_file.json", "w") as json_file:
-     json.dump(result, json_file, default=toJson, indent=4, sort_keys=False)
+# with open("result_file.json", "w") as json_file:
+#      json.dump(result, json_file, default=toJson, indent=4, sort_keys=False)

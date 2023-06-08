@@ -12,14 +12,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 16,
-            "nominal_speed_per_branch": 5.0,
-            "minimal_unit_length_adviced_RAGE": 26.1,
-            "total_length_adviced": 417.8,
-            "needed_area_m2": 283.7
+            "proposed_number_of_pipes": 16,
+            "nominal_speed": 5.0,
+            "proposed_length_lo": 26.1,
+            "proposed_total_length": 417.8,
+            "occupied_area": 283.7
         },
         {
             "pipe_data": {
@@ -33,14 +33,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 17,
-            "nominal_speed_per_branch": 4.7,
-            "minimal_unit_length_adviced_RAGE": 25.2,
-            "total_length_adviced": 427.8,
-            "needed_area_m2": 290.6
+            "proposed_number_of_pipes": 17,
+            "nominal_speed": 4.7,
+            "proposed_length_lo": 25.2,
+            "proposed_total_length": 427.8,
+            "occupied_area": 290.6
         },
         {
             "pipe_data": {
@@ -54,14 +54,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 18,
-            "nominal_speed_per_branch": 4.4,
-            "minimal_unit_length_adviced_RAGE": 24.3,
-            "total_length_adviced": 437.7,
-            "needed_area_m2": 297.3
+            "proposed_number_of_pipes": 18,
+            "nominal_speed": 4.4,
+            "proposed_length_lo": 24.3,
+            "proposed_total_length": 437.7,
+            "occupied_area": 297.3
         },
         {
             "pipe_data": {
@@ -75,14 +75,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 19,
-            "nominal_speed_per_branch": 4.2,
-            "minimal_unit_length_adviced_RAGE": 23.6,
-            "total_length_adviced": 447.5,
-            "needed_area_m2": 304.0
+            "proposed_number_of_pipes": 19,
+            "nominal_speed": 4.2,
+            "proposed_length_lo": 23.6,
+            "proposed_total_length": 447.5,
+            "occupied_area": 304.0
         },
         {
             "pipe_data": {
@@ -96,14 +96,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 20,
-            "nominal_speed_per_branch": 4.0,
-            "minimal_unit_length_adviced_RAGE": 22.9,
-            "total_length_adviced": 457.2,
-            "needed_area_m2": 310.6
+            "proposed_number_of_pipes": 20,
+            "nominal_speed": 4.0,
+            "proposed_length_lo": 22.9,
+            "proposed_total_length": 457.2,
+            "occupied_area": 310.6
         },
         {
             "pipe_data": {
@@ -117,14 +117,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 21,
-            "nominal_speed_per_branch": 3.8,
-            "minimal_unit_length_adviced_RAGE": 22.2,
-            "total_length_adviced": 466.8,
-            "needed_area_m2": 317.1
+            "proposed_number_of_pipes": 21,
+            "nominal_speed": 3.8,
+            "proposed_length_lo": 22.2,
+            "proposed_total_length": 466.8,
+            "occupied_area": 317.1
         },
         {
             "pipe_data": {
@@ -138,14 +138,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 22,
-            "nominal_speed_per_branch": 3.6,
-            "minimal_unit_length_adviced_RAGE": 21.7,
-            "total_length_adviced": 476.4,
-            "needed_area_m2": 323.5
+            "proposed_number_of_pipes": 22,
+            "nominal_speed": 3.6,
+            "proposed_length_lo": 21.7,
+            "proposed_total_length": 476.4,
+            "occupied_area": 323.5
         },
         {
             "pipe_data": {
@@ -159,14 +159,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 150",
             "external_diameter": 0.1698,
-            "number_of_branches": 23,
-            "nominal_speed_per_branch": 3.5,
-            "minimal_unit_length_adviced_RAGE": 21.1,
-            "total_length_adviced": 485.8,
-            "needed_area_m2": 330.0
+            "proposed_number_of_pipes": 23,
+            "nominal_speed": 3.5,
+            "proposed_length_lo": 21.1,
+            "proposed_total_length": 485.8,
+            "occupied_area": 330.0
         },
         {
             "pipe_data": {
@@ -180,14 +180,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 300",
             "external_diameter": 0.3266,
-            "number_of_branches": 5,
-            "nominal_speed_per_branch": 4.2,
-            "minimal_unit_length_adviced_RAGE": 54.2,
-            "total_length_adviced": 271.0,
-            "needed_area_m2": 354.1
+            "proposed_number_of_pipes": 5,
+            "nominal_speed": 4.2,
+            "proposed_length_lo": 54.2,
+            "proposed_total_length": 271.0,
+            "occupied_area": 354.1
         },
         {
             "pipe_data": {
@@ -201,14 +201,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 300",
             "external_diameter": 0.3266,
-            "number_of_branches": 6,
-            "nominal_speed_per_branch": 3.5,
-            "minimal_unit_length_adviced_RAGE": 48.7,
-            "total_length_adviced": 292.3,
-            "needed_area_m2": 381.9
+            "proposed_number_of_pipes": 6,
+            "nominal_speed": 3.5,
+            "proposed_length_lo": 48.7,
+            "proposed_total_length": 292.3,
+            "occupied_area": 381.9
         },
         {
             "pipe_data": {
@@ -222,14 +222,14 @@
                 "slope": 0.02,
                 "nb_layers": 1
             },
-            "sizing_flow_rate": 6000.0,
+            "nominal_flow_rate": 6000.0,
             "pipe_name": "PAM Elixair 500",
             "external_diameter": 0.532,
-            "number_of_branches": 2,
-            "nominal_speed_per_branch": 4.0,
-            "minimal_unit_length_adviced_RAGE": 94.2,
-            "total_length_adviced": 188.5,
-            "needed_area_m2": 401.0
+            "proposed_number_of_pipes": 2,
+            "nominal_speed": 4.0,
+            "proposed_length_lo": 94.2,
+            "proposed_total_length": 188.5,
+            "occupied_area": 401.0
         }
     ]
 }
