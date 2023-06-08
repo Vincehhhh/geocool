@@ -71,8 +71,13 @@
   display: flex;
   justify-content: center;
   background-color: #20D3B0;
+  border-radius: 18px;
+  padding: 15px 35px 15px 35px;
 }
 
 .btn-card-result>a {
   color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 22px;
 }
