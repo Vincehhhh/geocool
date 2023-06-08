@@ -8,6 +8,8 @@
 puts "Cleaning database..."
 Pipe.destroy_all
 Manufacturer.destroy_all
+Building.destroy_all
+Project.destroy_all
 User.destroy_all
 
 puts "Creating users"
