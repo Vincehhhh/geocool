@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 
   def create
     @building = Building.create!(area: 0, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 0)
-    @ground_type = GroundType.create!(name: "0", lambda_ground: 0, density: 0, heat_capacity: 0)
+    @ground_type = GroundType.last
     @project = Project.new(set_params)
     @project.building = @building
     @project.ground_type = @ground_type

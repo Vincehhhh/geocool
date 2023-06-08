@@ -6,11 +6,10 @@ class BuildingsController < ActionController::Base
 
   def update
     @building = Building.find(params[:id])
-    @ground_type= GroundType.find(params[:id])
     if @building.update(building_params)
-      redirect_to edit_project_ground_type_path(@building, @ground_type)
+      redirect_to project_ground_types_path(@building.project_ids, @building)
     else
-      puts @project.errors.full_messages
+      puts @building.errors.full_messages
     end
   end
 

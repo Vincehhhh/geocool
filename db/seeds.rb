@@ -10,6 +10,7 @@ Project.destroy_all
 Pipe.destroy_all
 Manufacturer.destroy_all
 Building.destroy_all
+GroundType.destroy_all
 User.destroy_all
 
 puts "Creating users"
