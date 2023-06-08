@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_141825) do
+
+
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_081816) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "buildings", force: :cascade do |t|
-    t.integer "floor_area"
+    t.integer "area"
     t.string "type"
     t.integer "postal_code"
     t.string "city_name"
@@ -47,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_141825) do
   create_table "ground_types", force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.integer "thermal_conductivity"
+    t.integer "lambda_ground"
     t.integer "density"
     t.integer "heat_capacity"
     t.datetime "created_at", null: false
@@ -74,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_141825) do
     t.integer "diameter_ext_mm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "diameter_int"
     t.index ["manufacturer_id"], name: "index_pipes_on_manufacturer_id"
   end
 
