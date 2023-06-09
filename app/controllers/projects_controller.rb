@@ -18,8 +18,8 @@ class ProjectsController < ApplicationController
 
       redirect_to edit_project_building_path(@project, @building)
     else
-      puts @project.errors.full_messages
-      # render :new, status: :unprocessable_entity
+      # puts @project.errors.full_messages
+      render :new, status: :unprocessable_entity
     end
   end
 
