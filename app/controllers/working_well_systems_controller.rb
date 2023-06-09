@@ -31,7 +31,9 @@ class WorkingWellSystemsController < ApplicationController
     File.open('lib/assets/python/input_from_ruby.json', 'w') do |f|
       f.write(input_json)
     end
+    
     # @working_wells = GeoCoolSolver.compute("result_from_form")
+
     @working_wells = @project.working_well_systems.presence || GeoCoolSolver.compute("result_from_form")
     @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }.first(3)
 
@@ -40,7 +42,6 @@ class WorkingWellSystemsController < ApplicationController
   end
 
   def show
-
   end
 
 end

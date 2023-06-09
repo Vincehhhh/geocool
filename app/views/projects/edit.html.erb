@@ -1,23 +1,39 @@
-<div class = container>
-  <%= simple_form_for @project do |f| %>
-  <%# <% @ground_types.each do |ground| %>
-      <%# <%= f.collection_radio_buttons :name, label: ground.name %>
-    <%= f.input :name %>
-    <%= f.input :ground_type, collection: @ground_types, as: :radio_buttons %>
-    <%= f.submit  "Suivant", class:"btn d-flex" %>
-  <% end %>
-</div>
+<div class="container">
 
+  <%= render "shared/progress_bar" %>
 
+  <div class="flex-container">
 
-<!--
-<div>
-    <div class="container">
-      <% @ground_types.each do |ground| %>
-        <div class="container">
-          <%= ground.name %>
-        </div>
-      <% end %>
+    <div class="main-card-form main-card-form-preambule justify-content-center">
+
+        <%= simple_form_for @project do |f| %>
+          <div class="ground-container">
+            <% @ground_types.each do |ground| %>
+              <div class="ground d-flex">
+                <div class="ground-img">
+                  <p>photo</p>
+                </div>
+                <div class="ground-infos ">
+                  <p>Name</p>
+                  <strong><%= ground.name  %></strong>
+
+                  <p>Lambda</p>
+                  <strong><%= ground.lambda_ground  %></strong>
+
+                  <p>Density</p>
+                  <strong><%= ground.density  %></strong>
+
+                  <p>Heat</p>
+                  <strong><%= ground.heat_capacity  %></strong>
+                </div>
+              </div>
+            <% end %>
+            <%= f.submit  "Suivant", class:"btn d-flex" %>
+          </div>
+        <% end %>
+
     </div>
+
+  </div>
+
 </div>
--->
