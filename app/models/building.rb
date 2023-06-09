@@ -1,7 +1,7 @@
 class Building < ApplicationRecord
   has_many :projects
 
-  validates :area, presence: true
+  validates :area, presence: true, numericality: { greater_than: 0, too_long: "%{count} characters is the maximum allowed" }
   validates :postal_code, presence: true
   validates :city_name, presence: true
   validates :building_type, presence: true, inclusion: { in: [
@@ -19,7 +19,6 @@ class Building < ApplicationRecord
     "Enseignement Secondaire / Université"
     ]}
 
-  validates :nominal_flow_rate, presence: true
-
+  validates :nominal_flow_rate, presence: true, numericality: { greater_than: 0, too_long: "%{count} characters is the maximum allowed" }
 
 end

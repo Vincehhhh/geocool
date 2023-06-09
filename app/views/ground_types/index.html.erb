@@ -1,6 +1,28 @@
-<div>
-  <% @ground_type.each do |ground| %>
-    <%= ground.name %>
-
+<div class = container>
+  <%= simple_form_for ([:owner,@weapon]) do |f| %>
+    <% @ground_types.each do |ground| %>
+      <%= f.collection_radio_buttons :name, label: ground.name %>
+      <%= f.input :name, as: :radio_buttons, label: ground.name %>
+    <% end %>
+    <%= f.submit  "Suivant", class:"btn d-flex" %>
   <% end %>
 </div>
+
+<!--
+<%= form_for @ost do |f| %>
+  <%= f.collection_radio_buttons :author_id, Author.all, :id, :name_with_initial %>
+  <%= f.submit %>
+<% end %>
+-->
+
+<!--
+<div>
+    <div class="container">
+      <% @ground_types.each do |ground| %>
+        <div class="container">
+          <%= ground.name %>
+        </div>
+      <% end %>
+    </div>
+</div>
+-->
