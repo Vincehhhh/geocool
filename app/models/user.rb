@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   validates :occupation, presence: true, inclusion:  { in: %w(Architecte Ingénieur Etudiant Artisan Particulier Autre),
     message: "%{value} is not a valid category" }
+
+  has_one_attached :photo
+
 end
