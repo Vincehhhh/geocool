@@ -4,29 +4,35 @@
 
   <div class="flex-container">
 
-    <div class="main-card-form align-item">
+    <div class="main-card-form main-card-form-buildings align-item">
 
-      <%= simple_form_for(@building) do |f| %>
-        <%= f.input :area, label: "Surface du bâtiment", input_html: { value: "" }%>
-        <%= f.input :building_type, label: "Type de projet", collection: [
-            "Neuf",
-            "Rénovation",
-            "Mixte : Neuf / Rénovation"], :include_blank => false %>
-        <%= f.input :postal_code, input_html: { value: "" } %>
-        <%= f.input :city_name, input_html: { value: "" } %>
-        <%= f.input :category, collection:[
-            "Maison individuelle",
-            "Logement Collectif",
-            "Bureaux",
-            "Chai Vini-viticole",
-            "Groupe Scolaire",
-            "Enseignement Secondaire / Université"] ,:include_blank => false %>
+      <div>
+        <%= simple_form_for(@building) do |f| %>
+          <%= f.input :city_name, label: "Ville :", input_html: { value: "" } %>
+          <%= f.input :postal_code, label: "Code postal :", input_html: { value: "" } %>
+          <%= f.input :area, label: "Surface :", input_html: { value: "" }%>
+          <%= f.input :nominal_flow_rate, label: "Débit ventilation :",input_html: { value: "" } %>
+          <%= f.input :building_type, label: "Type de travaux :", collection: [
+              "Neuf",
+              "Rénovation",
+              "Mixte : Neuf / Rénovation"], :include_blank => false %>
+      </div>
 
-        <%= f.input :nominal_flow_rate, input_html: { value: "" } %>
-        <%= f.submit "Suivant", class:"btn d-flex"  %>
-      <% end %>
+      <div>
+          <%= f.input :category, label: "Usage principal du bâtiment :",collection:[
+              "Maison individuelle",
+              "Logement Collectif",
+              "Bureaux",
+              "Chai Vini-viticole",
+              "Groupe Scolaire",
+              "Enseignement Secondaire / Université"] ,:include_blank => false %>
+
+      </div>
 
     </div>
+
+    <%= f.submit "Suivant", class:"btn d-flex"  %>
+  <% end %>
 
   </div>
 
