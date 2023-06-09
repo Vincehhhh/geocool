@@ -83,6 +83,27 @@ arr_ground = [{
     'density': 500,      # kg/m3
     'lambda_ground': 0.20,  # W/m.K
     'heat_capacity' :  3200     # J/kg.K
+},
+{
+    'slug': 'limons',
+    'name': 'Limons',
+    'density': 500,      # kg/m3
+    'lambda_ground': 0.20,  # W/m.K
+    'heat_capacity' :  3200     # J/kg.K
+},
+{
+    'slug': 'calcaire',
+    'name': 'Calcaire',
+    'density': 1800,      # kg/m3
+    'lambda_ground': 0.20,  # W/m.K
+    'heat_capacity' :  3200     # J/kg.K
+},
+{
+    'slug': 'argile_sec',
+    'name': 'Argile Sec',
+    'density': 1700,      # kg/m3
+    'lambda_ground': 0.40,  # W/m.K
+    'heat_capacity' : 850     # J/kg.K
 }
 ]
 
