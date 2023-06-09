@@ -1,7 +1,7 @@
-class BuildingsController < ActionController::Base
+class BuildingsController < ApplicationController
+
   def edit
     @building = Building.find(params[:id])
-
   end
 
   def update

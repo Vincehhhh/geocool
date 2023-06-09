@@ -1,4 +1,4 @@
-class GroundTypesController < ActionController::Base
+class GroundTypesController < ApplicationController
 
 
   def index
