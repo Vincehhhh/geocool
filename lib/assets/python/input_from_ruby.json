@@ -1,1 +1,1 @@
-{"building_data"=>"\"#<Building:0x00007fd997b86f28>\"", "ground"=>"\"#<GroundType:0x00007fd997b47210>\"", "pipes"=>"\"#<Pipe::ActiveRecord_Relation:0x00007fd997b46db0>\""}
+{"building_data"=>"\"#<Building:0x00000001108fdef8>\"", "ground"=>"\"#<GroundType:0x000000011326d158>\"", "pipes"=>"\"#<Pipe::ActiveRecord_Relation:0x000000011326c140>\""}
