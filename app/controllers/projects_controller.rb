@@ -24,6 +24,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
     @ground_types = GroundType.all
     @pipes = Pipe.all
   end
