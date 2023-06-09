@@ -1,7 +1,7 @@
 <div class="container">
 
-  <h1 class="h1-center">Résultats</h1>
-
+  <h1 class="h1-center"> Pré-Dimensionnement - TOP 3 </h1>
+    <p class="p-center">metter un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
   <div class="container flex-container container-cards-results">
 
     <div class="results-container">
@@ -15,8 +15,75 @@
       </div>
 
       <div class="results-card">
+        <div class="flex-container">
+          <%# IMAGE HERE %>
+
+          <div class="title-result">
+            <h2 class="h2-card-result"> <%= @sorted_working_wells[1].pipe.material %></h2>
+            <p class="pipe-type"> <%= @sorted_working_wells[1].pipe.nominal_diameter_dn %> </p>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Tubes</p>
+            <p class="response-card"><%= @sorted_working_wells[1].proposed_number_of_pipes %></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Vitesse max</p>
+            <p class="response-card"><%= @sorted_working_wells[1].nominal_speed %> m/s</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Longueur unitaire</p>
+            <p class="response-card"><%= @sorted_working_wells[1].proposed_length_lo %> m</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Longueur totale</p>
+            <p class="response-card"><%= @sorted_working_wells[1].proposed_total_length %> m</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Surface au sol</p>
+            <p class="response-card"><%= @sorted_working_wells[1].occupied_area %> m²</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="links-premium">
+          <div class="align-item link-premium" id="first-link-premium">
+            <%= link_to 'Exporter en PDF', root_path %>
+            <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.375 6.65V4.75C11.375 2.09 9.45 0 7 0C4.55 0 2.625 2.09 2.625 4.75V6.65C1.1375 6.65 0 7.885 0 9.5V16.15C0 17.765 1.1375 19 2.625 19H11.375C12.8625 19 14 17.765 14 16.15V9.5C14 7.885 12.8625 6.65 11.375 6.65ZM4.375 4.75C4.375 3.135 5.5125 1.9 7 1.9C8.4875 1.9 9.625 3.135 9.625 4.75V6.65H4.375V4.75ZM7.9625 12.825L7.875 12.92V14.25C7.875 14.82 7.525 15.2 7 15.2C6.475 15.2 6.125 14.82 6.125 14.25V12.92C5.6 12.35 5.5125 11.495 6.0375 10.925C6.5625 10.355 7.35 10.26 7.875 10.83C8.4 11.305 8.4875 12.255 7.9625 12.825Z" fill="#8E8E93"/>
+            </svg>
+          </div>
+          <div class="align-item link-premium">
+            <%= link_to 'Performances annuelles', root_path %>
+            <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.375 6.65V4.75C11.375 2.09 9.45 0 7 0C4.55 0 2.625 2.09 2.625 4.75V6.65C1.1375 6.65 0 7.885 0 9.5V16.15C0 17.765 1.1375 19 2.625 19H11.375C12.8625 19 14 17.765 14 16.15V9.5C14 7.885 12.8625 6.65 11.375 6.65ZM4.375 4.75C4.375 3.135 5.5125 1.9 7 1.9C8.4875 1.9 9.625 3.135 9.625 4.75V6.65H4.375V4.75ZM7.9625 12.825L7.875 12.92V14.25C7.875 14.82 7.525 15.2 7 15.2C6.475 15.2 6.125 14.82 6.125 14.25V12.92C5.6 12.35 5.5125 11.495 6.0375 10.925C6.5625 10.355 7.35 10.26 7.875 10.83C8.4 11.305 8.4875 12.255 7.9625 12.825Z" fill="#8E8E93"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="btn-card-result">
+          <%= link_to 'Contacter le fabricant', root_path %>
+        </div>
+
       </div>
     </div>
+
 
     <div class="first-results-container">
       <div class="flex-container circle-number">
@@ -31,44 +98,53 @@
           <%# IMAGE HERE %>
 
           <div class="title-result">
-            <h2 class="h2-card-result">FONTE</h2>
-            <p class="pipe-type">DN-300</p>
+            <h2 class="h2-card-result"> <%= @sorted_working_wells.first.pipe.material %></h2>
+            <p class="pipe-type"> <%= @sorted_working_wells.first.pipe.nominal_diameter_dn %> </p>
           </div>
 
         </div>
 
+      <!-- TO DO : ADD FABRICANT :
+        <div>
+          <div class="align-item">
+            <p class="label-card">Fabricant</p>
+            <p class="response-card"><%= @sorted_working_wells.first.proposed_number_of_pipes %></p>
+          </div>
+        </div>
+      -->
+
         <div>
           <div class="align-item">
             <p class="label-card">Tubes</p>
-            <p class="response-card"><%= @working_well.proposed_number_of_pipes %></p>
+            <p class="response-card"><%= @sorted_working_wells.first.proposed_number_of_pipes %></p>
           </div>
         </div>
 
         <div>
           <div class="align-item">
             <p class="label-card">Vitesse max</p>
-            <p class="response-card"><%= @working_well.nominal_speed %> m/s</p>
+            <p class="response-card"><%= @sorted_working_wells.first.nominal_speed %> m/s</p>
           </div>
         </div>
 
         <div>
           <div class="align-item">
             <p class="label-card">Longueur unitaire</p>
-            <p class="response-card"><%= @working_well.proposed_length_lo %> m</p>
+            <p class="response-card"><%= @sorted_working_wells.first.proposed_length_lo %> m</p>
           </div>
         </div>
 
         <div>
           <div class="align-item">
             <p class="label-card">Longueur totale</p>
-            <p class="response-card"><%= @working_well.proposed_total_length %> m</p>
+            <p class="response-card"><%= @sorted_working_wells.first.proposed_total_length %> m</p>
           </div>
         </div>
 
         <div>
           <div class="align-item">
             <p class="label-card">Surface au sol</p>
-            <p class="response-card"><%= @working_well.occupied_area %> m²</p>
+            <p class="response-card"><%= @sorted_working_wells.first.occupied_area %> m²</p>
           </div>
         </div>
 
@@ -106,6 +182,72 @@
         </svg>
       </div>
       <div class="results-card">
+        <div class="flex-container">
+          <%# IMAGE HERE %>
+
+          <div class="title-result">
+            <h2 class="h2-card-result"> <%= @sorted_working_wells[2].pipe.material %></h2>
+            <p class="pipe-type"> <%= @sorted_working_wells[2].pipe.nominal_diameter_dn %> </p>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Tubes</p>
+            <p class="response-card"><%= @sorted_working_wells[2].proposed_number_of_pipes %></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Vitesse max</p>
+            <p class="response-card"><%= @sorted_working_wells[2].nominal_speed %> m/s</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Longueur unitaire</p>
+            <p class="response-card"><%= @sorted_working_wells[2].proposed_length_lo %> m</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Longueur totale</p>
+            <p class="response-card"><%= @sorted_working_wells[2].proposed_total_length %> m</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="align-item">
+            <p class="label-card">Surface au sol</p>
+            <p class="response-card"><%= @sorted_working_wells[2].occupied_area %> m²</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="links-premium">
+          <div class="align-item link-premium" id="first-link-premium">
+            <%= link_to 'Exporter en PDF', root_path %>
+            <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.375 6.65V4.75C11.375 2.09 9.45 0 7 0C4.55 0 2.625 2.09 2.625 4.75V6.65C1.1375 6.65 0 7.885 0 9.5V16.15C0 17.765 1.1375 19 2.625 19H11.375C12.8625 19 14 17.765 14 16.15V9.5C14 7.885 12.8625 6.65 11.375 6.65ZM4.375 4.75C4.375 3.135 5.5125 1.9 7 1.9C8.4875 1.9 9.625 3.135 9.625 4.75V6.65H4.375V4.75ZM7.9625 12.825L7.875 12.92V14.25C7.875 14.82 7.525 15.2 7 15.2C6.475 15.2 6.125 14.82 6.125 14.25V12.92C5.6 12.35 5.5125 11.495 6.0375 10.925C6.5625 10.355 7.35 10.26 7.875 10.83C8.4 11.305 8.4875 12.255 7.9625 12.825Z" fill="#8E8E93"/>
+            </svg>
+          </div>
+          <div class="align-item link-premium">
+            <%= link_to 'Performances annuelles', root_path %>
+            <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.375 6.65V4.75C11.375 2.09 9.45 0 7 0C4.55 0 2.625 2.09 2.625 4.75V6.65C1.1375 6.65 0 7.885 0 9.5V16.15C0 17.765 1.1375 19 2.625 19H11.375C12.8625 19 14 17.765 14 16.15V9.5C14 7.885 12.8625 6.65 11.375 6.65ZM4.375 4.75C4.375 3.135 5.5125 1.9 7 1.9C8.4875 1.9 9.625 3.135 9.625 4.75V6.65H4.375V4.75ZM7.9625 12.825L7.875 12.92V14.25C7.875 14.82 7.525 15.2 7 15.2C6.475 15.2 6.125 14.82 6.125 14.25V12.92C5.6 12.35 5.5125 11.495 6.0375 10.925C6.5625 10.355 7.35 10.26 7.875 10.83C8.4 11.305 8.4875 12.255 7.9625 12.825Z" fill="#8E8E93"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="btn-card-result">
+          <%= link_to 'Contacter le fabricant', root_path %>
+        </div>
+
       </div>
     </div>
 
