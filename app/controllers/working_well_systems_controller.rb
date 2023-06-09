@@ -8,14 +8,19 @@ class WorkingWellSystemsController < ApplicationController
 
     input_json = {}
 
-    input_json["building_data"] = @building.as_json
-    input_json["ground"] = @ground.as_json
-    input_json["pipes"] = @pipes.as_json
+    # input_json["building_data"] = @building.as_json
+    # input_json["ground"] = @ground.as_json
+    # input_json["pipes"] = @pipes.as_json
 
-    input_json["building_data"] = JSON.pretty_generate(@building)
-    input_json["ground"] = JSON.pretty_generate(@ground)
-    input_json["pipes"] = JSON.pretty_generate(@pipes)
+    # input_json["building_data"] = @building.as_json(symbolize_names:true)
+    # input_json["ground"] = @ground.as_json(symbolize_names:true)
+    # input_json["pipes"] = @pipes.as_json(symbolize_names:true)
 
+    # input_json["pipes"] = JSON.pretty_generate(@pipes)
+
+    input_json["building_data"] = @building.to_json(symbolize_names:true)
+    input_json["ground"] = @ground.to_json(symbolize_names:true)
+    input_json["pipes"] = @pipes.to_json(symbolize_names:true)
     # input_json_pipe = {}
     # input_json_pipe["pipes"] = JSON.parse(@pipes.to_json, symbolize_names: true))
 
@@ -26,6 +31,9 @@ class WorkingWellSystemsController < ApplicationController
     File.open('lib/assets/python/input_from_ruby.json', 'w') do |f|
       f.write(input_json)
     end
+    
+    # @working_wells = GeoCoolSolver.compute("result_from_form")
+
     @working_wells = @project.working_well_systems.presence || GeoCoolSolver.compute("result_from_form")
     @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }.first(3)
 

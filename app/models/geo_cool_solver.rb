@@ -1,9 +1,9 @@
 class GeoCoolSolver < ApplicationRecord
   def self.compute(json_form)
     # Prochaine ligne à modifier quand le form sera fait !!
-    json_form = File.open("lib/assets/python/input_from_ruby.json").read
+    # json_form = File.open("lib/assets/python/input_from_ruby.json").read
 
-    # json_form = File.open("lib/assets/python/sample_file.json").read
+    json_form = File.open("lib/assets/python/sample_file.json").read
 
     result = `python3 lib/assets/python/geocool_dim.py '#{json_form.to_s}'`
 
