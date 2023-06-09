@@ -10,7 +10,6 @@ class WorkingWellSystemsController < ApplicationController
   end
 
   def show
-    
   end
 
 end
