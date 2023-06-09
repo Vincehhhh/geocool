@@ -21,6 +21,8 @@ vince = User.create!(
   premium_status: true,
   company_name:"Turtwell"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 bastien = User.create!(
   email: "bastien@gmail.com",
@@ -29,6 +31,8 @@ bastien = User.create!(
   premium_status: false,
   company_name:"my_archi"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+bastien.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 clement = User.create!(
   email: "clement@gmail.com",
@@ -37,6 +41,8 @@ clement = User.create!(
   premium_status: true,
   company_name:"my_archi"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+clement.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 # file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
 # vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")

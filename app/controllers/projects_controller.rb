@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
 
   def create
     # TO DO :
-    @building = Building.create!(area: 0, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 2)
+
+    @building = Building.create!(area: 1, building_type: "Neuf", postal_code: 0, city_name: "0", category: "Bureaux", nominal_flow_rate: 2)
     @ground_type = GroundType.last
     @project = Project.new(set_params)
     @project.building = @building
@@ -14,11 +15,21 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
+
       redirect_to edit_project_building_path(@project, @building)
     else
       puts @project.errors.full_messages
       # render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @ground_types = GroundType.all
+    @pipes = Pipe.all
+  end
+
+  def update
+
   end
 
   private

@@ -1,0 +1,23 @@
+<div class = container>
+  <% @ground_types.each do |ground| %>
+  <%= simple_form_for (ground) do |f| %>
+      <%# <%= f.collection_radio_buttons :name, label: ground.name %> %>
+      <%= f.input :name, as: :radio_buttons, label: ground.name %>
+    <%= f.submit  "Suivant", class:"btn d-flex" %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<!--
+<div>
+    <div class="container">
+      <% @ground_types.each do |ground| %>
+        <div class="container">
+          <%= ground.name %>
+        </div>
+      <% end %>
+    </div>
+</div>
+-->
