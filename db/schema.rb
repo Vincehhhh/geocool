@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_09_092033) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -97,7 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_092033) do
     t.string "nominal_diameter_dn"
     t.string "name"
     t.bigint "manufacturer_id", null: false
-    t.integer "thermal_conductivity"
+    t.float "thermal_conductivity"
     t.integer "thickness_mm"
     t.integer "diameter_ext_mm"
     t.datetime "created_at", null: false
