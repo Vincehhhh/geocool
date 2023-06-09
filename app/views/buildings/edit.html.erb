@@ -1,25 +1,33 @@
-<div class="container"> %>
+<div class="container">
 
-  <%= render "shared/progress_bar" %>
+  <%= render "shared/progress_bar/step2_progress_bar" %>
 
-  <%= simple_form_for(@building) do |f| %>
-    <%= f.input :area, label: "Surface du bâtiment", input_html: { value: "" }%>
-    <%= f.input :building_type, label: "Type de projet", collection: [
-        "Neuf",
-        "Rénovation",
-        "Mixte : Neuf / Rénovation"], :include_blank => false %>
-    <%= f.input :postal_code, input_html: { value: "" } %>
-    <%= f.input :city_name, input_html: { value: "" } %>
-    <%= f.input :category, collection:[
-        "Maison individuelle",
-        "Logement Collectif",
-        "Bureaux",
-        "Chai Vini-viticole",
-        "Groupe Scolaire",
-        "Enseignement Secondaire / Université"] ,:include_blank => false %>
+  <div class="flex-container">
 
-    <%= f.input :nominal_flow_rate, input_html: { value: "" } %>
-    <%= f.submit "Suivant", class:"btn d-flex"  %>
-  <% end %>
+    <div class="main-card-form align-item">
+
+      <%= simple_form_for(@building) do |f| %>
+        <%= f.input :area, label: "Surface du bâtiment", input_html: { value: "" }%>
+        <%= f.input :building_type, label: "Type de projet", collection: [
+            "Neuf",
+            "Rénovation",
+            "Mixte : Neuf / Rénovation"], :include_blank => false %>
+        <%= f.input :postal_code, input_html: { value: "" } %>
+        <%= f.input :city_name, input_html: { value: "" } %>
+        <%= f.input :category, collection:[
+            "Maison individuelle",
+            "Logement Collectif",
+            "Bureaux",
+            "Chai Vini-viticole",
+            "Groupe Scolaire",
+            "Enseignement Secondaire / Université"] ,:include_blank => false %>
+
+        <%= f.input :nominal_flow_rate, input_html: { value: "" } %>
+        <%= f.submit "Suivant", class:"btn d-flex"  %>
+      <% end %>
+
+    </div>
+
+  </div>
 
 </div>
