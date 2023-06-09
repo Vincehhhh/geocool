@@ -30,12 +30,27 @@ class ProjectsController < ApplicationController
   end
 
   def update
-
+    @project = Project.find(params[:id])
+    @ground_type = GroundType.find(project_ground_params[:ground_type])
+    #@ground_type = GroundType.find(params[:project][:ground_type])
+    @project.ground_type = @ground_type
+    # raise
+    if @project.save
+      # redirect_to project_ground_types_path(@building.project_ids, @building)
+      # redirect_to project_ground_types_path(@building)
+      redirect_to project_working_well_systems_path(@project)
+    else
+      puts @building.errors.full_messages
+    end
   end
 
   private
 
   def set_params
     params.require(:project).permit(:name)
+  end
+
+  def project_ground_params
+    params.require(:project).permit(:ground_type)
   end
 end
