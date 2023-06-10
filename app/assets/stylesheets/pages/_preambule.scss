@@ -7,14 +7,39 @@
 
 .container-text-preambule {
   width: 366px;
-  padding-top: 70px;
+  padding-top: 48px;
 
   h1 {
     font-size: 32px;
+    line-height: 40px;
+    padding-bottom: 5px;
   }
 }
 
 .main-card-form-preambule {
   padding-inline: 65px;
   padding-block: 95px;
+}
+
+.project_name>label {
+  display: none;
+}
+
+.project_name>input {
+  width: 261px;
+  height: 51px;
+  border-radius: 18px;
+  border: none;
+  margin-right: 5px;
+}
+
+.btn-submit-create-project {
+  width: 102px;
+  height: 51px;
+  border-radius: 18px;
+}
+
+.new_project {
+  display: flex;
+  padding-top: 10px;
 }
