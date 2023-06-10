@@ -21,6 +21,8 @@ vince = User.create!(
   premium_status: true,
   company_name:"Turtwell"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 bastien = User.create!(
   email: "bastien@gmail.com",
@@ -29,6 +31,8 @@ bastien = User.create!(
   premium_status: false,
   company_name:"my_archi"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+bastien.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 clement = User.create!(
   email: "clement@gmail.com",
@@ -37,6 +41,8 @@ clement = User.create!(
   premium_status: true,
   company_name:"my_archi"
 )
+file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
+clement.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 
 # file = File.open(Rails.root.join("db/seeds/users_img/vince_light.jpg"))
 # vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
@@ -84,7 +90,10 @@ elixair150 = Pipe.create!(
   manufacturer: elixair
 )
 elixair150.diameter_int = elixair150.diameter_ext_mm - ( 2 * elixair150.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
+elixair150.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
 elixair150.save
+
 
 elixair300 = Pipe.create!(
   material: "FONTE",
@@ -96,18 +105,24 @@ elixair300 = Pipe.create!(
   manufacturer: elixair
 )
 elixair300.diameter_int = elixair300.diameter_ext_mm - ( 2 * elixair300.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
+elixair300.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
+
 elixair300.save
 
 elixair500 = Pipe.create!(
   material: "FONTE",
   nominal_diameter_dn: "DN-500",
   name: "PAM Elixair 500",
-  thermal_conductivity: 36,
+  thermal_conductivity: 36.0,
   thickness_mm: 7.0,
   diameter_ext_mm: 532,
   manufacturer: elixair
 )
 elixair500.diameter_int = elixair500.diameter_ext_mm - ( 2 * elixair500.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
+elixair500.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
+
 elixair500.save
 
 elixair100 = Pipe.create!(
@@ -120,6 +135,8 @@ elixair100 = Pipe.create!(
   manufacturer: elixair
 )
 elixair100.diameter_int = elixair100.diameter_ext_mm - ( 2 * elixair100.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
+elixair100.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
 elixair100.save
 
 helios150 = Pipe.create!(
@@ -132,6 +149,8 @@ helios150 = Pipe.create!(
   manufacturer: helios
 )
 helios150.diameter_int = helios150.diameter_ext_mm - ( 2 * helios150.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/Polyethylene.jpg"))
+helios150.photo.attach(io: file, filename: "Polyethylene.jpg", content_type: "image/jpeg")
 helios150.save
 
 helios200 = Pipe.create!(
@@ -144,6 +163,8 @@ helios200 = Pipe.create!(
   manufacturer: helios
 )
 helios200.diameter_int = helios200.diameter_ext_mm - ( 2 * helios200.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/Polyethylene.jpg"))
+helios200.photo.attach(io: file, filename: "Polyethylene.jpg", content_type: "image/jpeg")
 helios200.save
 
 helios300 = Pipe.create!(
@@ -156,6 +177,8 @@ helios300 = Pipe.create!(
   manufacturer: helios
 )
 helios300.diameter_int = helios300.diameter_ext_mm - ( 2 * helios300.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/Polyethylene.jpg"))
+helios300.photo.attach(io: file, filename: "Polyethylene.jpg", content_type: "image/jpeg")
 helios300.save
 
 puts "Creating grounds..."
@@ -184,13 +207,27 @@ sable_sec = GroundType.create!(
   heat_capacity: 920
 )
 
-sable_sec = GroundType.create!(
-  slug:'tourbe',
-  name:'Tourbe',
+limon = GroundType.create!(
+  slug:'limons',
+  name:'Limons',
   lambda_ground: 0.20,
   density: 500,
   heat_capacity: 3200
 )
 
+calcaire = GroundType.create!(
+  slug:'calcaire',
+  name:'Calcaire',
+  lambda_ground: 0.40,
+  density: 1800,
+  heat_capacity: 778
+)
 
+argile_sec = GroundType.create!(
+  slug:'argile_sec',
+  name:'Argile Sec',
+  lambda_ground: 0.40,
+  density: 1700,
+  heat_capacity: 850
+)
 puts "Seeds Finished!"

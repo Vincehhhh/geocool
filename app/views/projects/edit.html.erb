@@ -1,0 +1,38 @@
+<div class="container">
+
+
+  <div class="flex-container">
+
+    <div class="main-card-form main-card-form-preambule justify-content-center">
+
+        <%= simple_form_for @project do |f| %>
+          <div class="ground-container">
+            <% @ground_types.each do |ground| %>
+              <div class="ground d-flex">
+                <div class="ground-img">
+                  <p>photo</p>
+                </div>
+                <div class="ground-infos ">
+                  <p>Name</p>
+                  <strong><%= ground.name  %></strong>
+
+                  <p>Lambda</p>
+                  <strong><%= ground.lambda_ground  %></strong>
+
+                  <p>Density</p>
+                  <strong><%= ground.density  %></strong>
+
+                  <p>Heat</p>
+                  <strong><%= ground.heat_capacity  %></strong>
+                </div>
+              </div>
+            <% end %>
+            <%= f.submit  "Suivant", class:"btn d-flex" %>
+          </div>
+        <% end %>
+
+    </div>
+
+  </div>
+
+</div>

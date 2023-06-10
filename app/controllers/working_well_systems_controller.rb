@@ -2,15 +2,46 @@ class WorkingWellSystemsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @working_wells = @project.working_wells.presence || GeoCoolSolver.compute("result_from_form")
+    @building = @project.building
+    @ground = @project.ground_type
+    @pipes = Pipe.all
+
+    input_json = {}
+
+    # input_json["building_data"] = @building.as_json
+    # input_json["ground"] = @ground.as_json
+    # input_json["pipes"] = @pipes.as_json
+
+    # input_json["building_data"] = @building.as_json(symbolize_names:true)
+    # input_json["ground"] = @ground.as_json(symbolize_names:true)
+    # input_json["pipes"] = @pipes.as_json(symbolize_names:true)
+
+    # input_json["pipes"] = JSON.pretty_generate(@pipes)
+
+    input_json["building_data"] = @building.to_json(symbolize_names:true)
+    input_json["ground"] = @ground.to_json(symbolize_names:true)
+    input_json["pipes"] = @pipes.to_json(symbolize_names:true)
+    # input_json_pipe = {}
+    # input_json_pipe["pipes"] = JSON.parse(@pipes.to_json, symbolize_names: true))
+
+    # File.open('test_ruby.json', 'w') do |f|
+    #   f.write(input_json_pipe)
+    # end
+
+    File.open('lib/assets/python/input_from_ruby.json', 'w') do |f|
+      f.write(input_json)
+    end
+    
+    # @working_wells = GeoCoolSolver.compute("result_from_form")
+
+    @working_wells = @project.working_well_systems.presence || GeoCoolSolver.compute("result_from_form")
     @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }.first(3)
 
-    # @results = GeoCoolSolver.compute("result_from_form")
-    # @working_well = @results.first
+    # @working_well = @sorted_working_wells.first
+    # raise
   end
 
   def show
-    
   end
 
 end
