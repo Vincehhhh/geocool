@@ -132,7 +132,7 @@ class Ground_settings:
             print(getattr(self, var))
 
 class Pipe_settings:
-    def __init__(self,name,diameter_int,e_p_mm,lambda_tube):
+    def __init__(self,name,diameter_int,e_p_mm,lambda_tube,id):
         self.name = name
         self.diameter_int = diameter_int/1000. #m
         self.diameter_ext =  self.diameter_int + 2*e_p_mm/1000
@@ -142,6 +142,7 @@ class Pipe_settings:
         self.lambda_tube = lambda_tube
         self.slope = 0.02
         self.nb_layers = 1
+        self.id = id
 
     def surface_int(self,pipe_length):
         return 2*np.pi*self.radius_int*pipe_length
@@ -221,7 +222,8 @@ class Working_wells:
             self.pipe.append(Pipe_settings(i_pipe['name'],
                                     i_pipe['diameter_int'],
                                     i_pipe['thickness_mm'],
-                                    i_pipe['thermal_conductivity']))
+                                    i_pipe['thermal_conductivity'],
+                                    i_pipe['id']))
 
         for j_pipe in self.pipe:
             #print('name',j_pipe.name)
@@ -297,6 +299,7 @@ for i_well in arr_well_system:
     #       "v@Qvmax:",np.round(i_well.speed_max,1),"m/s  ", "v@Qvmin:",np.round(i_well.speed_min,1),"m/s  " ,
     #       "Long Unitaire Conseillée(RAGE):",np.round(i_well.L_0,1),"m  ", "Longueur tot conseillée:",np.round(i_well.L_total,1),'m  ',"surf. terrain",np.round(i_well.occupied_surface,1),'m²')
     i_result = {
+        "pipe_id": i_well.pipe.id,
         "pipe_data": i_well.pipe,
         "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
         "pipe_name": i_well.pipe.name,

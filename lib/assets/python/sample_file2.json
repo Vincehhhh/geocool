@@ -1,0 +1,99 @@
+{
+  "ground": {
+    "id": 46,
+    "name": "Argile Sec",
+    "slug": "argile_sec",
+    "lambda_ground": 0.4,
+    "density": 1700,
+    "heat_capacity": 850
+  },
+  "building_data": {
+    "id": 17,
+    "area": 1500,
+    "building_type": "Neuf",
+    "postal_code": 44100,
+    "city_name": "nantes",
+    "category": "Bureaux",
+    "nominal_flow_rate": 2500,
+    "department": 44
+  },
+  "pipes": [
+    {
+      "id": 71,
+      "material": "PEHD",
+      "nominal_diameter_dn": "DN-200",
+      "name": "Helios 200",
+      "manufacturer_id": 46,
+      "thermal_conductivity": 0.3,
+      "thickness_mm": 7,
+      "diameter_ext_mm": 214,
+      "diameter_int": 200
+    },
+    {
+      "id": 72,
+      "material": "PEHD",
+      "nominal_diameter_dn": "DN-200",
+      "name": "Helios 300",
+      "manufacturer_id": 46,
+      "thermal_conductivity": 0.3,
+      "thickness_mm": 10,
+      "diameter_ext_mm": 320,
+      "diameter_int": 300
+    },
+    {
+      "id": 66,
+      "material": "FONTE",
+      "nominal_diameter_dn": "DN-150",
+      "name": "PAM Elixair 150",
+      "manufacturer_id": 45,
+      "thermal_conductivity": 36.0,
+      "thickness_mm": 3,
+      "diameter_ext_mm": 166,
+      "diameter_int": 160
+    },
+    {
+      "id": 67,
+      "material": "FONTE",
+      "nominal_diameter_dn": "DN-300",
+      "name": "PAM Elixair 300",
+      "manufacturer_id": 45,
+      "thermal_conductivity": 36.0,
+      "thickness_mm": 4,
+      "diameter_ext_mm": 326,
+      "diameter_int": 318
+    },
+    {
+      "id": 68,
+      "material": "FONTE",
+      "nominal_diameter_dn": "DN-500",
+      "name": "PAM Elixair 500",
+      "manufacturer_id": 45,
+      "thermal_conductivity": 36.0,
+      "thickness_mm": 7,
+      "diameter_ext_mm": 532,
+      "diameter_int": 518
+    },
+    {
+      "id": 69,
+      "material": "FONTE",
+      "nominal_diameter_dn": "DN-100",
+      "name": "PAM Elixair 100",
+      "manufacturer_id": 45,
+      "thermal_conductivity": 36.0,
+      "thickness_mm": 3,
+      "diameter_ext_mm": 103,
+      "diameter_int": 97
+    },
+    {
+      "id": 70,
+      "material": "PEHD",
+      "nominal_diameter_dn": "DN-150",
+      "name": "Helios 200",
+      "manufacturer_id": 46,
+      "thermal_conductivity": 0.3,
+      "thickness_mm": 5,
+      "diameter_ext_mm": 196,
+      "diameter_int": 186
+    }
+  ]
+}

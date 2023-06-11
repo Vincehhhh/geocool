@@ -1,7 +1,7 @@
 <div class="container">
 
   <h1 class="h1-center"> Pré-Dimensionnement - TOP 3 </h1>
-    <p class="p-center">metter un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
+    <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + mettre un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
   <div class="container flex-container container-cards-results">
 
     <div class="results-container">
@@ -261,5 +261,12 @@
       </svg>
     </div>
   </div>
+
+
+<div class="flex-container">
+  <p>
+    <%= @sorted_working_wells.as_json %>
+  </p>
+</div>
 
 </div>
