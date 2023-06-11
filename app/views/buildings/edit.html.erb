@@ -33,7 +33,9 @@
       </div>
 
       <div class="container-inputs-right">
-          <%= f.input :category, label: "Usage principal du bâtiment :", as: :radio_buttons, collection:[
+          <%= f.input :category, label: "Usage principal du bâtiment :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper-building-use', item_wrapper_class: 'category-item-building-use',
+            input_html: {class: 'category-selector-building-use'}, collection: [
               "Maison individuelle",
               "Logement Collectif",
               "Bureaux",
