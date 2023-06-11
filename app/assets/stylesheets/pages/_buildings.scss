@@ -17,9 +17,17 @@
 
 .inputs-form-buildings>div>input {
   width: 191px;
-  height: 55px;
+  height: 50px;
   border-radius: 18px;
 }
 
 
 // INPUT - TYPE DE TRAVAUX
+.building_building_type>.form-check {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  margin-bottom: 15px;
+}
