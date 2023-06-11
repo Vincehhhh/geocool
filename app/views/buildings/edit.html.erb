@@ -24,7 +24,9 @@
             <%= f.input :nominal_flow_rate, label: "Débit ventilation :",input_html: { value: "" } %>
           </div>
 
-          <%= f.input :building_type, label: "Type de travaux :", as: :radio_buttons, collection: [
+          <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper-building-type', item_wrapper_class: 'category-item-building-type',
+            input_html: {class: 'category-selector-building-type'}, collection: [
               "Neuf",
               "Rénovation",
               "Mixte : Neuf / Rénovation"], :include_blank => false %>

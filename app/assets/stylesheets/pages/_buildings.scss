@@ -23,11 +23,57 @@
 
 
 // INPUT - TYPE DE TRAVAUX
-.building_building_type>.form-check {
+
+// .building_building_type>.form-check {
+//   display: flex;
+//   align-items: center;
+//   height: 50px;
+//   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+//   border-radius: 18px;
+//   margin-bottom: 15px;
+// }
+
+// input[type="radio"]:checked + .building_building_type>.form-check {
+//   border: 3px solid black;
+// }
+
+// TEST
+
+.category-wrapper-building-type {
   display: flex;
-  align-items: center;
-  height: 50px;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 18px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item-building-type {
+  flex: 1 0 47%;
   margin-bottom: 15px;
+}
+
+.category-selector-building-type {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector-building-type + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border-radius: 18px;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+}
+
+.category-selector-building-type:checked + label {
+  color: black;
+  border: 2px solid #20D3B0;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: black;
 }
