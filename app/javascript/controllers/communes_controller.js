@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="communes"
 export default class extends Controller {
+  // static targets = ["department", "dptcommunes","postCode"]
   static targets = ["department", "dptcommunes"]
   connect() {
     console.log("Hello from our first Stimulus controller");
@@ -16,12 +17,16 @@ export default class extends Controller {
     // fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${token}`)
        .then(response => response.json())
        .then((data) => {
-          // console.log(data);
+          console.log(data);
           const communes = data.map( hash => hash["nom"] );
+          const post_codes = data.map( hash => hash["codesPostaux"] );
+          // const code_insee = data.map( hash => hash["code"] );
           console.log(communes);
           console.log(this.dptcommunesTarget)
+
           // Clear the existing city options
           this.dptcommunesTarget.innerHTML = '';
+          // this.postCodeTarget.innerHTML = '';
 
           communes.forEach((city) => {
             const option = document.createElement("option");
@@ -30,11 +35,12 @@ export default class extends Controller {
             this.dptcommunesTarget.appendChild(option);
           });
 
-
-
-          // this.deptcommunesTarget = communes;
-
-        //  this.insertGeoData(data);
+          // post_codes.forEach((post_code) => {
+          //   const option2 = document.createElement("option");
+          //   option2.value = post_code;
+          //   option2.textContent = post_code;
+          //   this.postCodeTarget.appendChild(option2);
+          // });
      });
   }
 
@@ -49,4 +55,7 @@ export default class extends Controller {
     // console.log(dptNumber);
     this.fetchDepartment(dptNumber);
   }
+
+
+
 }

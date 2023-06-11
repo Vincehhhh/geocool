@@ -11,8 +11,11 @@ class BuildingsController < ApplicationController
   def update
     @building = Building.find(params[:id])
     @project = Project.find(@building.project_ids)
+
     if @building.update(building_params)
-      @building.department = @building.postal_code / 1000
+      @building.city_insee_code = fetch_code_insee(@building.city_name)
+      dpt_number = @building.department.split(' =')[0]
+      @building.department = dpt_number
       @building.save
       # redirect_to project_ground_types_path(@building.project_ids, @building)
       # redirect_to project_ground_types_path(@building)
@@ -25,16 +28,18 @@ class BuildingsController < ApplicationController
   private
 
   def building_params
-    params.require(:building).permit(:area, :building_type, :postal_code,:city_name,:category,:nominal_flow_rate)
+    # params.require(:building).permit(:area, :building_type, :postal_code,:city_name,:category,:nominal_flow_rate)
+    params.require(:building).permit(:area, :building_type, :department, :city_name,:category,:nominal_flow_rate)
+
   end
 
-  def fetch_communes()
-    url = 'https://geo.api.gouv.fr/departements/01/communes'
+  def fetch_code_insee(query)
+    url="https://geo.api.gouv.fr/communes?nom=#{query}&fields=codesPostaux&boost=population&limit=1"
+
     # response = URI.open(url).read
     # JSON.parse(response)
-    response = HTTParty.get(url)
-    JSON.parse(response.body)
-
+    response = JSON.parse((HTTParty.get(url)).body)
+    code_insee = response[0]["code"]
   end
 
 end

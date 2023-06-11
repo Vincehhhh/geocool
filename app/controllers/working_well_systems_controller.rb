@@ -30,10 +30,29 @@ class WorkingWellSystemsController < ApplicationController
     # @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_length_lo"] }
     @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_total_length"] }
 
-
+    @seismes = fetch_risques_seismes(@building.city_insee_code)
+    @radon = fetch_risques_radon(@building.city_insee_code)
   end
 
   def show
   end
+
+  def fetch_risques_seismes(code_insee)
+    url = "https://www.georisques.gouv.fr/api/v1/zonage_sismique?code_insee=#{code_insee}&page=1&page_size=10&rayon=1000"
+
+    # response = URI.open(url).read
+    # JSON.parse(response)
+    response = JSON.parse((HTTParty.get(url)).body)
+    zone_seismes = response["data"][0]["zone_sismicite"]
+  end
+
+  def fetch_risques_radon(code_insee)
+    url ="https://www.georisques.gouv.fr/api/v1/radon?code_insee=#{code_insee}&page=1&page_size=10"
+    # response = URI.open(url).read
+    # JSON.parse(response)
+    response = JSON.parse((HTTParty.get(url)).body)
+    zone_radon = response["data"][0]["classe_potentiel"]
+  end
+
 
 end

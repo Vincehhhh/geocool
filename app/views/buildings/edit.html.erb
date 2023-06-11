@@ -14,7 +14,8 @@
               action: "change->communes#dptChoice"}}%>
             <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
               data: { communes_target: "dptcommunes" }}%>
-            <%# <%= f.input :postal_code, label: "Code postal :",  %>
+            <%# <%= f.input :postal_code, label: "Code postal :",collection: [], input_html:{
+              data: { communes_target: "postCode" }}%> 
           </div>
 
           <div class="align-item inputs-form-buildings">
