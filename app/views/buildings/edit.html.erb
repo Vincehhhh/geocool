@@ -1,6 +1,7 @@
 <div class="container">
 
   <%= render "shared/progress_bar/step2_progress_bar" %>
+  <%= simple_form_for(@building) do |f| %>
 
   <div class="flex-container">
 
@@ -8,9 +9,9 @@
       <%= link_to 'Précédent', new_project_path %>
     </div>
 
-    <%= simple_form_for(@building) do |f| %>
       <div class="main-card-form main-card-form-buildings align-item">
           <div class="container-inputs-left">
+
             <div class="align-item inputs-form-buildings" data-controller="communes">
                <%= f.input :department, label: "Département :", collection: @dpt_list,
               input_html:{data: { communes_target:"department", action: "change->communes#dptChoice"}}%>
@@ -21,8 +22,8 @@
             </div>
 
             <div class="align-item inputs-form-buildings">
-              <%= f.input :area, label: "Surface :", input_html: { value: "" }%>
-              <%= f.input :nominal_flow_rate, label: "Débit ventilation :", input_html: { value: "" } %>
+              <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
+              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
             </div>
 
             <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
@@ -40,7 +41,82 @@
                 "Maison individuelle",
                 "Logement Collectif",
                 "Bureaux",
-                "Chai Vini-viticole",
+                "Chai",
+                "Groupe Scolaire",
+                "Enseignement Secondaire / Université"] ,:include_blank => false %>
+        </div>
+
+        <!--
+        <div>
+          <%= f.submit "", class:"btn d-flex btn-next"  %>
+        </div>
+        -->
+
+      </div>
+
+      <div>
+        <%= f.submit "", class:"btn d-flex btn-next"  %>
+      </div>
+
+  <% end %>
+
+  </div>
+
+</div>
+
+
+
+
+
+<%# ANCIEN CODE QUI FONCTIONNE %>
+
+<!--
+<div class="container">
+
+  <%= render "shared/progress_bar/step2_progress_bar" %>
+
+  <%= simple_form_for(@building) do |f| %>
+
+  <div class="flex-container">
+
+    <div class="btn-before">
+      <%= link_to 'Précédent', new_project_path %>
+    </div>
+
+    <%# <%= simple_form_for(@building) do |f| %>
+      <div class="main-card-form main-card-form-buildings align-item">
+          <div class="container-inputs-left">
+
+            <div class="align-item inputs-form-buildings" data-controller="communes">
+               <%= f.input :department, label: "Département :", collection: @dpt_list,
+              input_html:{data: { communes_target:"department", action: "change->communes#dptChoice"}}%>
+               <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
+              data: { communes_target: "dptcommunes" }}%>
+               <%# <%= f.input :postal_code, label: "Code postal :", ,collection: [], input_html:{
+              data: { communes_target: "postCode" }}%>
+            </div>
+
+            <div class="align-item inputs-form-buildings">
+              <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
+              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
+            </div>
+
+            <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper-building-type', item_wrapper_class: 'category-item-building-type',
+              input_html: {class: 'category-selector-building-type'}, collection: [
+                "Neuf",
+                "Rénovation",
+                "Mixte"], :include_blank => false %>
+        </div>
+
+        <div class="container-inputs-right">
+            <%= f.input :category, label: "Usage principal du bâtiment :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper-building-use', item_wrapper_class: 'category-item-building-use',
+              input_html: {class: 'category-selector-building-use'}, collection: [
+                "Maison individuelle",
+                "Logement Collectif",
+                "Bureaux",
+                "Chai",
                 "Groupe Scolaire",
                 "Enseignement Secondaire / Université"] ,:include_blank => false %>
         </div>
@@ -48,7 +124,6 @@
         <div>
           <%= f.submit "", class:"btn d-flex btn-next"  %>
         </div>
-
 
       </div>
 
@@ -60,3 +135,4 @@
   </div>
 
 </div>
+-->

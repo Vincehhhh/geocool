@@ -8,21 +8,21 @@
 }
 
 .inputs-form-buildings>div>label, .building_building_type>legend, .building_category>legend {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .container-inputs-left {
-  width: 402px;
+  width: 420px;
 }
 
 .container-inputs-right {
   width: 318px;
-  margin-right: -100px;
+  // margin-right: -100px;
 }
 
-.inputs-form-buildings>div>input {
-  width: 191px;
+.inputs-form-buildings>div>input, .inputs-form-buildings>div>select {
+  width: 200px;
   height: 50px;
   border-radius: 18px;
 }
@@ -46,7 +46,7 @@
 }
 
 .category-item-building-type {
-  flex: 0 0 28%;
+  flex: 0 0 30%;
   margin-bottom: 15px;
 }
 
