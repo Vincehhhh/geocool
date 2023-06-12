@@ -8,24 +8,20 @@
         <%= simple_form_for @project do |f| %>
           <div class="ground-container">
             <% @ground_types.each do |ground| %>
-              <div class="ground d-flex">
+              <label class="ground d-flex">
+                <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
                 <div class="ground-img">
-                  <p>photo</p>
+                  <p>hello</p>
                 </div>
                 <div class="ground-infos ">
-                  <p>Name</p>
-                  <strong><%= ground.name  %></strong>
-
                   <p>Lambda</p>
                   <strong><%= ground.lambda_ground  %></strong>
-
                   <p>Density</p>
                   <strong><%= ground.density  %></strong>
-
                   <p>Heat</p>
                   <strong><%= ground.heat_capacity  %></strong>
                 </div>
-              </div>
+              </label>
             <% end %>
             <%= f.submit  "Suivant", class:"btn d-flex" %>
           </div>
