@@ -13,6 +13,7 @@ Building.destroy_all
 GroundType.destroy_all
 User.destroy_all
 
+
 puts "Creating users"
 vince = User.create!(
   email: "vhelpin@protonmail.com",
@@ -86,7 +87,7 @@ elixair150 = Pipe.create!(
   name: "PAM Elixair 150",
   thermal_conductivity: 36,
   thickness_mm: 3.4,
-  diameter_ext_mm: 166.4,
+  diameter_ext_mm: 169.8,
   manufacturer: elixair
 )
 elixair150.diameter_int = elixair150.diameter_ext_mm - ( 2 * elixair150.thickness_mm)
@@ -101,7 +102,7 @@ elixair300 = Pipe.create!(
   name: "PAM Elixair 300",
   thermal_conductivity: 36,
   thickness_mm: 4.8,
-  diameter_ext_mm: 326,
+  diameter_ext_mm: 326.6,
   manufacturer: elixair
 )
 elixair300.diameter_int = elixair300.diameter_ext_mm - ( 2 * elixair300.thickness_mm)
@@ -125,19 +126,19 @@ elixair500.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/j
 
 elixair500.save
 
-elixair100 = Pipe.create!(
-  material: "FONTE",
-  nominal_diameter_dn: "DN-100",
-  name: "PAM Elixair 100",
-  thermal_conductivity: 36,
-  thickness_mm: 3.0,
-  diameter_ext_mm: 103,
-  manufacturer: elixair
-)
-elixair100.diameter_int = elixair100.diameter_ext_mm - ( 2 * elixair100.thickness_mm)
-file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
-elixair100.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
-elixair100.save
+# elixair100 = Pipe.create!(
+#   material: "FONTE",
+#   nominal_diameter_dn: "DN-100",
+#   name: "PAM Elixair 100",
+#   thermal_conductivity: 36,
+#   thickness_mm: 3.0,
+#   diameter_ext_mm: 103,
+#   manufacturer: elixair
+# )
+# elixair100.diameter_int = elixair100.diameter_ext_mm - ( 2 * elixair100.thickness_mm)
+# file = File.open(Rails.root.join("db/seeds_pics/pipes/fonte1.jpg"))
+# elixair100.photo.attach(io: file, filename: "fonte1.jpg", content_type: "image/jpeg")
+# elixair100.save
 
 helios150 = Pipe.create!(
   material: "PEHD",
@@ -227,7 +228,7 @@ argile_sec = GroundType.create!(
   slug:'argile_sec',
   name:'Argile Sec',
   lambda_ground: 0.40,
-  density: 1700,
-  heat_capacity: 850
+  density: 1800,
+  heat_capacity: 833,
 )
 puts "Seeds Finished!"

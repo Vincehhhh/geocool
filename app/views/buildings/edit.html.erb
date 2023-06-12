@@ -11,9 +11,13 @@
     <%= simple_form_for(@building) do |f| %>
       <div class="main-card-form main-card-form-buildings align-item">
           <div class="container-inputs-left">
-            <div class="align-item inputs-form-buildings">
-              <%= f.input :city_name, label: "Ville :", input_html: { value: "" } %>
-              <%= f.input :postal_code, label: "Code postal :", input_html: { value: "" } %>
+            <div class="align-item inputs-form-buildings" data-controller="communes">
+               <%= f.input :department, label: "Département :", collection: @dpt_list,
+              input_html:{data: { communes_target:"department", action: "change->communes#dptChoice"}}%>
+               <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
+              data: { communes_target: "dptcommunes" }}%>
+               <%# <%= f.input :postal_code, label: "Code postal :", ,collection: [], input_html:{
+              data: { communes_target: "postCode" }}%> 
             </div>
 
             <div class="align-item inputs-form-buildings">
@@ -44,6 +48,7 @@
         <div>
           <%= f.submit "", class:"btn d-flex btn-next"  %>
         </div>
+
 
       </div>
 
