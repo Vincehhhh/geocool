@@ -24,7 +24,19 @@
   // margin-right: -154px;
 }
 
+.btn-next-text-bottom {
+  margin-left: 30px;
+  margin-top: 10px
+}
+
+.arrow-btn-next {
+  margin-left: 44px;
+  position: absolute;
+  margin-top: -34px;
+}
+
 .btn-before {
+  display: flex;
   width: 51px;
   height: 51px;
   background-color: white;
@@ -36,6 +48,17 @@
   a {
     color: black;
   }
+}
+
+.btn-before-text-bottom {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.arrow-btn-before {
+  margin-left: 12px;
+  position: absolute;
+  margin-top: -38px;
 }
 
 .empty-container-btn-next {

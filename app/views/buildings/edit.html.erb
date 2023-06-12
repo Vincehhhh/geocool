@@ -5,8 +5,13 @@
 
   <div class="flex-container">
 
-    <div class="btn-before">
-      <%= link_to 'Précédent', new_project_path %>
+    <div class="">
+      <%= link_to '', new_project_path, class: "btn-before" %>
+      <%# <input class="btn" type="button" value="" link="new_project_path"> %>
+      <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-before">
+        <path d="M3.94751 14L22.9178 14M3.94751 14L12.0776 7M3.94751 14L12.0776 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="btn-before-text-bottom">Précédent</p>
     </div>
 
       <div class="main-card-form main-card-form-buildings align-item">
@@ -55,7 +60,11 @@
       </div>
 
       <div>
-        <%= f.submit "", class:"btn d-flex btn-next"  %>
+        <%= f.submit "", class:"btn d-flex btn-next" %>
+        <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
+          <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="btn-next-text-bottom">Suivant</p>
       </div>
 
   <% end %>
