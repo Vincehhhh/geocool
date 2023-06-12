@@ -17,14 +17,26 @@
   width: 51px;
   height: 51px;
   border-radius: 18px;
-  // margin-top: 235px;
-  // margin-left: 30px;
-  margin-top: 188px;
-  margin-left: 126px;
-  margin-right: -154px;
+  margin-top: 235px;
+  margin-left: 30px;
+  // margin-top: 188px;
+  // margin-left: 126px;
+  // margin-right: -154px;
+}
+
+.btn-next-text-bottom {
+  margin-left: 30px;
+  margin-top: 10px
+}
+
+.arrow-btn-next {
+  margin-left: 44px;
+  position: absolute;
+  margin-top: -34px;
 }
 
 .btn-before {
+  display: flex;
   width: 51px;
   height: 51px;
   background-color: white;
@@ -36,6 +48,21 @@
   a {
     color: black;
   }
+}
+
+.btn-before:hover {
+  border: 2px solid #888888;
+}
+
+.btn-before-text-bottom {
+  margin-top: 10px;
+  margin-left: -30px;
+}
+
+.arrow-btn-before {
+  margin-left: 12px;
+  position: absolute;
+  margin-top: -38px;
 }
 
 .empty-container-btn-next {

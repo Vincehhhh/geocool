@@ -1,23 +1,28 @@
+.main-card-form-buildings {
+  padding-inline: 65px;
+  padding-block: 47px;
+}
+
 .two-inputs-form-buildings>input {
   background-color: #F4F4F4;
 }
 
 .inputs-form-buildings>div>label, .building_building_type>legend, .building_category>legend {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .container-inputs-left {
-  width: 402px;
+  width: 420px;
 }
 
 .container-inputs-right {
   width: 318px;
-  margin-right: -100px;
+  // margin-right: -100px;
 }
 
-.inputs-form-buildings>div>input {
-  width: 191px;
+.inputs-form-buildings>div>input, .inputs-form-buildings>div>select {
+  width: 200px;
   height: 50px;
   border-radius: 18px;
 }
@@ -41,7 +46,7 @@
 }
 
 .category-item-building-type {
-  flex: 1 0 47%;
+  flex: 0 0 30%;
   margin-bottom: 15px;
 }
 
@@ -114,4 +119,16 @@
 .category-selector-building-use:checked + label {
   color: black;
   border: 2px solid #20D3B0;
+}
+
+
+
+// TEST : ajouter une image selon card
+
+.category-item-building-use>label[for='building_category_maison_individuelle'] {
+  background-image: url('/../../maison-building.png');
+}
+
+.category-item-building-use>label[for='building_category_logement_collectif'] {
+  background-image: url('https://i.etsystatic.com/22498515/r/il/68fdd3/2936713559/il_570xN.2936713559_e4g2.jpg');
 }
