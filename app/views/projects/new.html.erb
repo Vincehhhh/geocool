@@ -7,11 +7,12 @@
     <div class="main-card-form main-card-form-preambule align-item">
 
       <div class="container-text-preambule">
-        <h1>Vous avez dit puits climatique ?</h1>
+        <h1>Vous avez dit <br>
+        puits climatique ?</h1>
         <p>Le puits climatique est un système de ventilation renouvelable qui capte gratuitement l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
         <%= simple_form_for(@project) do |f| %>
           <%= f.input :name, label: "Nouveau projet", placeholder: "Nom du projet", class: "input-label" %>
-          <%= f.submit  "Créer", class:"btn d-flex" %>
+          <%= f.submit  "Créer", class:"btn d-flex btn-submit-create-project" %>
         <% end %>
       </div>
 
@@ -24,4 +25,3 @@
   </div>
 
 </div>
-

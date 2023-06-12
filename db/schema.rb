@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_11_222541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
     t.integer "nominal_flow_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "department"
+    t.string "city_insee_code"
   end
 
   create_table "energetic_results", force: :cascade do |t|
@@ -75,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
   create_table "ground_types", force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.integer "lambda_ground"
+    t.float "lambda_ground"
     t.integer "density"
     t.integer "heat_capacity"
     t.datetime "created_at", null: false
@@ -98,8 +100,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
     t.string "name"
     t.bigint "manufacturer_id", null: false
     t.float "thermal_conductivity"
-    t.integer "thickness_mm"
-    t.integer "diameter_ext_mm"
+    t.float "thickness_mm"
+    t.float "diameter_ext_mm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "diameter_int"
@@ -161,6 +163,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_123652) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pipe_id"
+    t.string "name"
     t.index ["pipe_id"], name: "index_working_well_systems_on_pipe_id"
     t.index ["project_id"], name: "index_working_well_systems_on_project_id"
   end

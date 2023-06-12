@@ -5,43 +5,54 @@ class WorkingWellSystemsController < ApplicationController
     @building = @project.building
     @ground = @project.ground_type
     @pipes = Pipe.all
+    global_hash = {}
 
-    input_json = {}
+    ground_hash = @ground.as_json(except: [:created_at, :updated_at])
+    building_hash = @building.as_json(except: [:created_at, :updated_at])
+    pipes_hash = @pipes.as_json(except: [:created_at, :updated_at])
+    # ground_json = ground_hash.to_json
+    # building_json = building_hash.to_json
 
-    # input_json["building_data"] = @building.as_json
-    # input_json["ground"] = @ground.as_json
-    # input_json["pipes"] = @pipes.as_json
+    global_hash[:ground] = ground_hash
+    global_hash[:building_data] = building_hash
+    global_hash[:pipes] = pipes_hash
 
-    # input_json["building_data"] = @building.as_json(symbolize_names:true)
-    # input_json["ground"] = @ground.as_json(symbolize_names:true)
-    # input_json["pipes"] = @pipes.as_json(symbolize_names:true)
-
-    # input_json["pipes"] = JSON.pretty_generate(@pipes)
-
-    input_json["building_data"] = @building.to_json(symbolize_names:true)
-    input_json["ground"] = @ground.to_json(symbolize_names:true)
-    input_json["pipes"] = @pipes.to_json(symbolize_names:true)
-    # input_json_pipe = {}
-    # input_json_pipe["pipes"] = JSON.parse(@pipes.to_json, symbolize_names: true))
-
-    # File.open('test_ruby.json', 'w') do |f|
-    #   f.write(input_json_pipe)
-    # end
+    # conversion en json du hash global
+    global_json = global_hash.to_json
 
     File.open('lib/assets/python/input_from_ruby.json', 'w') do |f|
-      f.write(input_json)
+      f.write(global_json)
     end
-    
-    # @working_wells = GeoCoolSolver.compute("result_from_form")
 
-    @working_wells = @project.working_well_systems.presence || GeoCoolSolver.compute("result_from_form")
-    @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }.first(3)
+    @working_wells = @project.working_well_systems.presence || GeoCoolSolver.compute(@project, 'lib/assets/python/input_from_ruby.json')
 
-    # @working_well = @sorted_working_wells.first
-    # raise
+    # @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }
+    # @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_length_lo"] }
+    @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_total_length"] }
+
+    @seismes = fetch_risques_seismes(@building.city_insee_code)
+    @radon = fetch_risques_radon(@building.city_insee_code)
   end
 
   def show
   end
+
+  def fetch_risques_seismes(code_insee)
+    url = "https://www.georisques.gouv.fr/api/v1/zonage_sismique?code_insee=#{code_insee}&page=1&page_size=10&rayon=1000"
+
+    # response = URI.open(url).read
+    # JSON.parse(response)
+    response = JSON.parse((HTTParty.get(url)).body)
+    zone_seismes = response["data"][0]["zone_sismicite"]
+  end
+
+  def fetch_risques_radon(code_insee)
+    url ="https://www.georisques.gouv.fr/api/v1/radon?code_insee=#{code_insee}&page=1&page_size=10"
+    # response = URI.open(url).read
+    # JSON.parse(response)
+    response = JSON.parse((HTTParty.get(url)).body)
+    zone_radon = response["data"][0]["classe_potentiel"]
+  end
+
 
 end
