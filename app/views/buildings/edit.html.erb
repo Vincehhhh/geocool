@@ -1,28 +1,34 @@
 <div class="container">
 
   <%= render "shared/progress_bar/step2_progress_bar" %>
+  <%= simple_form_for(@building) do |f| %>
 
   <div class="flex-container">
 
-    <div class="btn-before">
-      <%= link_to 'Précédent', new_project_path %>
+    <div class="">
+      <%= link_to '', new_project_path, class: "btn-before" %>
+      <%# <input class="btn" type="button" value="" link="new_project_path"> %>
+      <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-before">
+        <path d="M3.94751 14L22.9178 14M3.94751 14L12.0776 7M3.94751 14L12.0776 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="btn-before-text-bottom">Précédent</p>
     </div>
 
-    <%= simple_form_for(@building) do |f| %>
       <div class="main-card-form main-card-form-buildings align-item">
           <div class="container-inputs-left">
+
             <div class="align-item inputs-form-buildings" data-controller="communes">
                <%= f.input :department, label: "Département :", collection: @dpt_list,
               input_html:{data: { communes_target:"department", action: "change->communes#dptChoice"}}%>
                <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
               data: { communes_target: "dptcommunes" }}%>
                <%# <%= f.input :postal_code, label: "Code postal :", ,collection: [], input_html:{
-              data: { communes_target: "postCode" }}%> 
+              data: { communes_target: "postCode" }}%>
             </div>
 
             <div class="align-item inputs-form-buildings">
-              <%= f.input :area, label: "Surface :", input_html: { value: "" }%>
-              <%= f.input :nominal_flow_rate, label: "Débit ventilation :", input_html: { value: "" } %>
+              <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
+              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
             </div>
 
             <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
@@ -30,7 +36,7 @@
               input_html: {class: 'category-selector-building-type'}, collection: [
                 "Neuf",
                 "Rénovation",
-                "Mixte : neuf / rénovation"], :include_blank => false %>
+                "Mixte"], :include_blank => false %>
         </div>
 
         <div class="container-inputs-right">
@@ -40,7 +46,86 @@
                 "Maison individuelle",
                 "Logement Collectif",
                 "Bureaux",
-                "Chai Vini-viticole",
+                "Chai",
+                "Groupe Scolaire",
+                "Enseignement Secondaire / Université"] ,:include_blank => false %>
+        </div>
+
+        <!--
+        <div>
+          <%= f.submit "", class:"btn d-flex btn-next"  %>
+        </div>
+        -->
+
+      </div>
+
+      <div>
+        <%= f.submit "", class:"btn d-flex btn-next" %>
+        <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
+          <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="btn-next-text-bottom">Suivant</p>
+      </div>
+
+  <% end %>
+
+  </div>
+
+</div>
+
+
+
+
+
+<%# ANCIEN CODE QUI FONCTIONNE %>
+
+<!--
+<div class="container">
+
+  <%= render "shared/progress_bar/step2_progress_bar" %>
+
+  <%= simple_form_for(@building) do |f| %>
+
+  <div class="flex-container">
+
+    <div class="btn-before">
+      <%= link_to 'Précédent', new_project_path %>
+    </div>
+
+    <%# <%= simple_form_for(@building) do |f| %>
+      <div class="main-card-form main-card-form-buildings align-item">
+          <div class="container-inputs-left">
+
+            <div class="align-item inputs-form-buildings" data-controller="communes">
+               <%= f.input :department, label: "Département :", collection: @dpt_list,
+              input_html:{data: { communes_target:"department", action: "change->communes#dptChoice"}}%>
+               <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
+              data: { communes_target: "dptcommunes" }}%>
+               <%# <%= f.input :postal_code, label: "Code postal :", ,collection: [], input_html:{
+              data: { communes_target: "postCode" }}%>
+            </div>
+
+            <div class="align-item inputs-form-buildings">
+              <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
+              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
+            </div>
+
+            <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper-building-type', item_wrapper_class: 'category-item-building-type',
+              input_html: {class: 'category-selector-building-type'}, collection: [
+                "Neuf",
+                "Rénovation",
+                "Mixte"], :include_blank => false %>
+        </div>
+
+        <div class="container-inputs-right">
+            <%= f.input :category, label: "Usage principal du bâtiment :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper-building-use', item_wrapper_class: 'category-item-building-use',
+              input_html: {class: 'category-selector-building-use'}, collection: [
+                "Maison individuelle",
+                "Logement Collectif",
+                "Bureaux",
+                "Chai",
                 "Groupe Scolaire",
                 "Enseignement Secondaire / Université"] ,:include_blank => false %>
         </div>
@@ -48,7 +133,6 @@
         <div>
           <%= f.submit "", class:"btn d-flex btn-next"  %>
         </div>
-
 
       </div>
 
@@ -60,3 +144,4 @@
   </div>
 
 </div>
+-->

@@ -1,21 +1,20 @@
 <div class="container">
-
-  <div class="info-homepage row">
-    <div class="col-5">
-      
-      <h1 class="h1-homepage">Découvrez le puits canadien !</h1>
-        <h2 class="h2-homepage">Faire des économies d’énergies tout en restant au frais !</h2>
-          <p class="text-banner">Les puits climatiques sont des systèmes renouvelables de ventilation qui captent l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
-      <div class="btn-homepage">
-        <%= link_to 'Démarrez votre étude', new_project_path %>
-        <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.9165 12H6.99984M23.9165 12L16.6665 19M23.9165 12L16.6665 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+  <%# <div class="container"> %>
+    <div class="info-homepage row">
+      <div class="col-5">
+        <h1 class="h1-homepage">Découvrez le puits canadien !</h1>
+          <h2 class="h2-homepage">Faites des économies d’énergie tout en conservant une ambiance confortable </h2>
+            <p class="text-banner">Les puits climatiques sont des systèmes renouvelables de ventilation qui captent l'énergie du sol pour vous rafraîchir en été et vous réchauffer en hiver !</p>
+        <div class="btn-homepage">
+          <%= link_to 'Démarrez votre étude', new_project_path %>
+          <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.9165 12H6.99984M23.9165 12L16.6665 19M23.9165 12L16.6665 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="col-4">
+        <%= image_tag "maison.png", alt: "Le Wagon", width: 420 %>
       </div>
     </div>
-    <div class="col-4">
-      <%= image_tag "maison.png", alt: "Le Wagon", width: 420 %>
-    </div>
-  </div>
-
+  <%# </div> %>
 </div>

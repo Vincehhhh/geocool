@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,6 +10,18 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon .nav-item {
+  padding-inline: 0.5em;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-container{
+  padding-inline: 60px;
 }
 
 .brand {
@@ -40,14 +52,18 @@
   background: #20D3B0;
   border-radius: 18px;
   align-items: center;
-  padding: 0px 15px 0px 18px;
+  margin-inline: 10px;
+  padding: 0px 1em 0px 1em;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   display: flex;
   justify-content: space-between;
+  height: 55px;
 }
 
 .btn-login>a {
   color: white;
+  padding-block: 0px;
+  padding-inline: 1em;
 }
 
 .btn-login:hover {
