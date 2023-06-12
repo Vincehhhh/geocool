@@ -13,8 +13,105 @@
 
 .container-inputs-right {
   width: 318px;
+  margin-right: -100px;
+}
+
+.inputs-form-buildings>div>input {
+  width: 191px;
+  height: 50px;
+  border-radius: 18px;
 }
 
 
 // INPUT - TYPE DE TRAVAUX
 
+// .building_building_type>.form-check {
+//   display: flex;
+//   align-items: center;
+//   height: 50px;
+//   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+//   border-radius: 18px;
+//   margin-bottom: 15px;
+// }
+
+.category-wrapper-building-type {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item-building-type {
+  flex: 1 0 47%;
+  margin-bottom: 15px;
+}
+
+.category-selector-building-type {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector-building-type + label {
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 20px 21px;
+  border-radius: 18px;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+}
+
+.category-selector-building-type:checked + label {
+  color: black;
+  border: 2px solid #20D3B0;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+// INPUT - Usage principal du bâtiment
+
+.category-wrapper-building-use {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item-building-use {
+  flex: 0 0 48%;
+  margin-bottom: 15px;
+}
+
+.category-selector-building-use {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector-building-use + label {
+  font-size: 15px;
+  font-weight: 500;
+  height: 127px;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 20px 21px;
+  border-radius: 18px;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+  text-align: center;
+}
+
+.category-selector-building-use:checked + label {
+  color: black;
+  border: 2px solid #20D3B0;
+}
