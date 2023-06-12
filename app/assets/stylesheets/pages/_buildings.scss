@@ -120,3 +120,15 @@
   color: black;
   border: 2px solid #20D3B0;
 }
+
+
+
+// TEST : ajouter une image selon card
+
+.category-item-building-use>label[for='building_category_maison_individuelle'] {
+  background-image: url('/../../maison-building.png');
+}
+
+.category-item-building-use>label[for='building_category_logement_collectif'] {
+  background-image: url('https://i.etsystatic.com/22498515/r/il/68fdd3/2936713559/il_570xN.2936713559_e4g2.jpg');
+}
