@@ -17,7 +17,7 @@
                <%= f.input :city_name, label: "Commune :", collection: [], input_html:{
               data: { communes_target: "dptcommunes" }}%>
                <%# <%= f.input :postal_code, label: "Code postal :", ,collection: [], input_html:{
-              data: { communes_target: "postCode" }}%> 
+              data: { communes_target: "postCode" }}%>
             </div>
 
             <div class="align-item inputs-form-buildings">
@@ -30,7 +30,7 @@
               input_html: {class: 'category-selector-building-type'}, collection: [
                 "Neuf",
                 "Rénovation",
-                "Mixte : neuf / rénovation"], :include_blank => false %>
+                "Mixte"], :include_blank => false %>
         </div>
 
         <div class="container-inputs-right">
