@@ -31,6 +31,10 @@
   text-align: center;
 }
 
+.inputs-fieldwork-types {
+  padding-top: 20px;
+}
+
 // INPUT - TYPE DE TRAVAUX
 
 .category-wrapper-building-type {
@@ -62,12 +66,12 @@
   background-color: white;
   color: black;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  border: 2px solid white;
+  border: 3px solid white;
 }
 
 .category-selector-building-type:checked + label {
   color: black;
-  border: 2px solid #20D3B0;
+  border: 3px solid #20D3B0;
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
@@ -106,13 +110,13 @@
   background-color: white;
   color: black;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  border: 2px solid white;
+  border: 3px solid white;
   text-align: center;
 }
 
 .category-selector-building-use:checked + label {
   color: black;
-  border: 2px solid #20D3B0;
+  border: 3px solid #20D3B0;
 }
 
 // Ajouter une image selon card
