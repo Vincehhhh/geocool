@@ -1,0 +1,29 @@
+.card-manufacturer {
+  background: white;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.5);
+  border-radius: 45px;
+  width: 227px;
+  height: 455px;
+  margin-inline: 10px;
+  padding-block: 30px;
+  padding-inline: 20px
+}
+
+.h2-center-card-manufacturer {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.address-card-manufacturer {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  padding-bottom: 5px;
+}
+
+.cards-manufacturers {
+  padding-top: 20px;
+}

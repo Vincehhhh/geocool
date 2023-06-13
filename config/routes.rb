@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   resources :ground_types, only: %i[new show create]
   resources :working_well_systems, only: %i[show]
   resources :buildings, only: %i[new create update]
-  # resources :manufacturers, only: %i[new create edit update]
+
+  resources :manufacturers, only: %i[index new create edit update] do
+    resources :pipes, only: %i[index]
+  end
+
   # resources :pipes, only: %i[new show create edit update]
   # resources :energetic_studies, only: %i[new show create edit update]
   # resources :energetic_results, only: %i[new create edit update]

@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1 class="h1-center">Tous les fabricants</h1>
+
+    <div class="flex-container cards-manufacturers">
+
+    <% @manufacturers.each do |manufacturer| %>
+
+    <div class="card-manufacturer">
+      <%# IMAGE HERE %>
+      <h2 class="h2-center-card-manufacturer"> <%= manufacturer.social_name %> </h2>
+      <p class="address-card-manufacturer"> <%= manufacturer.address %> </p>
+      <hr>
+      <p><%=  %></p>
+      <%= link_to 'Découvrir', new_project_path, class: "btn" %>
+    </div>
+
+    <% end %>
+
+    </div>
+
+</div>
