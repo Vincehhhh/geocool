@@ -1,0 +1,52 @@
+.ground-card:has(.ground-selector:checked) {
+  border: solid 3px #20D3B0;
+}
+
+.ground-selector {
+  display: none;
+}
+
+.ground-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ground-card {
+  background: white;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.5);
+  border: solid 3px white;
+  margin: 5px;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 26px;
+  width: 348px;
+  height: 131px;
+}
+
+.ground-infos {
+  text-align: center;
+  padding-right: 10px;
+  padding-block: 7px;
+
+  p {
+    font-size: 11px;
+    margin-bottom: 1px;
+    line-height: 0px;
+  }
+  strong {
+    font-size: 12px;
+  }
+}
+
+.ground-img img {
+  height: 100px;
+}
+
+.card-form-ground-type {
+  padding-inline: 87px;
+  padding-block: 40px;
+}
+
+.ground-info {
+  padding-bottom: 11px;
+}
