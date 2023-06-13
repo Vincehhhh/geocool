@@ -13,7 +13,7 @@
 
 .ground-card {
   background: white;
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.3);
   border: solid 3px white;
   margin: 5px;
   justify-content: space-between;
@@ -49,4 +49,11 @@
 
 .ground-info {
   padding-bottom: 11px;
+}
+
+.h2-ground-name {
+  margin-top: -60px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
 }

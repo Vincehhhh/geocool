@@ -20,24 +20,30 @@
         <% @ground_types.each do |ground| %>
           <label class="ground-card d-flex">
             <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
-            <div class="ground-img">
-              <%= cl_image_tag ground.photo.key %>
+
+            <div>
+              <div class="ground-img">
+                <%= cl_image_tag ground.photo.key %>
+              </div>
+              <h2 class="h2-ground-name"><%= ground.name %></h2>
             </div>
+
+
             <div class="ground-infos">
 
               <div class="ground-info">
                 <p>Conductivité thermique</p>
-                <strong><%= ground.lambda_ground%>/m.K</strong>
+                <strong><%= ground.lambda_ground %>/m.K</strong>
               </div>
 
               <div class="ground-info">
                 <p>Masse volumique</p>
-                <strong><%= ground.density%>/m³</strong>
+                <strong><%= ground.density %>/m³</strong>
               </div>
 
               <div class="ground-info">
                 <p>Capacité thermique</p>
-                <strong><%= ground.heat_capacity%>/kg.K</strong>
+                <strong><%= ground.heat_capacity %>/kg.K</strong>
               </div>
 
             </div>
