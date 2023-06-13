@@ -34,8 +34,8 @@ class BuildingsController < ApplicationController
   end
 
   def fetch_code_insee(query)
-    url="https://geo.api.gouv.fr/communes?nom=#{query}&fields=codesPostaux&boost=population&limit=1"
-
+    encoded_query = URI.encode_www_form_component(query)
+    url = "https://geo.api.gouv.fr/communes?nom=#{encoded_query}&fields=codesPostaux&boost=population&limit=1"
     # response = URI.open(url).read
     # JSON.parse(response)
     response = JSON.parse((HTTParty.get(url)).body)

@@ -1,5 +1,12 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @my_projects = Project.where(user: current_user)
+    @user = current_user
+
+  end
+
+
   def new
     @project = Project.new
   end
