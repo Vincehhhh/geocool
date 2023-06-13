@@ -185,7 +185,8 @@ helios300.save
 puts "Creating grounds..."
 
 argile_humide = GroundType.create!(
-  name:'Argile humide RT2012',
+  name:'Argile humide',
+  source: 'RT2012',
   slug:'argile_humide_rt2012',
   lambda_ground: 1.45,
   density:  1800,
@@ -197,7 +198,8 @@ argile_humide.photo.attach(io: file, filename: "argileHumide.jpg", content_type:
 
 sable_humide = GroundType.create!(
   slug:'sable_humide_rt2012',
-  name:'Sable humide RT2012',
+  source: 'RT2012',
+  name:'Sable humide',
   lambda_ground: 1.88,
   density: 1500,
   heat_capacity: 1200
@@ -208,7 +210,8 @@ sable_humide.photo.attach(io: file, filename: "sableHumide.jpg", content_type: "
 
 sable_sec = GroundType.create!(
   slug:'sable_sec_rt2012',
-  name:'Sable sec RT2012',
+  source: 'RT2012',
+  name:'Sable sec',
   lambda_ground: 0.70,
   density: 1500,
   heat_capacity: 920
@@ -219,6 +222,7 @@ sable_sec.photo.attach(io: file, filename: "sableSec.jpg", content_type: "image/
 
 limon = GroundType.create!(
   slug:'limons',
+  source: 'GeoCool',
   name:'Limons',
   lambda_ground: 0.20,
   density: 500,
@@ -230,6 +234,7 @@ limon.photo.attach(io: file, filename: "Limons.jpg", content_type: "image/jpeg")
 
 calcaire = GroundType.create!(
   slug:'calcaire',
+  source: 'GeoCool',
   name:'Calcaire',
   lambda_ground: 0.40,
   density: 1800,
@@ -241,6 +246,7 @@ calcaire.photo.attach(io: file, filename: "calcaire.jpg", content_type: "image/j
 
 argile_sec = GroundType.create!(
   slug:'argile_sec',
+  source: 'GeoCool',
   name:'Argile sec',
   lambda_ground: 0.40,
   density: 1800,
