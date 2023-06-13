@@ -1,9 +1,12 @@
 <div class="container">
+
   <%= render "shared/progress_bar/step3_progress_bar" %>
   <%= simple_form_for @project do |f| %>
+
     <div class="flex-container">
-      <%# PREV %>
-      <div class="">
+
+    <%# PREV %>
+    <div>
       <%= link_to '', edit_project_building_path(@project.id, @project.building_id), class: "btn-before" %>
       <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-before">
         <path d="M3.94751 14L22.9178 14M3.94751 14L12.0776 7M3.94751 14L12.0776 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -11,36 +14,119 @@
       <p class="btn-before-text-bottom">Précédent</p>
     </div>
 
-      <div class="main-card-form justify-content-center card-project align-items">
-        <p class="text-center">En fonction des régions et de leur histoire géologique, les sols ont des natures très différentes. </p>
-        <div class="ground-container">
-          <% @ground_types.each do |ground| %>
-            <label class="ground d-flex">
-              <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
+    <div class="main-card-form justify-content-center card-form-ground-type align-items">
+      <p class="text-center">En fonction des régions et de leur histoire géologique, les sols ont des natures très différentes. </p>
+      <div class="ground-container">
+        <% @ground_types.each do |ground| %>
+          <label class="ground-card d-flex">
+            <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
+
+            <div>
               <div class="ground-img">
                 <%= cl_image_tag ground.photo.key %>
               </div>
-              <div class="ground-infos">
-                <p>Conductivité thermique</p>
-                <strong><%= ground.lambda_ground%> W/m.K</strong>
-                <p>Masse volumique</p>
-                <strong><%= ground.density%>kg/m³</strong>
-                <p>Capacité thermique</p>
-                <strong><%= ground.heat_capacity%>J/kg.K</strong>
-              </div>
-            </label>
-          <% end %>
-        </div>
-      </div>
+              <h2 class="h2-ground-name"><%= ground.name %></h2>
+                <p class="text-source">Source : <%= ground.source %></p>
+            </div>
 
-      <%# NEXT %>
-      <div>
-        <%= f.submit "", class:"btn d-flex btn-next" %>
-        <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
-          <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class="btn-next-text-bottom">Suivant</p>
+
+            <div class="ground-infos">
+
+              <div class="ground-info">
+                <p>Conductivité thermique</p>
+
+                <strong><%= ground.lambda_ground %>W/m.K</strong>
+              </div>
+
+              <div class="ground-info">
+                <p>Masse volumique</p>
+                <strong><%= ground.density %>kg/m³</strong>
+              </div>
+
+              <div class="ground-info">
+                <p>Capacité thermique</p>
+                <strong><%= ground.heat_capacity %>J/kg.K</strong>
+
+              </div>
+
+            </div>
+          </label>
+        <% end %>
       </div>
     </div>
+
+    <%# NEXT %>
+    <div>
+      <%= f.submit "", class:"btn d-flex btn-next" %>
+      <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
+        <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="btn-next-text-bottom">Suivant</p>
+    </div>
+  </div>
+
   <% end %>
+
 </div>
+
+
+
+
+
+
+
+<%# CODE ALMIS %>
+
+<!--
+<div class="container">
+
+  <%= render "shared/progress_bar/step3_progress_bar" %>
+  <%= simple_form_for @project do |f| %>
+
+    <div class="flex-container">
+
+    <%# PREV %>
+    <div>
+      <%= link_to '', edit_project_building_path(@project.id, @project.building_id), class: "btn-before" %>
+      <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-before">
+        <path d="M3.94751 14L22.9178 14M3.94751 14L12.0776 7M3.94751 14L12.0776 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="btn-before-text-bottom">Précédent</p>
+    </div>
+
+    <div class="main-card-form justify-content-center card-project align-items">
+      <p class="text-center">En fonction des régions et de leur histoire géologique, les sols ont des natures très différentes. </p>
+      <div class="ground-container">
+        <% @ground_types.each do |ground| %>
+          <label class="ground d-flex">
+            <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
+            <div class="ground-img">
+              <%= cl_image_tag ground.photo.key %>
+            </div>
+            <div class="ground-infos">
+              <p>Conductivité thermique</p>
+              <strong><%= ground.lambda_ground%>/m.K</strong>
+              <p>Masse volumique</p>
+              <strong><%= ground.density%>/m³</strong>
+              <p>Capacité thermique</p>
+              <strong><%= ground.heat_capacity%>/kg.K</strong>
+            </div>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+    <%# NEXT %>
+    <div>
+      <%= f.submit "", class:"btn d-flex btn-next" %>
+      <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
+        <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="btn-next-text-bottom">Suivant</p>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>
+-->

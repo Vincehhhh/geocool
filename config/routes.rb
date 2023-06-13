@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   # resources :projects, only: %i[index show]
 
   resources :buildings, only: %i[new create update]
+  get "guides", to: "pages#guides"
+  get "guidesol", to: "pages#guidesol"
+  get "guidepipe", to: "pages#guidepipe"
+  get "guideventilation", to: "pages#guideventilation"
+  get "guidepuit", to: "pages#guidepuit"
   # resources :working_well_systems, only: %i[index]
   # pour les admin de geocool :
   resources :ground_types, only: %i[new show create]
