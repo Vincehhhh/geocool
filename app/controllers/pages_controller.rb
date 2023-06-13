@@ -3,4 +3,19 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def guides
+  end
+
+  def guidesol
+  end
+
+  def guidepipe
+  end
+
+  def guideventilation
+  end
+
+  def guidepuit
+  end
 end
