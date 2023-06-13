@@ -7,8 +7,8 @@ class GeoCoolSolver < ApplicationRecord
 
     result = `python3 lib/assets/python/geocool_dim.py '#{json_form.to_s}'`
 
-    # best_pipes = JSON.parse(result)["selected_wells"].first(3)
-    best_pipes_all = JSON.parse(result)["selected_wells"].sort_by { |hash| hash["occupied_area"] }
+    # best_pipes_all = JSON.parse(result)["selected_wells"].sort_by { |hash| hash["occupied_area"] }
+    best_pipes_all = JSON.parse(result)["selected_wells"]
 
     @working_wells = best_pipes_all.map do |result|
       WorkingWellSystem.new(
@@ -22,6 +22,17 @@ class GeoCoolSolver < ApplicationRecord
         proposed_total_length: result["proposed_total_length"],
         nominal_speed: result["nominal_speed"].round(2),
       )
+      # {
+      #   name: "#{result["proposed_number_of_pipes"]} x #{result["pipe_data"]["name"]}",
+      #   pipe_id: result["pipe_id"],
+      #   project_id: project.id,
+      #   # pipe: Pipe.last,
+      #   proposed_length_lo: result["proposed_length_lo"],
+      #   proposed_number_of_pipes: result["proposed_number_of_pipes"],
+      #   occupied_area: result["occupied_area"],
+      #   proposed_total_length: result["proposed_total_length"],
+      #   nominal_speed: result["nominal_speed"].round(2),
+      # }
     end
     # accepted_attributes =  WorkingWellSystem.new.attributes.keys.map(&:to_sym)
 

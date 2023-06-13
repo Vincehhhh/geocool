@@ -29,6 +29,8 @@
             <div class="align-item inputs-form-buildings">
               <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
               <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
+              <%= f.input :available_area, label: "Terrain disponible (m²):"%>
+
             </div>
 
             <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
@@ -60,11 +62,14 @@
       </div>
 
       <div>
-        <%= f.submit "", class:"btn d-flex btn-next" %>
-        <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
-          <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class="btn-next-text-bottom">Suivant</p>
+        <%# <%= f.submit "", class:"btn d-flex btn-next" do %>
+        <button type= "submit" class="btn d-flex btn-next">
+          <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow-btn-next">
+            <path d="M21.1794 9.98686L1.69227 9.98686M21.1794 9.98686L12.8278 18.2632M21.1794 9.98686L12.8278 1.71054" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+          <p class="btn-next-text-bottom">Suivant</p>
+        <%# <% end %>
       </div>
 
   <% end %>

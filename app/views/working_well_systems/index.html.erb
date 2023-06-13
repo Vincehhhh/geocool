@@ -4,6 +4,8 @@
     <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + mettre un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
     <p> Risque Sismique sur votre commune : <%= @seismes %> </p>
     <p> Risques Radon sur votre commune : Catégorie <%= @radon %> </p>
+
+    <p> <%=  @sorted_working_wells[1].name  %></p>
   <div class="container flex-container container-cards-results">
 
     <div class="results-container">
@@ -19,7 +21,7 @@
       <div class="results-card">
         <div class="flex-container">
           <%# IMAGE HERE %>
-
+            <%= cl_image_tag @sorted_working_wells[1].pipe.photo.key, width:68, height:68, crop: :fill %>
           <div class="title-result">
             <h2 class="h2-card-result"> <%= @sorted_working_wells[1].pipe.material %></h2>
             <p class="pipe-type"> <%= @sorted_working_wells[1].pipe.nominal_diameter_dn %> </p>
@@ -98,7 +100,7 @@
       <div class="first-results-card">
         <div class="flex-container">
           <%# IMAGE HERE %>
-
+            <%= cl_image_tag @sorted_working_wells.first.pipe.photo.key, width:68, height:68, crop: :fill %>
           <div class="title-result">
             <h2 class="h2-card-result"> <%= @sorted_working_wells.first.pipe.material %></h2>
             <p class="pipe-type"> <%= @sorted_working_wells.first.pipe.nominal_diameter_dn %> </p>
@@ -186,7 +188,7 @@
       <div class="results-card">
         <div class="flex-container">
           <%# IMAGE HERE %>
-
+          <%= cl_image_tag @sorted_working_wells[2].pipe.photo.key, width:68, height:68, crop: :fill %>
           <div class="title-result">
             <h2 class="h2-card-result"> <%= @sorted_working_wells[2].pipe.material %></h2>
             <p class="pipe-type"> <%= @sorted_working_wells[2].pipe.nominal_diameter_dn %> </p>
@@ -255,16 +257,15 @@
 
   </div>
 
-  <div class="flex-container">
-    <div class="btn-save">
-      <%= link_to 'Sauvegarder l’étude', root_path %>
-      <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 6H10V0H4V6H0L7 13L14 6ZM0 15V17H14V15H0Z" fill="black"/>
-      </svg>
+    <div class="flex-container">
+      <button type= "submit" class="btn-save">
+        <%= link_to 'Sauvegarder les résultats', project_working_well_systems_path(test: {systems: @sorted_working_wells.as_json}), data: {turbo_method: :post}  %>
+        <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 6H10V0H4V6H0L7 13L14 6ZM0 15V17H14V15H0Z" fill="black"/>
+        </svg>
+      </button>
     </div>
-  </div>
-
-
+  <%# ajouter méthode dans le link to comme pour un delete ! %>
 <div class="flex-container">
   <p>
     <%= @sorted_working_wells.as_json %>

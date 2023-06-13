@@ -1,0 +1,26 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="pb-4"> TABLEAU DE BORD </h1>
+    <h2 class="pb-4"> Hello <%= @user.username%>!  Voici toutes vos études </h2>
+  </div>
+</div>
+<div class="container projects-container">
+  <% @my_projects.each do |project| %>
+      <div class="projects-card-form">
+        <h4><%= project.name.capitalize %></h4>
+        <p>créé le : <% project.created_at %></p>
+        <div class="container main-project-info">
+          <div class="project-info">
+            <p><%= project.building.building_type %></p>
+            <p><%= project.ground_type.name %></p>
+          </div>
+          <div class="project-info">
+            <% project_working_wells_systems = WorkingWellSystem.where(project_id: project.id) %>
+            <% project_working_wells_systems.each do |project_working_wells_system| %>
+              <p> <%= project_working_wells_system.name %> </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
