@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database..."
+WorkingWellSystem.destroy_all
 Project.destroy_all
 Pipe.destroy_all
 Manufacturer.destroy_all
@@ -13,10 +14,10 @@ Building.destroy_all
 GroundType.destroy_all
 User.destroy_all
 
-
 puts "Creating users"
 vince = User.create!(
   email: "vhelpin@protonmail.com",
+  username: "Vincent",
   password: "123456",
   occupation: "Ingénieur",
   premium_status: true,
@@ -27,6 +28,7 @@ vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/j
 
 bastien = User.create!(
   email: "bastien@gmail.com",
+  username: "Bastien",
   password: "123456",
   occupation: "Architecte",
   premium_status: false,
@@ -37,6 +39,7 @@ bastien.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image
 
 clement = User.create!(
   email: "clement@gmail.com",
+  username: "Clement",
   password: "123456",
   occupation: "Architecte",
   premium_status: true,
@@ -77,14 +80,14 @@ rehau  = Manufacturer.create!(
 
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man3.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
-puts "Creating users..."
+
 #  status: %w(Newbie Intermediate Confirmed Professional).sample,
 puts "Creating pipes..."
 
 elixair150 = Pipe.create!(
   material: "FONTE",
   nominal_diameter_dn: "DN-150",
-  name: "PAM Elixair 150",
+  name: "Elixair DN150",
   thermal_conductivity: 36,
   thickness_mm: 3.4,
   diameter_ext_mm: 169.8,
@@ -99,7 +102,7 @@ elixair150.save
 elixair300 = Pipe.create!(
   material: "FONTE",
   nominal_diameter_dn: "DN-300",
-  name: "PAM Elixair 300",
+  name: "Elixair DN300",
   thermal_conductivity: 36,
   thickness_mm: 4.8,
   diameter_ext_mm: 326.6,
@@ -114,7 +117,7 @@ elixair300.save
 elixair500 = Pipe.create!(
   material: "FONTE",
   nominal_diameter_dn: "DN-500",
-  name: "PAM Elixair 500",
+  name: "Elixair DN500",
   thermal_conductivity: 36.0,
   thickness_mm: 7.0,
   diameter_ext_mm: 532,
@@ -143,7 +146,7 @@ elixair500.save
 helios150 = Pipe.create!(
   material: "PEHD",
   nominal_diameter_dn: "DN-150",
-  name: "Helios 200",
+  name: "Helios DN200",
   thermal_conductivity: 0.3,
   thickness_mm: 5.0,
   diameter_ext_mm: 196,
@@ -157,7 +160,7 @@ helios150.save
 helios200 = Pipe.create!(
   material: "PEHD",
   nominal_diameter_dn: "DN-200",
-  name: "Helios 200",
+  name: "Helios DN200",
   thermal_conductivity: 0.3,
   thickness_mm: 7.0,
   diameter_ext_mm: 214,
@@ -170,8 +173,8 @@ helios200.save
 
 helios300 = Pipe.create!(
   material: "PEHD",
-  nominal_diameter_dn: "DN-200",
-  name: "Helios 300",
+  nominal_diameter_dn: "DN-300",
+  name: "Helios DN300",
   thermal_conductivity: 0.3,
   thickness_mm: 10.0,
   diameter_ext_mm: 320,
@@ -181,6 +184,104 @@ helios300.diameter_int = helios300.diameter_ext_mm - ( 2 * helios300.thickness_m
 file = File.open(Rails.root.join("db/seeds_pics/pipes/Polyethylene.jpg"))
 helios300.photo.attach(io: file, filename: "Polyethylene.jpg", content_type: "image/jpeg")
 helios300.save
+
+rehau200 = Pipe.create!(
+  material: "POLYPROPYLENE",
+  nominal_diameter_dn: "DN-200",
+  name: "Rehau DN200",
+  thermal_conductivity: 0.28,
+  thickness_mm: 7.0,
+  diameter_ext_mm: 200,
+  manufacturer: rehau
+)
+rehau200.diameter_int = rehau200.diameter_ext_mm - ( 2 * rehau200.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/polypropylene.jpg"))
+rehau200.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "image/jpeg")
+rehau200.save
+
+rehau300 = Pipe.create!(
+  material: "POLYPROPYLENE",
+  nominal_diameter_dn: "DN-300",
+  name: "Rehau DN300",
+  thermal_conductivity: 0.28,
+  thickness_mm: 11.1,
+  diameter_ext_mm: 315,
+  manufacturer: rehau
+)
+rehau300.diameter_int = rehau300.diameter_ext_mm - ( 2 * rehau300.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/polypropylene.jpg"))
+rehau300.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "image/jpeg")
+rehau300.save
+
+rehau400 = Pipe.create!(
+  material: "POLYPROPYLENE",
+  nominal_diameter_dn: "DN-400",
+  name: "Rehau DN400",
+  thermal_conductivity: 0.28,
+  thickness_mm: 13.5,
+  diameter_ext_mm: 400,
+  manufacturer: rehau
+)
+rehau400.diameter_int = rehau400.diameter_ext_mm - ( 2 * rehau400.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/polypropylene.jpg"))
+rehau400.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "image/jpeg")
+rehau400.save
+
+rehau500 = Pipe.create!(
+  material: "PEHD",
+  nominal_diameter_dn: "DN-500",
+  name: "Rehau DN500",
+  thermal_conductivity: 0.28,
+  thickness_mm: 17.0,
+  diameter_ext_mm: 500,
+  manufacturer: rehau
+)
+rehau500.diameter_int = rehau500.diameter_ext_mm - ( 2 * rehau500.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/polypropylene.jpg"))
+rehau500.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "image/jpeg")
+rehau500.save
+
+lpc150 = Pipe.create!(
+  material: "GRES",
+  nominal_diameter_dn: "DN-200",
+  name: "LePuitsCanadien DN150",
+  thermal_conductivity: 1.20,
+  thickness_mm: 14.0,
+  diameter_ext_mm: 178,
+  manufacturer: le_pc
+)
+lpc150.diameter_int = lpc150.diameter_ext_mm - ( 2 * lpc150.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/gres.png"))
+lpc150.photo.attach(io: file, filename: "gres.png", content_type: "image/png")
+lpc150.save
+
+lpc200 = Pipe.create!(
+  material: "GRES",
+  nominal_diameter_dn: "DN-200",
+  name: "LePuitsCanadien DN200",
+  thermal_conductivity: 1.20,
+  thickness_mm: 18.5,
+  diameter_ext_mm: 237,
+  manufacturer: le_pc
+)
+lpc200.diameter_int = lpc200.diameter_ext_mm - ( 2 * lpc200.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/gres.png"))
+lpc200.photo.attach(io: file, filename: "gres.png", content_type: "image/png")
+lpc200.save
+
+lpc300 = Pipe.create!(
+  material: "GRES",
+  nominal_diameter_dn: "DN-300",
+  name: "LePuitsCanadien DN300",
+  thermal_conductivity: 1.20,
+  thickness_mm: 28.5,
+  diameter_ext_mm: 357,
+  manufacturer: le_pc
+)
+lpc300.diameter_int = lpc300.diameter_ext_mm - ( 2 * lpc300.thickness_mm)
+file = File.open(Rails.root.join("db/seeds_pics/pipes/gres.png"))
+lpc300.photo.attach(io: file, filename: "gres.png", content_type: "image/png")
+lpc300.save
 
 puts "Creating grounds..."
 
