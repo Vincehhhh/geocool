@@ -3,5 +3,7 @@
   box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.5);
   border-radius: 45px;
   width: 931px;
-  height: 549px;
+  // Test sur ground card faire attention aux bug
+  // height: 549px;
+  min-height: 549px;
 }
