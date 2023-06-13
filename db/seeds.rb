@@ -20,7 +20,7 @@ vince = User.create!(
   password: "123456",
   occupation: "Ingénieur",
   premium_status: true,
-  company_name:"Turtwell"
+  company_name: "Turtwell"
 )
 file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
 vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
@@ -30,7 +30,7 @@ bastien = User.create!(
   password: "123456",
   occupation: "Architecte",
   premium_status: false,
-  company_name:"my_archi"
+  company_name: "my_archi"
 )
 file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
 bastien.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
@@ -40,7 +40,7 @@ clement = User.create!(
   password: "123456",
   occupation: "Architecte",
   premium_status: true,
-  company_name:"my_archi"
+  company_name: "my_archi"
 )
 file = File.open(Rails.root.join("db/seeds_pics/users/vince_light.jpg"))
 clement.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
@@ -191,6 +191,9 @@ argile_humide = GroundType.create!(
   density:  1800,
   heat_capacity: 1340
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/argileHumide.png"))
+argile_humide.photo.attach(io: file, filename: "argileHumide.jpg", content_type: "image/jpeg")
+
 
 sable_humide = GroundType.create!(
   slug:'sable_humide_rt2012',
@@ -199,6 +202,9 @@ sable_humide = GroundType.create!(
   density: 1500,
   heat_capacity: 1200
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/sableHumide.png"))
+sable_humide.photo.attach(io: file, filename: "sableHumide.jpg", content_type: "image/jpeg")
+
 
 sable_sec = GroundType.create!(
   slug:'sable_sec_rt2012',
@@ -207,6 +213,9 @@ sable_sec = GroundType.create!(
   density: 1500,
   heat_capacity: 920
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/sableSec.png"))
+sable_sec.photo.attach(io: file, filename: "sableSec.jpg", content_type: "image/jpeg")
+
 
 limon = GroundType.create!(
   slug:'limons',
@@ -215,6 +224,9 @@ limon = GroundType.create!(
   density: 500,
   heat_capacity: 3200
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/Limons.png"))
+limon.photo.attach(io: file, filename: "Limons.jpg", content_type: "image/jpeg")
+
 
 calcaire = GroundType.create!(
   slug:'calcaire',
@@ -223,6 +235,9 @@ calcaire = GroundType.create!(
   density: 1800,
   heat_capacity: 778
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/calcaire.png"))
+calcaire.photo.attach(io: file, filename: "calcaire.jpg", content_type: "image/jpeg")
+
 
 argile_sec = GroundType.create!(
   slug:'argile_sec',
@@ -231,4 +246,7 @@ argile_sec = GroundType.create!(
   density: 1800,
   heat_capacity: 833,
 )
+file = File.open(Rails.root.join("db/seeds_pics/ground_types/argileSec.png"))
+argile_sec.photo.attach(io: file, filename: "argileSec.jpg", content_type: "image/jpeg")
+
 puts "Seeds Finished!"

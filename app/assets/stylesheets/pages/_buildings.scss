@@ -27,17 +27,11 @@
   border-radius: 18px;
 }
 
+.form-check-label[for='building_building_type_neuf'], .form-check-label[for='building_building_type_rénovation'], .form-check-label[for='building_building_type_mixte'] {
+  text-align: center;
+}
 
 // INPUT - TYPE DE TRAVAUX
-
-// .building_building_type>.form-check {
-//   display: flex;
-//   align-items: center;
-//   height: 50px;
-//   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-//   border-radius: 18px;
-//   margin-bottom: 15px;
-// }
 
 .category-wrapper-building-type {
   display: flex;
@@ -99,7 +93,7 @@
 }
 
 .category-selector-building-use + label {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   height: 127px;
   display: block;
@@ -107,7 +101,7 @@
   box-sizing: border-box;
   width: 100%;
   text-align: left;
-  padding: 20px 21px;
+  padding: 15px 21px;
   border-radius: 18px;
   background-color: white;
   color: black;
@@ -121,14 +115,74 @@
   border: 2px solid #20D3B0;
 }
 
+// Ajouter une image selon card
 
-
-// TEST : ajouter une image selon card
-
-.category-item-building-use>label[for='building_category_maison_individuelle'] {
-  background-image: url('/../../maison-building.png');
+.category-item-building-use>label:before {
+  content: "";
+  height: 60px;
+  width: 60px;
+  display: block;
+  background-size: cover;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.category-item-building-use>label[for='building_category_logement_collectif'] {
-  background-image: url('https://i.etsystatic.com/22498515/r/il/68fdd3/2936713559/il_570xN.2936713559_e4g2.jpg');
+.category-item-building-use>label[for='building_category_maison_individuelle']:before {
+  background-image: image-url('maison-building.png');
 }
+
+.category-item-building-use>label[for='building_category_logement_collectif']:before {
+  background-image: image-url('logement-collectif-building.png');
+}
+
+.category-item-building-use>label[for='building_category_bureaux']:before {
+  background-image: image-url('bureaux-building.png');
+  content: "";
+  height: 60px;
+  width: 60px;
+  display: block;
+  background-size: cover;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 13px;
+}
+
+.category-item-building-use>label[for='building_category_chai']:before {
+  background-image: image-url('chai-building.png');
+  content: "";
+  height: 60px;
+  width: 60px;
+  display: block;
+  background-size: cover;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 13px;
+}
+
+.category-item-building-use>label[for='building_category_groupe_scolaire']:before {
+  background-image: image-url('ecole-building.png');
+  content: "";
+  height: 60px;
+  width: 60px;
+  display: block;
+  background-size: cover;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 13px;
+}
+
+.category-item-building-use>label[for='building_category_enseignement_secondairesup']:before {
+  background-image: image-url('enseignement-sup-building.png');
+}
+
+// .category-item-building-use>label[for='building_category_logement_collectif']:before {
+//   background-image: url('https://i.etsystatic.com/22498515/r/il/68fdd3/2936713559/il_570xN.2936713559_e4g2.jpg');
+// }
+
+// .category-item-building-use:checked>label[for='building_category_maison_individuelle']:after {
+//   background-image: image-url('maison-building-checked.png');
+// }
