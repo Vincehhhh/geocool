@@ -1,9 +1,9 @@
 <div class="container">
 
-  <h1 class="h1-center"> Pré-Dimensionnement - TOP 3 </h1>
-    <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + mettre un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
-    <p> Risque Sismique sur votre commune : <%= @seismes %> </p>
-    <p> Risques Radon sur votre commune : Catégorie <%= @radon %> </p>
+  <h1 class="h1-center">Résultats</h1>
+
+    <h2 class="h2-center-results">TOP 3 Pré-dimensionnement</h2>
+
   <div class="container flex-container container-cards-results">
 
     <div class="results-container">
@@ -264,6 +264,12 @@
     </div>
   </div>
 
+  <div>
+    <h2 class="text-center h2-infos-risques">Informations risques</h2>
+      <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + mettre un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
+      <p> Risque Sismique sur votre commune : <%= @seismes %> </p>
+      <p> Risques Radon sur votre commune : Catégorie <%= @radon %> </p>
+  </div>
 
 <div class="flex-container">
   <p>
