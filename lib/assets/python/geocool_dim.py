@@ -1,3 +1,6 @@
+# pour éviter l'impression de warnings non bloquants :
+import warnings
+warnings.filterwarnings("ignore")
 # pour gérer les arguments appeler avec le script .py
 import sys
 from types import SimpleNamespace
@@ -23,14 +26,18 @@ class Result:
         pass
 
 # Import des données d'entrée ligne de commande
-# print('Number of arguments:', len(sys.argv), 'arguments.')
-
-# print('Argument List:', sys.argv)
-user_json = sys.argv[1]
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', sys.argv)
 
 
-# with open(user_jsonfile_name) as user_json:
-user_data = json.loads(user_json)
+# en cas d'utilisation depuis le terminal , décommanter ce bloc :
+user_json_file_name = sys.argv[1]
+with open(user_json_file_name) as user_json:
+    user_data = json.load(user_json)
+
+# en cas d'exécution depuis l'appli décommanter cette ligne :
+# user_json = sys.argv[1]
+# user_data = json.loads(user_json)
 
 samples_pipes = user_data['pipes']
 # print(samples_pipes)
