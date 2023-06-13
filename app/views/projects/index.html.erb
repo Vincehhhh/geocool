@@ -1,24 +1,53 @@
 <div class="container py-4">
-  <div class="d-flex justify-content-between align-items-center">
+  <div class="container align-items-center">
     <h1 class="pb-4"> TABLEAU DE BORD </h1>
-    <h2 class="pb-4"> Hello <%= @user.username%>!  Voici toutes vos études </h2>
+    <p class="pb-4"> Hello <%= @user.username%>!  Retrouve ici toutes tes études </p>
   </div>
 </div>
 <div class="container projects-container">
   <% @my_projects.each do |project| %>
-      <div class="projects-card-form">
-        <h4><%= project.name.capitalize %></h4>
-        <p>créé le : <% project.created_at %></p>
+      <div class="projects-card">
+        <div class="project-title-container">
+            <h3><%= project.name.capitalize %></h3>
+            <p>créé le : <%= project.created_at.strftime('%m/%d/%Y') %></p>
+        </div>
         <div class="container main-project-info">
-          <div class="project-info">
-            <p><%= project.building.building_type %></p>
-            <p><%= project.ground_type.name %></p>
+
+          <div class="project-info project-building">
+            <h4> Bâtiment </h4>
+              <div>
+                <i class="fa-solid fa-city"></i>
+                <p> <%= project.building.city_name%></p>
+              </div>
+              <div>
+                <i class="fa-solid fa-city"></i>
+                <p><%= project.building.building_type %></p>
+              </div>
+              <div>
+                <i class="fa-solid fa-city"></i>
+                <p><%= project.building.nominal_flow_rate%></p>
+              </div>
           </div>
+          <div class="project-info project-ground">
+            <h4> Sol </h4>
+            <p><%= cl_image_tag  project.ground_type.photo.key, width:100, height:100, crop: :fill %></p>
+            <p><%= project.ground_type.name  %></p>
+          </div>
+
+
           <div class="project-info">
+            <h4> Top 3 </h4>
             <% project_working_wells_systems = WorkingWellSystem.where(project_id: project.id) %>
-            <% project_working_wells_systems.each do |project_working_wells_system| %>
+            <% project_working_wells_systems.first(3).each do |project_working_wells_system| %>
               <p> <%= project_working_wells_system.name %> </p>
             <% end %>
+          </div>
+
+          <div class="project-info project-info-btn">
+
+              <%= link_to 'Détails', root_path, class: "btn btn-projects-index"  %>
+              <%= link_to 'Modifier', root_path, class: "btn btn-black-white"  %>
+
           </div>
         </div>
       </div>
