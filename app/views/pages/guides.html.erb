@@ -1,0 +1,51 @@
+<div class="container">
+  <h3 class="text-center guide-title">Le guide</h3>
+  <div class="guide-container">
+    <a href="<%= url_for(controller: 'pages', action: 'guidesol') %>">
+      <div class= "guides-card d-flex">
+        <div class="guides-img" >
+          <%= image_tag "guide_sol.png" %>
+        </div>
+        <div class="guides-infos">
+          <h3>Quels est votre type de sol ?</h3>
+          <p>Détails</p>
+        </div>
+      </div>
+    </a>
+    <a href="<%= url_for(controller: 'pages', action: 'guidepuit') %>">
+      <div class= "guides-card d-flex">
+        <div class="guides-img" >
+          <%= image_tag "guide_puit.png" %>
+        </div>
+        <div class="guides-infos">
+          <h3>Découvrez l'utilité du puit canadien</h3>
+          <p>Détails</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="<%= url_for(controller: 'pages', action: 'guideventilation') %>">
+      <div class= "guides-card d-flex">
+        <div class="guides-img" >
+          <%= image_tag "guide_ventilation.png" %>
+        </div>
+        <div class="guides-infos">
+          <h3>Comment calculer son débit de ventilation</h3>
+          <p>Détails</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="<%= url_for(controller: 'pages', action: 'guidepipe') %>">
+      <div class= "guides-card d-flex">
+        <div class="guides-img" >
+          <%= image_tag "guide_pipe.png" %>
+        </div>
+        <div class="guides-infos">
+          <h3>Les différents type de pipe</h3>
+          <p>Détails</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
