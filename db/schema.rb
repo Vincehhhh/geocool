@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_074117) do
+
+
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_074117) do
     t.datetime "updated_at", null: false
     t.string "department"
     t.string "city_insee_code"
+    t.integer "available_area"
   end
 
   create_table "energetic_results", force: :cascade do |t|
@@ -82,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_074117) do
     t.integer "heat_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "source"
   end
 
   create_table "guides", force: :cascade do |t|
@@ -145,6 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_074117) do
     t.string "company_name"
     t.boolean "premium_status"
     t.string "occupation"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
