@@ -1,6 +1,5 @@
 class GroundTypesController < ApplicationController
 
-
   def index
     @ground_types = GroundType.all
 
