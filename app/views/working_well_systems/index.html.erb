@@ -5,7 +5,7 @@
   <% elsif @sorted_working_wells.length < 3 %>
     <h2 class="h2-center-results"> Moins de 3 résultats trouvés : que faire ?</h2>
   <% else %>
-    <h2 class="h2-center-results"> Geocool a trouvé <strong> &nbsp; <%= @sorted_working_wells.length %>  configurations  </strong> &nbsp; pertinentes pour votre projet !  Voici le top 3 </h2>
+    <h2 class="h2-center-results"> Geocool a trouvé <strong> &nbsp; <%= @sorted_working_wells.length %>  configurations  </strong> &nbsp; pertinentes pour votre projet !</h2>
       <div class="container flex-container container-cards-results">
       <% @sorted_working_wells.first(3).each_with_index do |working_well, index| %>
 
@@ -40,7 +40,7 @@
 
             <div>
               <div class="align-item">
-                <p class="label-card">Tubes</p>
+                <p class="label-card"> Nombre de tubes</p>
                 <p class="response-card"><%= working_well.proposed_number_of_pipes %></p>
               </div>
             </div>
@@ -110,16 +110,16 @@
 
   </div>
 
-  <div>
+  <div class="container-cards">
 
-    <h2 class="text-center h2-infos-risques">Informations risques <br>
+    <h2 class="text-center h2-infos-risques" > Principaux risques <br>
     sur votre commune</h2>
 
       <!--
       <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + mettre un paragraphe d'intro sur le classement + nombre de calculs réalisés </p>
       -->
 
-      <div class="flex-container container-risks">
+      <div class="flex-container container-risks ">
 
         <div class="container-risk">
           <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,10 +152,10 @@
 
           <h3> Retrait et gonflement d’argiles </h3>
           <%# PENSER A METTRE RESULTAT %>
-          <p> <%= @radon %> </p>
+          <p> Classe <%= @radon %> </p>
         </div>
 
-        <div class="container-risk">
+        <div class="container-risk ">
           <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="23.5" cy="23.5" r="23.5" fill="#20D3B0"/>
             <path d="M21.5468 20.116C20.3798 20.7898 19.5937 22.0545 19.5937 23.4998H12.5624C11.6982 23.4998 10.9902 22.7967 11.0976 21.9422C11.5224 18.5193 13.3339 15.5262 15.9462 13.5389C16.6347 13.0164 17.5966 13.2801 18.0312 14.0271L21.5468 20.116ZM23.4999 27.4061C24.2128 27.4061 24.8769 27.2156 25.4531 26.8836L28.9687 32.9773C29.3984 33.7244 29.1494 34.6912 28.3535 35.0232C26.8593 35.6531 25.2187 35.9998 23.4999 35.9998C21.7812 35.9998 20.1357 35.6531 18.6464 35.0232C17.8505 34.6863 17.6015 33.7244 18.0312 32.9773L21.5468 26.8836C22.123 27.2156 22.7871 27.4061 23.4999 27.4061ZM34.4374 23.4998H27.4062C27.4062 22.0545 26.6201 20.7898 25.4531 20.116L28.9687 14.0271C29.3984 13.2801 30.3652 13.0164 31.0537 13.5389C33.6708 15.5262 35.4775 18.5193 35.9072 21.9422C36.0146 22.7967 35.3017 23.4998 34.4423 23.4998H34.4374ZM23.4999 21.1561C24.1215 21.1561 24.7177 21.403 25.1572 21.8425C25.5968 22.2821 25.8437 22.8782 25.8437 23.4998C25.8437 24.1214 25.5968 24.7175 25.1572 25.1571C24.7177 25.5966 24.1215 25.8436 23.4999 25.8436C22.8783 25.8436 22.2822 25.5966 21.8427 25.1571C21.4031 24.7175 21.1562 24.1214 21.1562 23.4998C21.1562 22.8782 21.4031 22.2821 21.8427 21.8425C22.2822 21.403 22.8783 21.1561 23.4999 21.1561Z" fill="white"/>
@@ -163,28 +163,51 @@
           <h3> Risque radon </h3>
           <p> Catégorie <%= @radon %> </p>
         </div>
-
-        
-        
       </div>
 
   </div>
-
-
-<div class="flex-container">
-  <div>
-      <h2 class="text-center h2-infos-risques">Informations risques</h2>
-      <p class="p-center"> Rappel débits : <%= @building.nominal_flow_rate %>   m3/h + </p>
-      <p class="p-center"> Rappel sol : <%= @project.ground_type.name %>   </p>
+<hr>
+  <div class="flex-container ">
+    <div>
+        <h2 class="text-center h2-infos-risques"> Rappel du projet</h2>
+        <div class="flex-container">
+          <p class="p-center"> Débit de ventilation : <%= @building.nominal_flow_rate %>   m3/h + </p>
+          <p class="p-center"> Type de sol : <%= @project.ground_type.name %>   </p>
+        </div>
+    </div>
   </div>
+  <div class="flex-container results-table">
+    <table>
+      <thead>
+        <tr>
+          <th># </th>
+          <th> Nom de la configuration </th>
+          <th> Fabricant </th>
+          <th> Diamètre extérieur </th>
+          <th> Nombre de tubes </th>
+          <th> Longueur unitaire conseillée </th>
+          <th> Gain énergétique - Hiver  </th>
+          <th> Gain énergétique - Hiver  </th>
 
-  <div class="flex-container">
-    <p>
-      <%= @sorted_working_wells.as_json %>
-    </p>
+          <!-- Ajoutez ici d'autres en-têtes de colonnes si nécessaire -->
+        </tr>
+      </thead>
+        <tbody>
+        <% @sorted_working_wells.each_with_index do |well,index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= well.name %></td>
+            <td><%= well.pipe.manufacturer.social_name %></td>
+            <td><%= well.pipe.diameter_ext_mm %> mm</td>
+            <td><%= well.proposed_number_of_pipes %> tubes </td>
+            <td><%= well.proposed_length_lo %>m/tube</td>
+
+            <!-- Ajoutez ici d'autres cellules correspondant aux autres attributs de well si nécessaire -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
-</div>
 
 
 </div>
