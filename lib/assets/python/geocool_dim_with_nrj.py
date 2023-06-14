@@ -20,10 +20,10 @@ from scipy.optimize import curve_fit
 import numpy as np
 import json
 
-import os
-dir_path = os.path.dirname(os.path.realpath(__file__))
+# import os
+# dir_path = os.path.dirname(os.path.realpath(__file__))
+# print(dir_path)
 
-print(dir_path)
 # import scipy.optimize
 # import pylab as plt
 # from scipy.optimize import curve_fit
@@ -39,8 +39,8 @@ class Result:
         pass
 
 # Import des données d'entrée ligne de commande
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', sys.argv)
+# print('Number of arguments:', len(sys.argv), 'arguments.')
+# print('Argument List:', sys.argv)
 
 
 # en cas d'utilisation depuis le terminal , décommanter ce bloc :
@@ -78,9 +78,9 @@ studied_ground = user_data['ground']
 ##### DEBUT DU PROGRAMME DE CALCUL DE DIMENSIONNEMENT #########
 ###############################################################
 # # List of global variables needed for sizing
-SPEED_MIN_QV_MAX = 2 # unit : m/s
-SPEED_MAX_QV_MAX = 5 # unit : m/s
-SPEED_MIN_QV_MIN = 1 # unit : m/s
+SPEED_MIN_QV_MAX = 1.5 # unit : m/s
+SPEED_MAX_QV_MAX = 5.1 # unit : m/s
+SPEED_MIN_QV_MIN = 0.95 # unit : m/s
 SPEED_MAX_QV_MIN = 4 # unit : m/s
 
 # List of Soils:
@@ -337,7 +337,7 @@ class Datetohour: # Convert a string "dd/mm/yy" into hour number within the year
 class Set_heating_period:
     def __init__(self,start_date,end_date):
         self.heating_period=np.array([Datetohour(start_date).hourofyear,Datetohour(end_date).hourofyear])
-        print("heating period (début, fin)",self.heating_period)
+        # print("heating period (début, fin)",self.heating_period)
 
 # CALCUL DES PERFORMANCE ENERGETIQUES ANNUELLES D'UN SYSTEME :
 class AnnualPerformance:
@@ -377,9 +377,9 @@ class AnnualPerformance:
         else:
             self.L_user = self.well_system.L_0
 
-        print("\n###############################################")
-        print("Cas étudié",self.well_system.pipe.name,np.round(self.L_user,1),"m / ", self.nb_tubes ,"branches - ","Profondeur : ",self.profondeur,"m")
-        print("#################################################")
+        # print("\n###############################################")
+        # print("Cas étudié",self.well_system.pipe.name,np.round(self.L_user,1),"m / ", self.nb_tubes ,"branches - ","Profondeur : ",self.profondeur,"m")
+        # print("#################################################")
 
     # fonction mysin : création d'un sinusoide selon Tmoy, Amplitude et phase
     def my_sin(self,t, Tm, Ta, phase):
@@ -393,15 +393,26 @@ class AnnualPerformance:
     def stats_on_hourlyT(self,dataT):
         Tmean=np.average(dataT)
         # nb_heures Text <= 0°C
-        nb_heure_inf0=np.sum(np.where(dataT<=0,1,0))
+        nb_heure_inf0= int(np.sum(np.where(dataT<=0,1,0)))
         # nb_heures Text <= 5°C
-        nb_heure_inf5=np.sum(np.where(dataT<=5,1,0))
-        return [Tmean,nb_heure_inf0, nb_heure_inf5]
+        nb_heure_inf5=int(np.sum(np.where(dataT<=5,1,0)))
+        nb_heure_sup28=int(np.sum(np.where(dataT>=28,1,0)))
+        Tmin = np.min(dataT)
+        Tmax = np.max(dataT)
+        return {"Tmean":Tmean,"nb_hours_inf_0":nb_heure_inf0, "nb_hours_inf_5":nb_heure_inf5,"nb_hours_sup_28":nb_heure_sup28, "Tmin":Tmin, "Tmax":Tmax}
 
     def computeStats(self):
         a = self.stats_on_hourlyT(self.meteo)
-        print(f"Tmean_ext:{np.round(a[0],2)}°C","- nb heures <0°C:",a[1],"- nb_heure <5°C :",a[2])
+        # print(f"Tmean_ext:{np.round(a[0],2)}°C","- nb heures <0°C:",a[1],"- nb_heure <5°C :",a[2], "nb_heures > 28°C:",a[3])
         # def DJU(self,dataT):
+        weather_data = {
+            "Text_mean_degC": a["Tmean"],
+            "nb_hours_inf_zero": a["nb_hours_inf_0"],
+            "nb_hours_sup_vingthuit": a["nb_hours_sup_28"],
+            "Text_min": a["Tmin"],
+            "Text_max": a["Tmax"]
+        }
+        return weather_data
 
     def computeGroundTemperature(self):
     #version initiale
@@ -420,7 +431,7 @@ class AnnualPerformance:
 
         # now do the fit
         fit = curve_fit(self.my_sin, t, Text_data, p0=p0)
-        print("Tm :: {:.2f} °C".format(fit[0][0]))
+        # print("Tm :: {:.2f} °C".format(fit[0][0]))
         # print("Ta :: {:.2f} °C".format(fit[0][1]))
         # print("Phase_h :: {:.2f} h".format(fit[0][2]))
         # print("Phase_jr ::{:.2f} jr".format(fit[0][2]/24))
@@ -462,14 +473,8 @@ class AnnualPerformance:
         self.Tout=np.where(self.hourly_L_0 == 0, self.Tsol_prof,(self.Tsol_prof+(Text-self.Tsol_prof)*(np.exp(-self.L_user/self.hourly_L_0))))
         # np.savetxt('Tout_pc.txt',self.Tout,fmt='%1.2f')
         self.Tout_av=np.round(np.average( self.Tout),1)
-        print("Tout_moyen",self.Tout_av,"°C")
+        # print("Tout_moyen",self.Tout_av,"°C")
 
-        # plt.figure(figsize=(10, 8))
-        # plt.plot(Text,label='Text')
-        # plt.plot(self.Tsol_prof,label='Tsol')
-        # plt.plot(self.Tout,label='Tout')
-        # plt.legend()
-        # plt.show()
         #return self.Tout
 
     def setWarmingPeriod(self):
@@ -518,21 +523,38 @@ class AnnualPerformance:
         self.WinterGainTmin=np.abs(self.Tout_min-Text_min)
         meanWinterGain=np.round(self.WinterGain_PC/duree_fonctionnement_winter,1)
         maxWinterGain=np.round(np.max(Heating_SF_hour-Heating_PC_hour)/1000,1)
+        mean_linear_winter_gain_wml = np.round(meanWinterGain*1000/(self.nb_tubes*self.L_user),0)
+        max_linear_winter_gain_wml = np.round(maxWinterGain*1000/(self.nb_tubes*self.L_user),0)
 
-        print('Winter :: @ ',self.profondeur,"m")
-        print("Heating air _SF", Heating_SF, "kWh")
-        print("Heating air_PClim",Heating_PC, "kWh")
-        print("Gain Energetique PC:", self.WinterGain_PC,"kWh")
-        print("Puissance Moyenne de récupération Hiver :", meanWinterGain,"KW")
-        print("Puissance Moyenne Linéaire de récupération Hiver :",  np.round(meanWinterGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
-        print("Puissance MAX de récupération Hiver :",  maxWinterGain,"KW")
-        print("Puissance MAX Linéaire de récupération Hiver :", np.round(maxWinterGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+        winter_data = {
+        'studied_depth_m': self.profondeur,
+        "winter_heating_needs_PC_kwh": Heating_PC,
+        "total_winter_gain_vs_SF_kwh": self.WinterGain_PC,
+        "mean_winter_gain_kw": meanWinterGain,
+        "mean_linear_winter_gain_wml": mean_linear_winter_gain_wml,
+        "max_winter_gain_kw": maxWinterGain,
+        "max_linear_winter_gain_wml": max_linear_winter_gain_wml,
+        "winter_Tout_min_degC": self.Tout_min,
+        "winter_Tout_min_gain_degC": self.WinterGainTmin,
+        "winter_number_of_hours_PC": duree_fonctionnement_winter
+        }
 
-        print("Tmin soufflé (hiver) : ",self.Tout_min,"°C")
-        print("gain sur Tmin hiver : ",self.WinterGainTmin,"°C")
-        print("Efficacité_hiver:",self.Winter_efficiency)
-        print("durée_fonctionnement_hiver",duree_fonctionnement_winter,"heures")
-        # return(self.WinterGain_PC)
+        return winter_data
+
+        # print('Winter :: @ ',self.profondeur,"m")
+        # print("Heating air _SF", Heating_SF, "kWh")
+        # print("Heating air_PClim",Heating_PC, "kWh")
+        # print("Gain Energetique PC:", self.WinterGain_PC,"kWh")
+        # print("Puissance Moyenne de récupération Hiver :", meanWinterGain,"KW")
+        # print("Puissance Moyenne Linéaire de récupération Hiver :",  np.round(meanWinterGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+        # print("Puissance MAX de récupération Hiver :",  maxWinterGain,"KW")
+        # print("Puissance MAX Linéaire de récupération Hiver :", np.round(maxWinterGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+
+        # print("Tmin soufflé (hiver) : ",self.Tout_min,"°C")
+        # print("gain sur Tmin hiver : ",self.WinterGainTmin,"°C")
+        # print("Efficacité_hiver:",self.Winter_efficiency)
+        # print("durée_fonctionnement_hiver",duree_fonctionnement_winter,"heures")
+        # # return(self.WinterGain_PC)
 
     def computeSummerGain(self):
         Tint_summer = 26
@@ -555,18 +577,56 @@ class AnnualPerformance:
         # Gain max et moyen (kW) et linéaire
         meanSummerGain =np.round(self.SummerGain_PC/duree_fonctionnement_summer,1)
         maxSummerGain = np.round(np.min(Cooling_PC_hour)/1000,1) #coolingPC = chiffres négatifs
+        mean_linear_summer_gain_wml = np.round(meanSummerGain*1000/(self.nb_tubes*self.L_user),0)
+        max_linear_summer_gain_wml = np.round(maxSummerGain*1000/(self.nb_tubes*self.L_user),0)
 
-        print('Summer :: @ ',self.profondeur,"m")
-        print("Cooling air _SF @ 26°C:", Cooling_SF, "kWh")
-        print("Gain énergétique PC été",self.SummerGain_PC, "kWh")
-        print("Puissance Moyenne de récupération été :", meanSummerGain,"KW")
-        print("Puissance Moyenne Linéaire de récupération été :",  np.round(meanSummerGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
-        print("Puissance MAX de récupération été :",  maxSummerGain,"KW")
-        print("Puissance MAX Linéaire de récupération été :", np.round(maxSummerGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+        summer_data = {
+            'studied_depth_m': self.profondeur,
+            "total_summer_gain_vs_SF_kwh": {
+                'value': self.SummerGain_PC,
+                'units': "kWh"
+            },
+            "mean_summer_gain_kw": {
+                'value': meanSummerGain,
+                'units': "kW"
+            },
+            "mean_linear_summer_gain_wml":{
+                'value': mean_linear_summer_gain_wml,
+                'units': "W/ml"
+            },
+            "max_summer_gain_kw":{
+                'value': maxSummerGain,
+                'units': "kW",
+            },
+            "max_linear_summer_gain_wml":{
+                'value': max_linear_summer_gain_wml,
+                'units': "W/ml"
+            },
+            "summer_Tout_max_degC":{
+                'value': self.Tout_max,
+                'units': "deg Celcius",
+            },
+            "summer_Tout_max_gain_degC": {
+                'value':self.SummerGainTmax,
+                'units':"deg Celcius",
+            },
+            "summer_number_of_hours_PC":{
+                'value':duree_fonctionnement_summer,
+                'units':"hours",
+            }
+        }
+        return summer_data
 
-        print("Tmax soufflé (été) : ",self.Tout_max,"°C")
-        print("gain sur Tmax été : ",self.SummerGainTmax,"°C")
-        print("durée_fonctionnement_été",duree_fonctionnement_summer,"heures")
+        # print('Summer :: @ ',self.profondeur,"m")
+        # print("Cooling air _SF @ 26°C:", Cooling_SF, "kWh")
+        # print("Gain énergétique PC été",self.SummerGain_PC, "kWh")
+        # print("Puissance Moyenne de récupération été :", meanSummerGain,"KW")
+        # print("Puissance Moyenne Linéaire de récupération été :",  np.round(meanSummerGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+        # print("Puissance MAX de récupération été :",  maxSummerGain,"KW")
+        # print("Puissance MAX Linéaire de récupération été :", np.round(maxSummerGain*1000/(self.nb_tubes*self.L_user),0),"W/ml")
+        # print("Tmax soufflé (été) : ",self.Tout_max,"°C")
+        # print("gain sur Tmax été : ",self.SummerGainTmax,"°C")
+        # print("durée_fonctionnement_été",duree_fonctionnement_summer,"heures")
 
 ##########################################################################################
 #### DONNEES UTILISATEUR EN ENTREE DU CALCUL
@@ -601,7 +661,7 @@ d = 1 # premier jour de l'année : si d = 1 premier jour = lundi
 # il s'agit du débit max dimensionnant du projet
 Qv_max = studied_building['nominal_flow_rate']
 # 6000 #m³/h # donner une info sur le débit max type : maison 30*(Nb_occ+2)
-Qv_min = 0.3*Qv_max # ce débit réduit sert à la sélection des systèmes adaptés :
+Qv_min = 0.35*Qv_max # ce débit réduit sert à la sélection des systèmes adaptés :
 # il faut que des conditions de vitesse soient respectées sur Qv_max et Qv_min
 
 # Débit de ventilation horaire pour la simulation énergétique :
@@ -620,45 +680,11 @@ Sbat = studied_building["area"]
 
 # Nombre de branches étudiées"
 max_branch = np.floor((Qv_max/200)).astype(int)+1
- # à choisir par l'utilisateur : il faut lui indiquer un paramètre du type :"Qv_max (m3/h) / 500"
+# à choisir par l'utilisateur : il faut lui indiquer un paramètre du type :"Qv_max (m3/h) / 500"
 nb_branch = range(1,max_branch)
 
 # APPEL DE LA FONCTION DE SELECTION DES TUBES ADAPTES
 arr_well_system = Working_wells(Qv_min,Qv_max,selected_pipes_db,nb_branch,user_ground).arr_well_system
-
-result_wells = []
-for i_well in arr_well_system:
-    # Impression des caractéristiques des systèmes préconisés
-    # print(i_well.qv_tube_max*i_well.nb_branch,"m³/h  ", i_well.pipe.name,"  ",i_well.nb_branch,"branche(s)  ",
-    #       "v@Qvmax:",np.round(i_well.speed_max,1),"m/s  ", "v@Qvmin:",np.round(i_well.speed_min,1),"m/s  " ,
-    #       "Long Unitaire Conseillée(RAGE):",np.round(i_well.L_0,1),"m  ", "Longueur tot conseillée:",np.round(i_well.L_total,1),'m  ',"surf. terrain",np.round(i_well.occupied_surface,1),'m²')
-    if i_well.L_0 < 100 and i_well.occupied_surface < available_ground_area:
-        i_result = {
-            "pipe_id": i_well.pipe.id,
-            "pipe_data": i_well.pipe,
-            "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
-            "pipe_name": i_well.pipe.name,
-            "external_diameter": i_well.pipe.diameter_ext,
-            "proposed_number_of_pipes": i_well.nb_branch,
-            "nominal_speed": np.round(i_well.speed_max,1),
-            "proposed_length_lo": np.round(i_well.L_0,1),
-            "proposed_total_length": np.round(i_well.L_total,1),
-            "occupied_area": np.round(i_well.occupied_surface,1)
-        }
-        result_wells.append(i_result)
-
-result = Result()
-result.selected_wells = result_wells
-# result.number_max_of_branches = max_branch
-# result.number_of_simulations = max_branch * len(samples_pipes)
-
-jsonResult = json.dumps(result,  default=toJson, indent=4, sort_keys=True)
-# print ('------------------------------------------')
-print (jsonResult)
-
-# with open("result_file.json", "w") as json_file:
-#      json.dump(result, json_file, default=toJson, indent=4, sort_keys=False)
-
 
 # ################################################################
 # # PARTIE DU PROGRAMME POUR LE CALCUL DES PERFORMANCES ANNUELLES
@@ -682,20 +708,53 @@ Tint_off = 17 #°C
 Bypass = 0 # Bypass = 0 : pas de bypass, sinon si Bypass= 1 : méthode simple sur comparaison Text et Tout_pc
 
 
-##############################################
-# LANCEMENT DU PROGRAMME ENERGETIQUE
-############################################3
-# étude de tous les tubes pré-sélectionnés :
-#for i_well in arr_well_system:
-# sinon pour test d'un seul système :
-i_well = arr_well_system[0]
-for p in arr_prof:
-    perf = AnnualPerformance(i_well,Text,heating_period,p,Qv_max,Bypass,VMC)
-    perf.computeStats()
-    perf.computeGroundTemperature()
-    perf.wellOutlet_Temp()
-    perf.setWarmingPeriod()
-    # print("winter gain /m²", perf.setWarmingPeriod()/Sbat)
-    perf.setCoolingPeriod()
-    perf.computeWinterGain()
-    perf.computeSummerGain()
+result_wells = []
+for i_well in arr_well_system:
+    # Impression des caractéristiques des systèmes préconisés
+    # print(i_well.qv_tube_max*i_well.nb_branch,"m³/h  ", i_well.pipe.name,"  ",i_well.nb_branch,"branche(s)  ",
+    #       "v@Qvmax:",np.round(i_well.speed_max,1),"m/s  ", "v@Qvmin:",np.round(i_well.speed_min,1),"m/s  " ,
+    #       "Long Unitaire Conseillée(RAGE):",np.round(i_well.L_0,1),"m  ", "Longueur tot conseillée:",np.round(i_well.L_total,1),'m  ',"surf. terrain",np.round(i_well.occupied_surface,1),'m²')
+    if i_well.L_0 < 100 and i_well.occupied_surface < available_ground_area:
+        i_result = {
+            "pipe_id": i_well.pipe.id,
+            "pipe_data": i_well.pipe,
+            "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
+            "pipe_name": i_well.pipe.name,
+            "external_diameter": i_well.pipe.diameter_ext,
+            "proposed_number_of_pipes": i_well.nb_branch,
+            "nominal_speed": np.round(i_well.speed_max,1),
+            "proposed_length_lo": np.round(i_well.L_0,1),
+            "proposed_total_length": np.round(i_well.L_total,1),
+            "occupied_area": np.round(i_well.occupied_surface,1)
+        }
+        for p in arr_prof:
+            perf = AnnualPerformance(i_well,Text,heating_period,p,Qv_max,Bypass,VMC)
+            i_weather_stats = perf.computeStats()
+            # print("weather_stats",i_weather_stats)
+            perf.computeGroundTemperature()
+            perf.wellOutlet_Temp()
+            perf.setWarmingPeriod()
+            perf.setCoolingPeriod()
+            i_winter_perf = perf.computeWinterGain()
+            i_summer_perf = perf.computeSummerGain()
+            # print('winter_perf',i_winter_perf)
+            # print('summer_perf',i_summer_perf)
+            i_result["weather_stats"] = i_weather_stats
+            i_result["winter_perf"] = i_winter_perf
+            i_result["summer_perf"] = i_summer_perf
+        result_wells.append(i_result)
+
+result = Result()
+result.selected_wells = result_wells
+result.number_of_tests = int(max_branch * len(samples_pipes))
+result.number_wells_found = int(len(result_wells))
+result.department = user_departement
+
+# with open("result_file.json", "w") as json_file:
+#      json.dump(result, json_file, default=toJson, indent=4, sort_keys=False)
+
+jsonResult = json.dumps(result,  default=toJson, indent=4, sort_keys=True)
+# print ('------------------------------------------')
+# print("number of cases tested:", max_branch * len(samples_pipes))
+# print("number of wells results:", len(result_wells))
+print (jsonResult)
