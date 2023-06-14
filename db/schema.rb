@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_111014) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_115258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_111014) do
     t.string "department"
     t.string "city_insee_code"
     t.integer "available_area"
+  end
+
+  create_table "contact_manufacturers", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "manufacturer_id", null: false
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manufacturer_id"], name: "index_contact_manufacturers_on_manufacturer_id"
+    t.index ["project_id"], name: "index_contact_manufacturers_on_project_id"
   end
 
   create_table "energetic_results", force: :cascade do |t|
@@ -179,6 +189,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_111014) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contact_manufacturers", "manufacturers"
+  add_foreign_key "contact_manufacturers", "projects"
   add_foreign_key "energetic_results", "energetic_studies"
   add_foreign_key "energetic_studies", "projects"
   add_foreign_key "manufacturers", "users"
