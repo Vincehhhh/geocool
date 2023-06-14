@@ -55,7 +55,7 @@ studied_ground = user_data['ground']
 # # List of global variables needed for sizing
 SPEED_MIN_QV_MAX = 2 # unit : m/s
 SPEED_MAX_QV_MAX = 5 # unit : m/s
-SPEED_MIN_QV_MIN = 1 # unit : m/s
+SPEED_MIN_QV_MIN = 0.90 # unit : m/s
 SPEED_MAX_QV_MIN = 4 # unit : m/s
 
 # List of Soils:
