@@ -24,12 +24,15 @@ class Result:
 
 # Import des données d'entrée ligne de commande
 # print('Number of arguments:', len(sys.argv), 'arguments.')
-
 # print('Argument List:', sys.argv)
+
+# en cas d'utilisation depuis le terminal , décommanter ce bloc :
+# user_json_file_name = sys.argv[1]
+# with open(user_json_file_name) as user_json:
+#     user_data = json.load(user_json)
+
+# en cas d'exécution depuis l'appli décommanter cette ligne :
 user_json = sys.argv[1]
-
-
-# with open(user_jsonfile_name) as user_json:
 user_data = json.loads(user_json)
 
 samples_pipes = user_data['pipes']
@@ -52,7 +55,7 @@ studied_ground = user_data['ground']
 # # List of global variables needed for sizing
 SPEED_MIN_QV_MAX = 2 # unit : m/s
 SPEED_MAX_QV_MAX = 5 # unit : m/s
-SPEED_MIN_QV_MIN = 1 # unit : m/s
+SPEED_MIN_QV_MIN = 0.90 # unit : m/s
 SPEED_MAX_QV_MIN = 4 # unit : m/s
 
 # List of Soils:
