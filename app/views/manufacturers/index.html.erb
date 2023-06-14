@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h1 class="h1-center">Tous les fabricants</h1>
+
+    <div class="flex-container cards-manufacturers">
+
+    <% @manufacturers.each do |manufacturer| %>
+
+    <div class="card-manufacturer">
+      <%# IMAGE HERE %>
+      <h2 class="h2-center-card-manufacturer"> <%= manufacturer.social_name %> </h2>
+      <p class="address-card-manufacturer"> <%= manufacturer.address %> </p>
+      <hr>
+
+      <div class="materials-manufacturer">
+        <% manufacturer.pipes.each do |pipe| %>
+          <p><%= pipe.name %> </p>
+          <p><%= pipe.material %> </p>
+          <hr>
+        <% end %>
+      </div>
+
+      <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
+    </div>
+
+    <% end %>
+
+    </div>
+
+</div>
