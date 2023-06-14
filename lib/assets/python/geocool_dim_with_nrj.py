@@ -643,7 +643,6 @@ available_ground_area = studied_building['available_area']
 # avec json :
 Text = np.zeros(8760)
 for index,elt in enumerate(france_temperatures):
-    # print(index,elt["44"])
     Text[index]= elt[user_departement]
 
 # SOL DE L'UTILISATEUR

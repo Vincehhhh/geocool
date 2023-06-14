@@ -1,5 +1,6 @@
 <div class="container">
   <h1 class="h1-center">Résultats</h1>
+  <p><%= @weather_data["Text_max"] %> degC</p>
   <% if @sorted_working_wells==[] %>
     <h2 class="h2-center-results">Désolé, GeoCool n'a pas trouvé de système adapté à vos données</h2>
   <% elsif @sorted_working_wells.length < 3 %>
