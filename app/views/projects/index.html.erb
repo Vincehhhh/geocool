@@ -1,55 +1,58 @@
-<div class="container py-4">
-  <div class="container align-items-center">
-    <h1 class="pb-4"> TABLEAU DE BORD </h1>
-    <p class="pb-4"> Hello <%= @user.username%>!  Retrouve ici toutes tes études </p>
+<div class="container dashboard-container">
+  <div class="text-center">
+    <h3> Hello <%= @user.username%>!  Retrouve ici toutes tes études</h3>
+    <h2>Tableau de bord</h2>
   </div>
-</div>
-<div class="container projects-container">
-  <% @my_projects.each do |project| %>
-      <div class="projects-card">
-        <div class="project-title-container">
-            <h3><%= project.name.capitalize %></h3>
-            <p>créé le : <%= project.created_at.strftime('%m/%d/%Y') %></p>
+  <div >
+    <div class="dashboard-all">
+      <p>Toutes mes études</p>
+      <%= link_to "+", new_project_path, class: "btn btn-new-p" %>
+    </div>
+    <% @my_projects.each do |project| %>
+      <div class=project-card>
+        <div class="card-project-top-left">
+          <div class="project-name"><p><%= project.name.capitalize %></p></div>
+          <div class="card-project-top">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#D9D9D9"/>
+              <path d="M12.8932 8.99954C12.8932 8.85333 12.8351 8.7131 12.7317 8.60971C12.6283 8.50633 12.4881 8.44824 12.3419 8.44824C12.1957 8.44824 12.0555 8.50633 11.9521 8.60971C11.8487 8.7131 11.7906 8.85333 11.7906 8.99954V10.1609C10.7321 10.2455 10.0382 10.4528 9.52809 10.9636C9.01722 11.4738 8.80994 12.1684 8.72467 13.2261H23.3098C23.2245 12.1677 23.0172 11.4738 22.5063 10.9636C21.9962 10.4528 21.3016 10.2455 20.2438 10.1602V8.99954C20.2438 8.85333 20.1857 8.7131 20.0824 8.60971C19.979 8.50633 19.8387 8.44824 19.6925 8.44824C19.5463 8.44824 19.4061 8.50633 19.3027 8.60971C19.1993 8.7131 19.1412 8.85333 19.1412 8.99954V10.1117C18.6524 10.1021 18.1041 10.1021 17.4873 10.1021H14.5471C13.9304 10.1021 13.382 10.1021 12.8932 10.1117V8.99954Z" fill="#8E8E93"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.66669 15.9827C8.66669 15.366 8.66669 14.8177 8.67624 14.3289H23.3584C23.3679 14.8177 23.3679 15.366 23.3679 15.9827V17.4529C23.3679 20.2248 23.3679 21.6111 22.5064 22.4719C21.6457 23.3334 20.2593 23.3334 17.4874 23.3334H14.5472C11.7753 23.3334 10.3889 23.3334 9.52818 22.4719C8.66669 21.6111 8.66669 20.2248 8.66669 17.4529V15.9827ZM19.6926 17.4529C19.8876 17.4529 20.0745 17.3754 20.2124 17.2376C20.3502 17.0997 20.4277 16.9128 20.4277 16.7178C20.4277 16.5229 20.3502 16.3359 20.2124 16.198C20.0745 16.0602 19.8876 15.9827 19.6926 15.9827C19.4977 15.9827 19.3107 16.0602 19.1728 16.198C19.035 16.3359 18.9576 16.5229 18.9576 16.7178C18.9576 16.9128 19.035 17.0997 19.1728 17.2376C19.3107 17.3754 19.4977 17.4529 19.6926 17.4529ZM19.6926 20.3931C19.8876 20.3931 20.0745 20.3157 20.2124 20.1778C20.3502 20.04 20.4277 19.853 20.4277 19.6581C20.4277 19.4631 20.3502 19.2761 20.2124 19.1383C20.0745 19.0004 19.8876 18.923 19.6926 18.923C19.4977 18.923 19.3107 19.0004 19.1728 19.1383C19.035 19.2761 18.9576 19.4631 18.9576 19.6581C18.9576 19.853 19.035 20.04 19.1728 20.1778C19.3107 20.3157 19.4977 20.3931 19.6926 20.3931ZM16.7524 16.7178C16.7524 16.9128 16.6749 17.0997 16.5371 17.2376C16.3992 17.3754 16.2123 17.4529 16.0173 17.4529C15.8224 17.4529 15.6354 17.3754 15.4975 17.2376C15.3597 17.0997 15.2822 16.9128 15.2822 16.7178C15.2822 16.5229 15.3597 16.3359 15.4975 16.198C15.6354 16.0602 15.8224 15.9827 16.0173 15.9827C16.2123 15.9827 16.3992 16.0602 16.5371 16.198C16.6749 16.3359 16.7524 16.5229 16.7524 16.7178ZM16.7524 19.6581C16.7524 19.853 16.6749 20.04 16.5371 20.1778C16.3992 20.3157 16.2123 20.3931 16.0173 20.3931C15.8224 20.3931 15.6354 20.3157 15.4975 20.1778C15.3597 20.04 15.2822 19.853 15.2822 19.6581C15.2822 19.4631 15.3597 19.2761 15.4975 19.1383C15.6354 19.0004 15.8224 18.923 16.0173 18.923C16.2123 18.923 16.3992 19.0004 16.5371 19.1383C16.6749 19.2761 16.7524 19.4631 16.7524 19.6581ZM12.342 17.4529C12.5369 17.4529 12.7239 17.3754 12.8618 17.2376C12.9996 17.0997 13.0771 16.9128 13.0771 16.7178C13.0771 16.5229 12.9996 16.3359 12.8618 16.198C12.7239 16.0602 12.5369 15.9827 12.342 15.9827C12.147 15.9827 11.9601 16.0602 11.8222 16.198C11.6844 16.3359 11.6069 16.5229 11.6069 16.7178C11.6069 16.9128 11.6844 17.0997 11.8222 17.2376C11.9601 17.3754 12.147 17.4529 12.342 17.4529ZM12.342 20.3931C12.5369 20.3931 12.7239 20.3157 12.8618 20.1778C12.9996 20.04 13.0771 19.853 13.0771 19.6581C13.0771 19.4631 12.9996 19.2761 12.8618 19.1383C12.7239 19.0004 12.5369 18.923 12.342 18.923C12.147 18.923 11.9601 19.0004 11.8222 19.1383C11.6844 19.2761 11.6069 19.4631 11.6069 19.6581C11.6069 19.853 11.6844 20.04 11.8222 20.1778C11.9601 20.3157 12.147 20.3931 12.342 20.3931Z" fill="#8E8E93"/>
+            </svg>
+            <div>
+              <p>Créé le :</p>
+              <strong ><%= project.created_at.strftime('%m/%d/%Y')%></strong>
+            </div>
+
+          </div>
+
         </div>
-        <div class="container main-project-info">
-
-          <div class="project-info project-building">
-            <h4> Bâtiment </h4>
-              <div>
-                <i class="fa-solid fa-city"></i>
-                <p> <%= project.building.city_name%></p>
-              </div>
-              <div>
-                <i class="fa-solid fa-city"></i>
-                <p><%= project.building.building_type %></p>
-              </div>
-              <div>
-                <i class="fa-solid fa-city"></i>
-                <p><%= project.building.nominal_flow_rate%></p>
-              </div>
+        <hr>
+        <div class="d-flex justify-content-between card-bottom">
+          <div >
+            <h3>Batiment</h3>
+            <p> <%= project.building.city_name%> </p>
+            <p><%= project.building.building_type %></p>
+            <p><%= project.building.nominal_flow_rate%></p>
           </div>
-          <div class="project-info project-ground">
-            <h4> Sol </h4>
-            <p><%= cl_image_tag  project.ground_type.photo.key, width:100, height:100, crop: :fill %></p>
-            <p><%= project.ground_type.name  %></p>
+          <div>
+            <h3>Sol</h3>
+            <p><%= project.ground_type.name %></p>
+          </div>
+          <div>
+            <h3>Résultats</h3>
+              <% project_working_wells_systems = WorkingWellSystem.where(project_id: project.id) %>
+            <p><%= project_working_wells_systems.first.name %> </p>
           </div>
 
-
-          <div class="project-info">
-            <h4> Top 3 </h4>
-            <% project_working_wells_systems = WorkingWellSystem.where(project_id: project.id) %>
-            <% project_working_wells_systems.first(3).each do |project_working_wells_system| %>
-              <p> <%= project_working_wells_system.name %> </p>
-            <% end %>
+          <div class="btn-project-card">
+            <%= link_to 'Ouvrir', root_path, class: "btn btn-projects-index"  %>
+            <%= link_to 'Modifier', root_path, class: "btn btn-black-white"  %>
           </div>
 
-          <div class="project-info project-info-btn">
-
-              <%= link_to 'Détails', root_path, class: "btn btn-projects-index"  %>
-              <%= link_to 'Modifier', root_path, class: "btn btn-black-white"  %>
-
-          </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
+
+
 </div>

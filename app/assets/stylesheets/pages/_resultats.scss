@@ -15,6 +15,22 @@
   justify-content: space-between;
 }
 
+.container-cards {
+  padding-bottom: 20px;
+  align-items: center;
+
+
+  background: #FFFFFF;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  width: 50vw;
+  padding: 1em;
+  margin: auto;
+  margin-block: 40px;
+
+  font-size: larger;
+
+}
 
 .container-cards-results {
   padding-bottom: 35px;
@@ -30,16 +46,16 @@
   border: 3px solid #20D3B0;
   box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.3);
   border-radius: 45px;
-  width: 260px;
+  width: 290px;
   // height: 494px;
-  padding: 30px 30px;
+  padding: 35px 30px;
 }
 
 .results-card {
   background: #FFFFFF;
   box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.3);
   border-radius: 45px;
-  width: 250px;
+  width: 280px;
   // height: 455px;
   top: 264px;
   padding: 25px;
@@ -78,6 +94,7 @@
 
   .circle-number {
     background-color: #20D3B0;
+
     p {
       color: white;
     }
@@ -184,7 +201,7 @@
 }
 
 .h2-infos-risques {
-  padding-top: 110px;
+  padding-top: 50px;
   font-size: 26px;
   line-height: 35px;
 }
@@ -195,12 +212,51 @@
   padding-right: 20px;
 
   h3 {
-    font-size: 16px;
+    font-size: 20px;
     padding-top: 10px;
+  }
+  p{
+    font-size: 25px;
   }
 }
 
 .container-risk {
   text-align: center;
   padding-inline: 35px;
+}
+
+.results-table {
+  display: flex;
+  justify-content: center;
+  width: 75vw;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 20px auto;
+  font-size: 0.9em;
+  // font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.results-table thead tr {
+  background-color: #47bca4;
+  color: #ffffff;
+  text-align: left;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 15px;
+}
+
+.results-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.results-table tbody tr:nth-of-type(even) {
+  background-color: #cfcfcf;
+}
+
+.results-table tbody tr:last-of-type {
+  border-bottom: 2px solid #47bca4;
 }
