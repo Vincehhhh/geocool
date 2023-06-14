@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-
       redirect_to edit_project_building_path(@project, @building)
     else
       # puts @project.errors.full_messages
@@ -39,6 +38,7 @@ class ProjectsController < ApplicationController
   def update
 
     @project = Project.find(params[:id])
+
     redirect_to project_working_well_systems_path(@project)
     # @ground_type = GroundType.find(project_ground_params[:ground_type])
     # #@ground_type = GroundType.find(params[:project][:ground_type])
