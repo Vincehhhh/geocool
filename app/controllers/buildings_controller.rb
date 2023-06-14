@@ -29,7 +29,7 @@ class BuildingsController < ApplicationController
 
   def building_params
     # params.require(:building).permit(:area, :building_type, :postal_code,:city_name,:category,:nominal_flow_rate)
-    params.require(:building).permit(:area, :building_type, :department, :city_name,:category,:nominal_flow_rate)
+    params.require(:building).permit(:area, :building_type, :department, :city_name,:category,:nominal_flow_rate, :available_area)
 
   end
 
