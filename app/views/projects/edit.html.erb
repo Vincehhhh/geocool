@@ -25,7 +25,7 @@
               <div class="ground-img">
                 <%= cl_image_tag ground.photo.key %>
               </div>
-                <i class="fa-solid fa-circle-info tooltip-icon" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="test"></i>
+                <i class="fa-solid fa-circle-info tooltip-icon tooltip-custom" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<%= ground.details%>"></i>
                 <h2 class="h2-ground-name"><%= ground.name %></h2>
                 <p class="text-source">Source : <%= ground.source %></p>
             </div>
