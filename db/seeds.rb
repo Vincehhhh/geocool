@@ -298,7 +298,8 @@ argile_humide = GroundType.create!(
   slug:'argile_humide_rt2012',
   lambda_ground: 1.45,
   density:  1800,
-  heat_capacity: 1340
+  heat_capacity: 1340,
+  details: "La finesse de ces particules en fait un sol lourd et compact qui laisse difficilement passer l’eau."
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/argileHumide.png"))
 argile_humide.photo.attach(io: file, filename: "argileHumide.jpg", content_type: "image/jpeg")
@@ -310,7 +311,8 @@ sable_humide = GroundType.create!(
   name:'Sable humide',
   lambda_ground: 1.88,
   density: 1500,
-  heat_capacity: 1200
+  heat_capacity: 1200,
+  details: "Un sable humide est principalement composé de particules de sable avec une texture granulaire grossière."
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/sableHumide.png"))
 sable_humide.photo.attach(io: file, filename: "sableHumide.jpg", content_type: "image/jpeg")
@@ -322,7 +324,8 @@ sable_sec = GroundType.create!(
   name:'Sable sec',
   lambda_ground: 0.70,
   density: 1500,
-  heat_capacity: 920
+  heat_capacity: 920,
+  details: "Les sols sableux sont souvent secs, pauvres en matières organiques, aérés et très drainants."
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/sableSec.png"))
 sable_sec.photo.attach(io: file, filename: "sableSec.jpg", content_type: "image/jpeg")
@@ -334,7 +337,8 @@ limon = GroundType.create!(
   name:'Limons',
   lambda_ground: 0.20,
   density: 500,
-  heat_capacity: 3200
+  heat_capacity: 3200,
+  details: "Sol dont les grains sont de taille intermédiaire entre les argiles et les sables, on le trouve donc à proximité des fleuves."
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/Limons.png"))
 limon.photo.attach(io: file, filename: "Limons.jpg", content_type: "image/jpeg")
@@ -346,7 +350,8 @@ calcaire = GroundType.create!(
   name:'Calcaire',
   lambda_ground: 0.40,
   density: 1800,
-  heat_capacity: 778
+  heat_capacity: 778,
+  details: "Il se reconnaît à sa couleur blanchâtre. Pour détecter si un sol est calcaire ou non, il suffit de verser du vinaigre blanc sur un échantillon. Une réaction chimique se produit alors et dégage une mousse blanche."
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/calcaire.png"))
 calcaire.photo.attach(io: file, filename: "calcaire.jpg", content_type: "image/jpeg")
@@ -359,6 +364,7 @@ argile_sec = GroundType.create!(
   lambda_ground: 0.40,
   density: 1800,
   heat_capacity: 833,
+  details: "En période de sécheresse, il devient très dur et laisse apparaître des crevasses et en période humide, il devient étanche et retient en surface l’eau"
 )
 file = File.open(Rails.root.join("db/seeds_pics/ground_types/argileSec.png"))
 argile_sec.photo.attach(io: file, filename: "argileSec.jpg", content_type: "image/jpeg")

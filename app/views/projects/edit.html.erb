@@ -21,11 +21,12 @@
           <label class="ground-card d-flex">
             <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
 
-            <div>
+            <div class="ground-img-wrapper">
               <div class="ground-img">
                 <%= cl_image_tag ground.photo.key %>
               </div>
-              <h2 class="h2-ground-name"><%= ground.name %></h2>
+                <i class="fa-solid fa-circle-info tooltip-icon tooltip-custom" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<%= ground.details%>"></i>
+                <h2 class="h2-ground-name"><%= ground.name %></h2>
                 <p class="text-source">Source : <%= ground.source %></p>
             </div>
 
