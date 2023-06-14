@@ -3,10 +3,10 @@
   box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.5);
   border-radius: 45px;
   width: 227px;
-  height: 455px;
   margin-inline: 10px;
   padding-block: 30px;
-  padding-inline: 20px
+  padding-inline: 20px;
+  min-height: 455px;
 }
 
 .h2-center-card-manufacturer {
@@ -26,4 +26,24 @@
 
 .cards-manufacturers {
   padding-top: 20px;
+}
+
+.btn-card-manufacturer {
+  display: flex;
+  margin-inline: 10px;
+  padding: 12px 44px;
+}
+
+.materials-manufacturer {
+  padding-top: 10px;
+  padding-inline: 10px;
+
+  p {
+    font-size: 14px;
+    line-height: 10px;
+  }
+
+  hr {
+    border: 0px solid transparent;
+  }
 }

@@ -11,8 +11,16 @@
       <h2 class="h2-center-card-manufacturer"> <%= manufacturer.social_name %> </h2>
       <p class="address-card-manufacturer"> <%= manufacturer.address %> </p>
       <hr>
-      <p><%=  %></p>
-      <%= link_to 'Découvrir', new_project_path, class: "btn" %>
+
+      <div class="materials-manufacturer">
+        <% manufacturer.pipes.each do |pipe| %>
+          <p><%= pipe.name %> </p>
+          <p><%= pipe.material %> </p>
+          <hr>
+        <% end %>
+      </div>
+
+      <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
     </div>
 
     <% end %>
