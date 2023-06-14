@@ -52,9 +52,11 @@ clement.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image
 # vince.photo.attach(io: file, filename: "vince_light.jpg", content_type: "image/jpeg")
 puts "Creating manufacturers"
 elixair = Manufacturer.create!(
-  social_name: "Saint-Gobain PAM-Building",
+  social_name: "Saint-Gobain Elixair",
   address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  user: vince
+  user: vince,
+  website: "https://www.pambuilding.fr/elixair-fonctionnement"
+
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man1.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
@@ -62,20 +64,25 @@ elixair = Manufacturer.create!(
 helios = Manufacturer.create!(
   social_name: "Helios",
   address: "21 avenue Camille Cavallier - 54705 PONT A MOUSSON",
-  user: bastien
+  user: bastien,
+  website:"https://www.prospair.com/contents/fr/double-flux-lewt.pdf"
+
 )
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
 # man2.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
 le_pc = Manufacturer.create!(
   social_name: "Le Puits Canadien",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  user: clement
+  user: clement,
+  website:"https://lepuitscanadien.fr/"
 )
 
 rehau  = Manufacturer.create!(
   social_name: "REHAU",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
-  user: clement
+  user: clement,
+  website:"https://www.rehau.com/be-fr/awadukt-thermo"
+
 )
 
 # file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
@@ -186,7 +193,7 @@ helios300.photo.attach(io: file, filename: "Polyethylene.jpg", content_type: "im
 helios300.save
 
 rehau200 = Pipe.create!(
-  material: "POLYPROPYLENE",
+  material: "POLY-PROP.",
   nominal_diameter_dn: "DN-200",
   name: "Rehau DN200",
   thermal_conductivity: 0.28,
@@ -200,7 +207,7 @@ rehau200.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "im
 rehau200.save
 
 rehau300 = Pipe.create!(
-  material: "POLYPROPYLENE",
+  material: "POLY-PROP.",
   nominal_diameter_dn: "DN-300",
   name: "Rehau DN300",
   thermal_conductivity: 0.28,
@@ -214,7 +221,7 @@ rehau300.photo.attach(io: file, filename: "polypropylene.jpg", content_type: "im
 rehau300.save
 
 rehau400 = Pipe.create!(
-  material: "POLYPROPYLENE",
+  material: "POLY-PROP.",
   nominal_diameter_dn: "DN-400",
   name: "Rehau DN400",
   thermal_conductivity: 0.28,
