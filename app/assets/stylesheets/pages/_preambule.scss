@@ -1,8 +1,17 @@
 .img-preambule {
-  background: #8E8E93;
-  border-radius: 18px;
+  background-image: image-url('puits-canadien3.png');
+  content: "";
+  height: 343px;
   width: 364px;
-  height: 364px;
+  display: block;
+  background-size: cover;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  // background: #8E8E93;
+  // border-radius: 18px;
+  // width: 364px;
+  // height: 364px;
 }
 
 .container-text-preambule {

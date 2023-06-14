@@ -10,38 +10,98 @@
   justify-content: center;
 }
 
+.flex-container .top {
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+
 .container-cards-results {
   padding-bottom: 35px;
+  align-items: center;
+}
+
+.result-pipe {
+  border-radius: 50%;
 }
 
 .first-results-card {
   background: #FFFFFF;
   border: 3px solid #20D3B0;
-  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.3);
   border-radius: 45px;
-  width: 248px;
-  height: 494px;
-  padding: 25px;
+  width: 260px;
+  // height: 494px;
+  padding: 30px 30px;
 }
 
 .results-card {
   background: #FFFFFF;
-  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.3);
   border-radius: 45px;
-  width: 227px;
-  height: 455px;
+  width: 250px;
+  // height: 455px;
   top: 264px;
-  padding: 27px;
+  padding: 25px;
+}
+
+.circle-number {
+  width: 35px;
+  height: 35px;
+  padding: 2px;
+  background-color: #E9FBF8;
+  border-radius: 50%;
+  justify-content: center;
+
+  margin: auto;
+  margin-block: 10px;
+  align-items: center;
+
+  p {
+    margin: 0px;
+    color: #20D3B0;
+    font-size: large;
+  }
+}
+
+.first-results-container {
+  padding-inline: 23px;
+}
+
+.results-container {
+  padding-top: 15px;
+  margin-inline: 15px;
+}
+
+.results-container-1 {
+  order: 2;
+
+  .circle-number {
+    background-color: #20D3B0;
+    p {
+      color: white;
+    }
+  }
+
+}
+
+.results-container-2 {
+  order: 1;
+}
+
+.results-container-3 {
+  order: 3;
 }
 
 .btn-save {
+  background: white;
   display: flex;
   justify-content: center;
-  border: 2px solid #000000;
+  border: 2.5px solid #000000;
   border-radius: 18px;
   align-items: center;
-  padding: 20px 35px 20px 35px;
-  width: 267px;
+  padding: 20px 25px 20px 25px;
+  width: 280px;
   justify-content: space-between;
 }
 
@@ -51,17 +111,6 @@
   font-weight: 500;
 }
 
-.circle-number {
-  padding-bottom: 12px;
-}
-
-.first-results-container {
-  padding-inline: 23px;
-}
-
-.results-container {
-  padding-top: 15px;
-}
 
 .title-result {
   padding-left: 25px;
@@ -130,10 +179,28 @@
   color: #8E8E93;
   font-weight: 400;
   font-size: 23px;
-  padding-bottom: 45px;
-  margin-top: -25px;
+  padding-bottom: 35px;
+  margin-top: -35px;
 }
 
 .h2-infos-risques {
-  padding-top: 100px;
+  padding-top: 110px;
+  font-size: 26px;
+  line-height: 35px;
+}
+
+.container-risks {
+  padding-top: 40px;
+  padding-bottom: 100px;
+  padding-right: 20px;
+
+  h3 {
+    font-size: 16px;
+    padding-top: 10px;
+  }
+}
+
+.container-risk {
+  text-align: center;
+  padding-inline: 35px;
 }
