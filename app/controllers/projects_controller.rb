@@ -39,18 +39,18 @@ class ProjectsController < ApplicationController
   def update
 
     @project = Project.find(params[:id])
-    redirect_to project_working_well_systems_path(@project)
-    # @ground_type = GroundType.find(project_ground_params[:ground_type])
-    # #@ground_type = GroundType.find(params[:project][:ground_type])
-    # @project.ground_type = @ground_type
-    # # raise
-    # if @project.save
-    #   # redirect_to project_ground_types_path(@building.project_ids, @building)
-    #   # redirect_to project_ground_types_path(@building)
-    #   redirect_to project_working_well_systems_path(@project)
-    # else
-    #   puts @building.errors.full_messages
-    # end
+    @ground_type = GroundType.find(project_ground_params[:ground_type])
+    #@ground_type = GroundType.find(params[:project][:ground_type])
+    @project.ground_type = @ground_type
+    raise
+    if @project.save
+      # redirect_to project_ground_types_path(@building.project_ids, @building)
+      # redirect_to project_ground_types_path(@building)
+      raise
+      redirect_to project_working_well_systems_path(@project)
+    else
+      puts @building.errors.full_messages
+    end
   end
 
   private
