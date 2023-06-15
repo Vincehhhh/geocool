@@ -126,15 +126,22 @@
 </div>
   <h2 class="h2-center-results"> <span class="logogeocool">Geocool </span>  &nbsp; a étudié <%= @number_of_calculs %> possibilités & trouvé <strong> &nbsp; <%= @sorted_working_wells.length %>  configurations  </strong> &nbsp; pertinentes pour votre projet ! </h2>
 
-    <div class="flex-container">
-      <button type= "submit" class="btn-save">
-        <%= link_to 'Sauvegarder les résultats', project_working_well_systems_path(test: {systems: @sorted_working_wells.as_json}), data: {turbo_method: :post}  %>
-        <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 6H10V0H4V6H0L7 13L14 6ZM0 15V17H14V15H0Z" fill="black"/>
-        </svg>
-      </button>
-    </div>
-
+    <% if @project.working_well_systems.empty? %>
+      <div class="flex-container">
+        <button type= "submit" class="btn-save">
+          <%= link_to 'Sauvegarder les résultats', project_working_well_systems_path(test: {systems: @sorted_working_wells.as_json}), data: {turbo_method: :post}  %>
+          <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 6H10V0H4V6H0L7 13L14 6ZM0 15V17H14V15H0Z" fill="black"/>
+          </svg>
+        </button>
+      </div>
+      <% else %>
+        <div class="flex-container">
+          <button class="btn-project-result">
+            <%= link_to 'Mes projets', projects_path %>
+          </button>
+        </div>
+    <% end %>
   </div>
 
   <div class="town-container-cards">

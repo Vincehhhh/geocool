@@ -250,7 +250,7 @@ rehau500.save
 
 lpc150 = Pipe.create!(
   material: "GRES",
-  nominal_diameter_dn: "DN-200",
+  nominal_diameter_dn: "DN-150",
   name: "LePuitsCanadien DN150",
   thermal_conductivity: 1.20,
   thickness_mm: 14.0,
