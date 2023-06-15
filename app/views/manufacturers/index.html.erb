@@ -13,11 +13,13 @@
       <hr>
 
       <div class="materials-manufacturer">
+
         <% manufacturer.pipes.each do |pipe| %>
-          <p><%= pipe.name %> </p>
           <p><%= pipe.material %> </p>
+          <p><%= pipe.name %> </p>
           <hr>
         <% end %>
+
       </div>
 
       <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
