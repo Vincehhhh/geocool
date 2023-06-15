@@ -13,9 +13,10 @@
       <hr>
 
       <div class="materials-manufacturer">
-
-        <h3><%= manufacturer.pipes.first.material %></h3>
-
+        <div class="flex-container materials-manufacturer-pic">
+          <%= cl_image_tag manufacturer.pipes.first.photo.key, width:50, height:50, crop: :fill, class:"result-pipe" %>
+          <h3><%= manufacturer.pipes.first.material %></h3>
+        </div>
         <div>
           <% manufacturer.pipes.each do |pipe| %>
             <div class="flex-container">
@@ -28,7 +29,7 @@
 
       </div>
 
-      <div>
+      <div class="flex-container container-btn-bottom">
         <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
       </div>
     </div>

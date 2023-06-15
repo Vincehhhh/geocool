@@ -14,8 +14,8 @@
       <p class="btn-before-text-bottom">Précédent</p>
     </div>
 
-      <div class="main-card-form main-card-form-buildings align-item">
-          <div class="container-inputs-left">
+      <div class="main-card-form main-card-form-buildings align-item" data-controller="airflow">
+          <div class="container-inputs-left" >
 
             <div class="align-item inputs-form-buildings" data-controller="communes">
                <%= f.input :department, label: "Département :", collection: @dpt_list,
@@ -27,14 +27,14 @@
             </div>
 
             <div class="align-item inputs-form-buildings">
-              <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
+              <%= f.input :area, label: "Surface de plancher (m²):", input_html: { value: "", data: { airflow_target: "buildingarea"}}%>
               <%= f.input :available_area, label: "Terrain disponible (m²):"%>
             </div>
 
             <div class="align-item input-ventilation-buildings">
-              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
+              <%= f.input :nominal_flow_rate, label: "Débit nominal de ventilation (m³/h):", input_html: { value: "" , data: { airflow_target: "flowrate", action: "input->airflow#writetip"}} %>
             </div>
-            <p class="text-input-ventilation-buildings"> Tips : Pour une bonne qualité d'air il est conseillé de prévoir un renouvellement d'air d'au moins 0.60 vol/h. </p>
+            <p class="text-input-ventilation-buildings" data-airflow-target="tip" > Tips : Pour une bonne qualité d'air, un déit de ventilation d'au moins 0.60 vol/h est recommandé. </p>
 
 
             <div class="inputs-fieldwork-types">

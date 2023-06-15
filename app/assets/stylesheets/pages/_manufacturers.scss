@@ -17,6 +17,7 @@
   }
 }
 
+
 .h2-center-card-manufacturer {
   text-align: center;
   font-size: 18px;
@@ -59,6 +60,15 @@
 
   hr {
     border: 0px solid transparent;
+  }
+}
+
+.materials-manufacturer-pic{
+  align-items: center ;
+  justify-content: space-evenly;
+  padding-bottom: 1.3em;
+  h3{
+    padding-bottom: 0px;
   }
 }
 

@@ -7,6 +7,9 @@ import { application } from "./application"
 import CommunesController from "./communes_controller"
 application.register("communes", CommunesController)
 
+import AirflowController from "./airflow_controller"
+application.register("airflow", AirflowController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

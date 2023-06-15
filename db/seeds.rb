@@ -58,8 +58,8 @@ elixair = Manufacturer.create!(
   website: "https://www.pambuilding.fr/elixair-fonctionnement"
 
 )
-# file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
-# man1.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/seeds_pics/manufacturers/Elixair.png"))
+elixair.photo.attach(io: file, filename: "Elixair.png", content_type: "image/png")
 
 helios = Manufacturer.create!(
   social_name: "Helios",
@@ -68,27 +68,27 @@ helios = Manufacturer.create!(
   website:"https://www.prospair.com/contents/fr/double-flux-lewt.pdf"
 
 )
-# file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
-# man2.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/seeds_pics/manufacturers/helios-ventilatoren.png"))
+helios.photo.attach(io: file, filename: "helios-ventilatoren.png", content_type: "image/png")
+
 le_pc = Manufacturer.create!(
   social_name: "Le Puits Canadien",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
   user: clement,
   website:"https://lepuitscanadien.fr/"
 )
+file = File.open(Rails.root.join("db/seeds_pics/manufacturers/lpc.png"))
+le_pc.photo.attach(io: file, filename: "lpc.png", content_type: "image/png")
 
-rehau  = Manufacturer.create!(
+rehau = Manufacturer.create!(
   social_name: "REHAU",
   address: "Zone artisanale des Tanneries - 38780 Pont-Evêque",
   user: clement,
   website:"https://www.rehau.com/be-fr/awadukt-thermo"
-
 )
+file = File.open(Rails.root.join("db/seeds_pics/manufacturers/Rehau-Logo.png"))
+rehau.photo.attach(io: file, filename: "Rehau-Logo.png", content_type: "image/png")
 
-# file = File.open(Rails.root.join("db/seeds/users_img/Clara_light.jpg"))
-# man3.photo.attach(io: file, filename: "Clara_light.jpg", content_type: "image/jpeg")
-
-#  status: %w(Newbie Intermediate Confirmed Professional).sample,
 puts "Creating pipes..."
 
 elixair150 = Pipe.create!(
