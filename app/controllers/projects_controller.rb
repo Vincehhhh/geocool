@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-
       redirect_to edit_project_building_path(@project, @building)
     else
       # puts @project.errors.full_messages
@@ -39,18 +38,18 @@ class ProjectsController < ApplicationController
   def update
 
     @project = Project.find(params[:id])
-    redirect_to project_working_well_systems_path(@project)
-    # @ground_type = GroundType.find(project_ground_params[:ground_type])
-    # #@ground_type = GroundType.find(params[:project][:ground_type])
-    # @project.ground_type = @ground_type
-    # # raise
-    # if @project.save
-    #   # redirect_to project_ground_types_path(@building.project_ids, @building)
-    #   # redirect_to project_ground_types_path(@building)
-    #   redirect_to project_working_well_systems_path(@project)
-    # else
-    #   puts @building.errors.full_messages
-    # end
+
+    @ground_type = GroundType.find(project_ground_params[:ground_type_id])
+    #@ground_type = GroundType.find(params[:project][:ground_type])
+    @project.ground_type = @ground_type
+    if @project.save
+      # redirect_to project_ground_types_path(@building.project_ids, @building)
+      # redirect_to project_ground_types_path(@building)
+      redirect_to project_working_well_systems_path(@project)
+    else
+      puts @building.errors.full_messages
+    end
+
   end
 
   private
@@ -60,6 +59,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_ground_params
-    params.require(:project).permit(:ground_type)
+    params.require(:project).permit(:ground_type_id)
   end
 end
