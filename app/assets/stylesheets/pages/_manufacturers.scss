@@ -6,7 +6,15 @@
   margin-inline: 10px;
   padding-block: 30px;
   padding-inline: 20px;
-  min-height: 455px;
+  min-height: 390px;
+  // min-height: 455px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
 
 .h2-center-card-manufacturer {
@@ -30,20 +38,33 @@
 
 .btn-card-manufacturer {
   display: flex;
-  margin-inline: 10px;
-  padding: 12px 44px;
+  padding: 12px;
+  justify-content: center;
+  position: absolute;
+  top: 516px;
+  width: 188px;
+  margin-top: 30px;
 }
 
 .materials-manufacturer {
   padding-top: 10px;
   padding-inline: 10px;
+  padding-bottom: 30px;
 
   p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 10px;
+    padding-right: 5px;
   }
 
   hr {
     border: 0px solid transparent;
   }
+}
+
+.tooltip-dn-manufacturer {
+  position: initial;
+  color: #20D3B0;
+  font-size: 12px;
+  margin-top: -2px;
 }
