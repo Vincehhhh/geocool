@@ -29,8 +29,11 @@ class WorkingWellSystemsController < ApplicationController
     # @working_wells = GeoCoolSolver.compute(@project, 'lib/assets/python/input_from_ruby.json')
 
     # working wells + energetic results
-    @working_wells = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[0]
-    @weather_data = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[1]
+    @working_wells = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[:working_wells]
+    @weather_data = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[:weather_data]
+    @wells_results = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[:wells_results]
+    @number_of_calculs = GeoCoolSolverNrj.compute(@project, 'lib/assets/python/input_from_ruby.json', 'lib/assets/python/temperatures.json')[:number_of_calculs]
+
     @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_total_length"] }
     # @sorted_working_wells = @working_wells.sort_by { |hash| hash["occupied_area"] }
     # @sorted_working_wells = @working_wells.sort_by { |hash| hash["proposed_length_lo"] }
