@@ -30,18 +30,20 @@
         <div class="d-flex justify-content-between card-bottom">
           <div >
             <h3>Batiment</h3>
-            <p> <%= project.building.city_name%> </p>
-            <p><%= project.building.building_type %></p>
-            <p><%= project.building.nominal_flow_rate%></p>
+            <p>📍 <%= project.building.city_name%> </p>
+            <p>🏢 <%= project.building.building_type %></p>
+            <p>💨 <%= project.building.nominal_flow_rate%></p>
           </div>
           <div>
             <h3>Sol</h3>
-            <p><%= project.ground_type.name %></p>
+            <p>🌱 <%= project.ground_type.name %></p>
           </div>
           <div>
             <h3>Résultats</h3>
               <% project_working_wells_systems = WorkingWellSystem.where(project_id: project.id) %>
+              <% if project_working_wells_systems.present? %>
             <p><%= project_working_wells_systems.first.name %> </p>
+              <% end %>
           </div>
 
           <div class="btn-project-card">

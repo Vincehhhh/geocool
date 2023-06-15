@@ -23,12 +23,12 @@
 
 .guides-img{
   img{
-    max-width: 100%;
     max-height: 100%;
     padding: 1rem;
   }
 }
 .guides-infos{
+  
   h3{
     color: black;
     font-style: normal;
@@ -61,12 +61,21 @@
 
 .container-infos{
   padding-inline: 16rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   h3{
     padding-bottom: 20px;
   }
+}
+.btn-retour{
+  width: 92px;
+  background-color: #20D3B0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 16px;
+  height: 31px;
   a{
-   background-color: black;
+    color: white;
+    font-size: 15px;
   }
 }
 .ground-img-wrapper{
