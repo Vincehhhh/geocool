@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     if @project.save
-
       redirect_to edit_project_building_path(@project, @building)
     else
       # puts @project.errors.full_messages
@@ -51,6 +50,7 @@ class ProjectsController < ApplicationController
     else
       puts @building.errors.full_messages
     end
+
   end
 
   private
