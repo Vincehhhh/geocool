@@ -23,14 +23,23 @@ class GeoCoolSolverNrj < ApplicationRecord
 
     # best_pipes_all = JSON.parse(result)["selected_wells"].sort_by { |hash| hash["occupied_area"] }
     best_pipes_all = JSON.parse(result)["selected_wells"]
-    number_of_calculs = JSON.parse(result)["number_of_tests"]
+    @number_of_calculs = JSON.parse(result)["number_of_tests"]
+    @weather_data = best_pipes_all.first["weather_stats"]
+    @wells_results = best_pipes_all.each_with_index.map do |pipe,index|
+      {
+        temporary_well_id:index+1,
+        pipe_id: pipe["pipe_id"],
+        well_system_name:"#{pipe["proposed_number_of_pipes"]} x #{pipe["pipe_data"]["name"]}",
+        summer_results: pipe["summer_perf"],
+        winter_results: pipe["winter_perf"]
+      }
+    end
 
-    @weather_data =  best_pipes_all.first["weather_stats"]
-
-    @working_wells = best_pipes_all.map do |result|
+    @working_wells = best_pipes_all.each_with_index.map do |result,index|
       WorkingWellSystem.new(
         name: "#{result["proposed_number_of_pipes"]} x #{result["pipe_data"]["name"]}",
         pipe_id: result["pipe_id"],
+        temporary_well_id:index+1,
         project_id: project.id,
         # pipe: Pipe.last,
         proposed_length_lo: result["proposed_length_lo"],
@@ -39,6 +48,7 @@ class GeoCoolSolverNrj < ApplicationRecord
         proposed_total_length: result["proposed_total_length"],
         nominal_speed: result["nominal_speed"].round(2),
       )
+
       # {
       #   name: "#{result["proposed_number_of_pipes"]} x #{result["pipe_data"]["name"]}",
       #   pipe_id: result["pipe_id"],
@@ -51,8 +61,12 @@ class GeoCoolSolverNrj < ApplicationRecord
       #   nominal_speed: result["nominal_speed"].round(2),
       # }
     end
-    return [@working_wells, @weather_data]
-
+    return {
+      number_of_calculs: @number_of_calculs,
+      working_wells: @working_wells,
+      weather_data: @weather_data,
+      wells_results: @wells_results
+    }
     # accepted_attributes =  WorkingWellSystem.new.attributes.keys.map(&:to_sym)
 
     # results.map do |result|
