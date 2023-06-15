@@ -14,15 +14,23 @@
 
       <div class="materials-manufacturer">
 
-        <% manufacturer.pipes.each do |pipe| %>
-          <p><%= pipe.material %> </p>
-          <p><%= pipe.name %> </p>
-          <hr>
-        <% end %>
+        <h3><%= manufacturer.pipes.first.material %></h3>
+
+        <div>
+          <% manufacturer.pipes.each do |pipe| %>
+            <div class="flex-container">
+              <p><%= pipe.nominal_diameter_dn %> </p>
+              <i class="fa-solid fa-circle-info tooltip-custom tooltip-dn-manufacturer" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Diamètre en mm : <%= pipe.diameter_int %> Epaisseur en mm : <%= pipe.thickness_mm %> Conductivité thermique : <%= pipe.thermal_conductivity %>"></i>
+              <%# <hr> %>
+            </div>
+          <% end %>
+        </div>
 
       </div>
 
-      <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
+      <div>
+        <%= link_to 'Découvrir', manufacturer.website, class: "btn btn-card-manufacturer" %>
+      </div>
     </div>
 
     <% end %>
