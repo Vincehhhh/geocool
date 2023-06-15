@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_115258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +56,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
     t.integer "available_area"
   end
 
+  create_table "contact_manufacturers", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "manufacturer_id", null: false
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manufacturer_id"], name: "index_contact_manufacturers_on_manufacturer_id"
+    t.index ["project_id"], name: "index_contact_manufacturers_on_project_id"
+  end
+
   create_table "energetic_results", force: :cascade do |t|
     t.bigint "energetic_study_id", null: false
     t.datetime "created_at", null: false
@@ -85,6 +94,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "source"
+    t.text "details"
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -94,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "website"
     t.index ["user_id"], name: "index_manufacturers_on_user_id"
   end
 
@@ -174,6 +190,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_124221) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contact_manufacturers", "manufacturers"
+  add_foreign_key "contact_manufacturers", "projects"
   add_foreign_key "energetic_results", "energetic_studies"
   add_foreign_key "energetic_studies", "projects"
   add_foreign_key "manufacturers", "users"

@@ -28,17 +28,24 @@
 
             <div class="align-item inputs-form-buildings">
               <%= f.input :area, label: "Surface bâtiment (m²):", input_html: { value: "" }%>
-              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
               <%= f.input :available_area, label: "Terrain disponible (m²):"%>
-
             </div>
 
-            <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper-building-type', item_wrapper_class: 'category-item-building-type',
-              input_html: {class: 'category-selector-building-type'}, collection: [
-                "Neuf",
-                "Rénovation",
-                "Mixte"], :include_blank => false %>
+            <div class="align-item input-ventilation-buildings">
+              <%= f.input :nominal_flow_rate, label: "Débit ventilation (m³/h):", input_html: { value: "" } %>
+            </div>
+            <p class="text-input-ventilation-buildings"> Tips : Pour une bonne qualité d'air il est conseillé de prévoir un renouvellement d'air d'au moins 0.60 vol/h  : </p>
+
+
+            <div class="inputs-fieldwork-types">
+              <%= f.input :building_type, label: "Type de travaux :", type: "radio", as: :radio_buttons, collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper-building-type', item_wrapper_class: 'category-item-building-type',
+                input_html: {class: 'category-selector-building-type'}, collection: [
+                  "Neuf",
+                  "Rénovation",
+                  "Mixte"], :include_blank => false %>
+            </div>
+
         </div>
 
         <div class="container-inputs-right">

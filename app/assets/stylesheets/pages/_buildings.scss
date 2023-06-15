@@ -7,7 +7,7 @@
   background-color: #F4F4F4;
 }
 
-.inputs-form-buildings>div>label, .building_building_type>legend, .building_category>legend {
+.inputs-form-buildings>div>label, .building_building_type>legend, .building_category>legend, .input-ventilation-buildings {
   font-size: 15px;
   font-weight: 600;
 }
@@ -25,6 +25,20 @@
   width: 200px;
   height: 50px;
   border-radius: 18px;
+}
+
+.input-ventilation-buildings>div>input {
+  width: 420px;
+}
+
+.text-input-ventilation-buildings {
+  font-size: 11px;
+  line-height: 18px;
+  margin-top: -10px;
+}
+
+.inputs-fieldwork-types {
+  padding-top: 9px;
 }
 
 .form-check-label[for='building_building_type_neuf'], .form-check-label[for='building_building_type_rénovation'], .form-check-label[for='building_building_type_mixte'] {

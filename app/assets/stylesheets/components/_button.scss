@@ -1,16 +1,58 @@
 .btn {
   color: white;
   padding: 8px 21px;
-  border-radius: 4px;
   background: #20D3B0;
   transition: background 0.3s ease;
   height: 50px;
   border-radius: 18px;
+
 }
 
 .btn:hover {
+  transition: background 0.3s ease;
   background: #0bbb98;
   color: white;
+}
+
+.btn-projects-index {
+  margin: 5px;
+  height: 33px;
+  border-radius: 15px;
+  // font-size: small;
+  padding: 4px 23px;
+  font-size: 13px;
+  background: #20D3B0;
+  font-weight: 500;
+  border: 2px solid #0bbb98;
+}
+
+.btn-projects-index:hover {
+  transition: 0.3s ease;
+  color: #0bbb98;
+  border: 2px solid #0bbb98;
+  background: white;
+}
+
+.btn-black-white {
+  margin: 5px;
+  color: black;
+  border: 2px solid black;
+  background: white;
+  padding: 4px 23px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  height: 33px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.btn-black-white:hover {
+  border: 2px solid rgb(155, 155, 155);
+  color: rgb(155, 155, 155);
+  background: white;
+  transition: 0.3s ease;
 }
 
 .btn-next {
@@ -20,7 +62,7 @@
   margin-top: 235px;
   margin-left: 30px;
 
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 2px;
@@ -35,10 +77,10 @@
 }
 
 .arrow-btn-next {
-//   margin-left: 44px;
-//   // position: absolute;
-//   margin-top: -34px;
- }
+  //   margin-left: 44px;
+  //   // position: absolute;
+  //   margin-top: -34px;
+}
 
 .btn-before {
   display: flex;

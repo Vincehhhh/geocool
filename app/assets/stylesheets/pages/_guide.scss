@@ -1,0 +1,78 @@
+.guide-container{
+  display: grid ;
+  grid-template-columns: 1fr 1fr;
+  gap: 51px 20px;
+  padding: 3rem;
+}
+
+.guide-title{
+    padding-top: 42px;
+}
+.guides-card{
+  height: 192px;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: solid 2px white;
+}
+.guides-card:hover{
+  height: 192px;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: solid 2px #20D3B0;
+}
+
+.guides-img{
+  img{
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+  }
+}
+.guides-infos{
+  h3{
+    color: black;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 14px;
+    width: 300px;
+  }
+  p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    padding-top: 35px;
+    padding-left: 14px;
+  }
+}
+
+.back-img{
+  background-image: image-url("terre.avif");
+  background-position: center;
+  height: 300px;
+  p{
+    text-align: center;
+    padding-top: 10rem;
+    color: white;
+    font-size: 35px;
+  }
+}
+
+.container-infos{
+  padding-inline: 16rem;
+  padding-top: 5rem;
+  h3{
+    padding-bottom: 20px;
+  }
+}
+.ground-img-wrapper{
+  position: relative;
+}
+
+.tooltip-icon{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+}

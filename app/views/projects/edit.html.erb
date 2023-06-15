@@ -21,11 +21,12 @@
           <label class="ground-card d-flex">
             <%= f.radio_button :ground_type_id, ground.id, id: "ground_type_#{ground.id}", class: "ground-selector" %>
 
-            <div>
+            <div class="ground-img-wrapper">
               <div class="ground-img">
                 <%= cl_image_tag ground.photo.key %>
               </div>
-              <h2 class="h2-ground-name"><%= ground.name %></h2>
+                <i class="fa-solid fa-circle-info tooltip-icon tooltip-custom" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<%= ground.details%>"></i>
+                <h2 class="h2-ground-name"><%= ground.name %></h2>
                 <p class="text-source">Source : <%= ground.source %></p>
             </div>
 
@@ -34,17 +35,19 @@
 
               <div class="ground-info">
                 <p>Conductivité thermique</p>
-                <strong><%= ground.lambda_ground %>/m.K</strong>
+
+                <strong><%= ground.lambda_ground %>W/m.K</strong>
               </div>
 
               <div class="ground-info">
                 <p>Masse volumique</p>
-                <strong><%= ground.density %>/m³</strong>
+                <strong><%= ground.density %>kg/m³</strong>
               </div>
 
               <div class="ground-info">
                 <p>Capacité thermique</p>
-                <strong><%= ground.heat_capacity %>/kg.K</strong>
+                <strong><%= ground.heat_capacity %>J/kg.K</strong>
+
               </div>
 
             </div>

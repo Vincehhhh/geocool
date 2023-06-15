@@ -24,12 +24,15 @@ class Result:
 
 # Import des données d'entrée ligne de commande
 # print('Number of arguments:', len(sys.argv), 'arguments.')
-
 # print('Argument List:', sys.argv)
+
+# en cas d'utilisation depuis le terminal , décommanter ce bloc :
+# user_json_file_name = sys.argv[1]
+# with open(user_json_file_name) as user_json:
+#     user_data = json.load(user_json)
+
+# en cas d'exécution depuis l'appli décommanter cette ligne :
 user_json = sys.argv[1]
-
-
-# with open(user_jsonfile_name) as user_json:
 user_data = json.loads(user_json)
 
 samples_pipes = user_data['pipes']
@@ -52,7 +55,7 @@ studied_ground = user_data['ground']
 # # List of global variables needed for sizing
 SPEED_MIN_QV_MAX = 2 # unit : m/s
 SPEED_MAX_QV_MAX = 5 # unit : m/s
-SPEED_MIN_QV_MIN = 1 # unit : m/s
+SPEED_MIN_QV_MIN = 0.90 # unit : m/s
 SPEED_MAX_QV_MIN = 4 # unit : m/s
 
 # List of Soils:
@@ -251,6 +254,7 @@ class Working_wells:
 
 # DEPARTEMENT DE L'UTILISATEUR
 user_departement = studied_building['department']
+available_ground_area = studied_building['available_area']
 
 # Fichier météo adapté au département:
 # meteo = Meteo_settings('./meteo/TW_Bilan_Temperatures2.csv',user_departement)
@@ -298,19 +302,20 @@ for i_well in arr_well_system:
     # print(i_well.qv_tube_max*i_well.nb_branch,"m³/h  ", i_well.pipe.name,"  ",i_well.nb_branch,"branche(s)  ",
     #       "v@Qvmax:",np.round(i_well.speed_max,1),"m/s  ", "v@Qvmin:",np.round(i_well.speed_min,1),"m/s  " ,
     #       "Long Unitaire Conseillée(RAGE):",np.round(i_well.L_0,1),"m  ", "Longueur tot conseillée:",np.round(i_well.L_total,1),'m  ',"surf. terrain",np.round(i_well.occupied_surface,1),'m²')
-    i_result = {
-        "pipe_id": i_well.pipe.id,
-        "pipe_data": i_well.pipe,
-        "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
-        "pipe_name": i_well.pipe.name,
-        "external_diameter": i_well.pipe.diameter_ext,
-        "proposed_number_of_pipes": i_well.nb_branch,
-        "nominal_speed": np.round(i_well.speed_max,1),
-        "proposed_length_lo": np.round(i_well.L_0,1),
-        "proposed_total_length": np.round(i_well.L_total,1),
-        "occupied_area": np.round(i_well.occupied_surface,1)
-    }
-    result_wells.append(i_result)
+    if i_well.L_0 < 100 and i_well.occupied_surface < available_ground_area:
+        i_result = {
+            "pipe_id": i_well.pipe.id,
+            "pipe_data": i_well.pipe,
+            "nominal_flow_rate": i_well.qv_tube_max*i_well.nb_branch,
+            "pipe_name": i_well.pipe.name,
+            "external_diameter": i_well.pipe.diameter_ext,
+            "proposed_number_of_pipes": i_well.nb_branch,
+            "nominal_speed": np.round(i_well.speed_max,1),
+            "proposed_length_lo": np.round(i_well.L_0,1),
+            "proposed_total_length": np.round(i_well.L_total,1),
+            "occupied_area": np.round(i_well.occupied_surface,1)
+        }
+        result_wells.append(i_result)
 
 result = Result()
 result.selected_wells = result_wells
