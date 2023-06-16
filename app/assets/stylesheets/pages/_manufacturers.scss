@@ -7,6 +7,7 @@
   padding-block: 30px;
   padding-inline: 20px;
   min-height: 390px;
+  flex-direction: column;
   // min-height: 455px;
 
   h3 {
@@ -37,12 +38,28 @@
   padding-top: 20px;
 }
 
+.brand-img {
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+.brand-img img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  /* Ensures the image is centered vertically */
+  margin: auto;
+  /* Centers the image horizontally */
+}
+
 .btn-card-manufacturer {
   display: flex;
   padding: 12px;
   justify-content: center;
   position: absolute;
-  top: 516px;
+  top: 582px;
+  // bottom:30px;
   width: 188px;
   margin-top: 30px;
 }
@@ -63,11 +80,12 @@
   }
 }
 
-.materials-manufacturer-pic{
-  align-items: center ;
+.materials-manufacturer-pic {
+  align-items: center;
   justify-content: space-evenly;
   padding-bottom: 1.3em;
-  h3{
+
+  h3 {
     padding-bottom: 0px;
   }
 }
