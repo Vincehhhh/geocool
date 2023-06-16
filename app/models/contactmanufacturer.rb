@@ -1,0 +1,2 @@
+class Contactmanufacturer < ApplicationRecord
+end

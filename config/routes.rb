@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   # pour les admin de geocool :
   resources :ground_types, only: %i[new show create]
 
+  resources :contactmanufacturers, only: %i[new]
+
   # resources :manufacturers, only: %i[new create edit update]
   # resources :pipes, only: %i[new show create edit update]
   # resources :energetic_studies, only: %i[new show create edit update]
