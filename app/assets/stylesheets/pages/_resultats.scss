@@ -5,6 +5,11 @@
   padding-bottom: 35px;
 }
 
+.h1-result {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
@@ -15,8 +20,8 @@
   justify-content: space-between;
 }
 
-.container-cards {
-  padding-bottom: 20px;
+.town-container-cards {
+  padding-bottom: 10px;
   align-items: center;
 
 
@@ -29,6 +34,7 @@
   margin-block: 40px;
 
   font-size: larger;
+  padding-inline: 2em;
 
 }
 
@@ -46,7 +52,7 @@
   border: 3px solid #20D3B0;
   box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.3);
   border-radius: 45px;
-  width: 290px;
+  width: 305px;
   // height: 494px;
   padding: 35px 30px;
 }
@@ -164,6 +170,10 @@
   line-height: 22px;
 }
 
+.logogeocool{
+  font-size: 1.5em;
+  font-weight: 600;
+}
 .align-item {
   display: flex;
   justify-content: space-between;
@@ -180,6 +190,18 @@
   line-height: 15px;
 }
 
+.link-premium {
+  font-weight: 700;
+}
+
+#label-card-manufacturer {
+  font-weight: 700;
+}
+
+#annual-perf {
+  font-weight: 700;
+}
+
 .response-card {
   font-size: 15px;
   font-weight: 600;
@@ -188,11 +210,50 @@
 }
 
 .links-premium {
-  padding-bottom: 33px;
+  // padding-bottom: 25px;
+  padding-bottom: 1.05em;
+  ul {
+    margin: 3px;
+  }
+}
+
+.align-item .link-premium {
+  ul {
+    margin: 3px;
+  }
+}
+
+a {
+  color: #d1aa0e;
 }
 
 #first-link-premium {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.label-card .card-nrj {
+  line-height: 0px;
+  margin: 5px;
+
+
+}
+
+.response-card card-nrj {
+  line-height: 0px;
+  margin: 5px;
+
+}
+
+.response-card .card-nrj {
+  line-height: 0px;
+  p {
+    margin-bottom: 2px;
+  }
+}
+
+
+.hr-results {
+  margin-top: 5px;
 }
 
 .h2-card-result {
@@ -209,42 +270,51 @@
 .h2-center-results {
   display: flex;
   justify-content: center;
+  align-items:flex-end;
   color: #8E8E93;
   font-weight: 400;
   font-size: 18px;
-  padding-bottom: 35px;
-  margin-top: -35px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .h2-infos-risques {
   padding-top: 50px;
-  font-size: 26px;
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.h3-infos-risques {
+  padding-top: 20px;
+  font-size: 20px;
   line-height: 35px;
 }
 
 .container-risks {
-  padding-top: 40px;
-  padding-bottom: 100px;
-  padding-right: 20px;
-
-  h3 {
-    font-size: 20px;
-    padding-top: 10px;
-  }
-  p{
-    font-size: 25px;
-  }
-}
-
-.container-risk {
   text-align: center;
   padding-inline: 35px;
+  // width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  justify-content: space-around;
+
+  h4 {
+    font-size: 15px;
+    padding-top: 10px;
+  }
+
+  p {
+    font-size: 15px;
+  }
 }
+
 
 .results-table {
   display: flex;
   justify-content: center;
-  width: 75vw;
+  width: 80vw;
   background-color: #ffffff;
   border-collapse: collapse;
   table-layout: auto;

@@ -189,6 +189,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_151704) do
     t.datetime "updated_at", null: false
     t.bigint "pipe_id"
     t.string "name"
+    t.integer "temporary_well_id"
     t.index ["pipe_id"], name: "index_working_well_systems_on_pipe_id"
     t.index ["project_id"], name: "index_working_well_systems_on_project_id"
   end
