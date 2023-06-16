@@ -5,7 +5,7 @@ export default class extends Controller {
   // static targets = ["department", "dptcommunes","postCode"]
   static targets = ["department", "dptcommunes"]
   connect() {
-    console.log("Hello from our first Stimulus controller");
+    console.log("Hello from communes controller");
     // console.log("my dropdoww", this.departmentTarget.value);
     console.log(this.dptcommunesTarget)
 

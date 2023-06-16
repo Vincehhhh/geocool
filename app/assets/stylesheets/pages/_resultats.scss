@@ -20,6 +20,22 @@
   justify-content: space-between;
 }
 
+#result-comment {
+  width: 60vw;
+  margin-block: 1em;
+  text-align: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #8E8E93;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top:0px;
+  padding-bottom: 10px;
+  margin-inline: auto;
+}
+
 .town-container-cards {
   padding-bottom: 10px;
   align-items: center;
@@ -36,6 +52,13 @@
   font-size: larger;
   padding-inline: 2em;
 
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
 }
 
 .container-cards-results {
@@ -133,6 +156,7 @@
   color: black;
   font-weight: 500;
 }
+
 .btn-project-result {
   background: white;
   display: flex;
@@ -170,10 +194,11 @@
   line-height: 22px;
 }
 
-.logogeocool{
+.logogeocool {
   font-size: 1.5em;
   font-weight: 600;
 }
+
 .align-item {
   display: flex;
   justify-content: space-between;
@@ -212,6 +237,7 @@
 .links-premium {
   // padding-bottom: 25px;
   padding-bottom: 1.05em;
+
   ul {
     margin: 3px;
   }
@@ -246,6 +272,7 @@ a {
 
 .response-card .card-nrj {
   line-height: 0px;
+
   p {
     margin-bottom: 2px;
   }
@@ -270,25 +297,28 @@ a {
 .h2-center-results {
   display: flex;
   justify-content: center;
-  align-items:flex-end;
+  align-items: flex-end;
   color: #8E8E93;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   padding-bottom: 10px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
 .h2-infos-risques {
-  padding-top: 50px;
+  padding-block: 15px;
+  text-align:center;
   font-size: 25px;
   line-height: 35px;
 }
 
 .h3-infos-risques {
-  padding-top: 20px;
+  padding-block: 5px;
   font-size: 20px;
-  line-height: 35px;
+  // line-height: 35px;
+  margin-block: 10px;
+  text-align: center;
 }
 
 .container-risks {
@@ -296,8 +326,8 @@ a {
   padding-inline: 35px;
   // width: 150px;
   padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-inline: 0px;
   justify-content: space-around;
 
   h4 {
@@ -310,6 +340,9 @@ a {
   }
 }
 
+.fixed-width {
+  width: 115px;
+}
 
 .results-table {
   display: flex;

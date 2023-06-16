@@ -1,7 +1,7 @@
 <div class="container dashboard-container">
   <div class="text-center">
-    <h3> Hello <%= @user.username%>!  Retrouve ici toutes tes études</h3>
     <h2>Tableau de bord</h2>
+    <h3 id ="hello" > Hello <%= @user.username%>!  Retrouve ici toutes tes études</h3>
   </div>
   <div >
     <div class="dashboard-all">
@@ -20,7 +20,7 @@
             </svg>
             <div>
               <p>Créé le :</p>
-              <strong ><%= project.created_at.strftime('%m/%d/%Y')%></strong>
+              <strong ><%= project.created_at.strftime('%d/%m/%Y')%></strong>
             </div>
 
           </div>

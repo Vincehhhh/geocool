@@ -4,4 +4,6 @@ class Manufacturer < ApplicationRecord
 
   validates :social_name, presence: true
   validates :address, presence: true
+  has_one_attached :photo
+
 end

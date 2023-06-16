@@ -6,6 +6,7 @@
   display: block;
   background-size: cover;
   margin: auto;
+  margin-right:0;
   background-position: center;
   background-repeat: no-repeat;
   // background: #8E8E93;
@@ -15,7 +16,7 @@
 }
 
 .container-text-preambule {
-  width: 366px;
+  width: 385px;
   padding-top: 48px;
 
   h1 {
@@ -43,9 +44,10 @@
 }
 
 .btn-submit-create-project {
-  width: 102px;
+  // width: 102px;
   height: 51px;
   border-radius: 18px;
+
 }
 
 .new_project {
