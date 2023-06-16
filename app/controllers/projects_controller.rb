@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
 
   def index
-    @my_projects = Project.where(user: current_user)
+    @projects = Project.where(user: current_user)
+    # raise
+    @my_projects = (@projects.sort_by { |hash| hash[:created_at] }).reverse
     @user = current_user
 
   end
